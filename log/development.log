@@ -2333,3 +2333,289 @@ Rendering template within layouts/application
 Rendering pages/show
 Rendered pages/_header (0.1ms)
 Completed in 72ms (View: 62, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-26 10:19:21) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.1ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-26 10:21:09) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.1ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-26 10:21:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/box-logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-26 10:21:11) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.0ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-26 10:21:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/images/box-logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-26 10:21:30) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.1ms)
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-26 10:21:39) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.0ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-09-26 10:22:02) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.0ms)
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:22:10) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.4ms)
+Completed in 75ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:24:24) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:25:41) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:25:50) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:25:55) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 71ms (View: 3, DB: 1) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:25:59) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:26:11) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:26:40) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:27:05) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 72ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:27:53) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:28:19) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:29:00) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 63ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:30:23) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 71ms (View: 61, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:30:46) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:31:00) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:31:19) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:31:24) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:31:48) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:31:59) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (6.3ms)
+Completed in 22ms (View: 12, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:31:59) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.1ms)
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/show/1/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-09-26 10:32:03) [GET]
+  Parameters: {"page_id"=>"1", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (0.4ms)
+Completed in 72ms (View: 5, DB: 1) | 200 OK [http://localhost/pages/show/1/1]

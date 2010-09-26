@@ -14,7 +14,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
   #menubar .wrapper {width:1060px; height:100px; margin:0px auto; padding:0px 0px;}
   
-  #menubar #company_name    {float:left; margin-top:40px;}
+  #menubar #company_name    {float:left; height:50px; margin-top:40px; margin-left:0px; padding-left:60px; background:url(/images/box-logo.png) no-repeat;}
   #menubar #company_name h3 {font-size:30px; font-weight:bold; color:#2f4d70; letter-spacing: 0.04em; text-shadow:#fff 0px 1px 0, #2f4d70 0 -1px 0;}
 
   #menubar #page_title       {float:left; margin-left:40px; margin-top:40px;}
@@ -38,7 +38,9 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   
   .buffer_header .label {float:left; min-width:60px; height:20px;}
   .buffer_header .label {line-height:20px; color:#f8f8f8;}
-    
+  .buffer_header .label:focus {outline: 1px dashed #f3f3f3;}
+  
+  
   .buffer_header ul {float:right; margin-top:-30px; padding:0px 2px; z-index:50;}
   .buffer_header ul {list-style:none; background-color:#253e5f; border-bottom:2px solid #333; border-left:2px solid #333;}
   

@@ -1,0 +1,85 @@
+body, div, span, h1, h2, h3, h4, h5 {margin:0; padding:0; border:none;}
+
+body      {background-color: #253e5f}
+div       {font-size:12px; font-color:#111; font-family:Helvetica;}
+.clear    {clear:both;}
+
+#page     {width:1000px; min-height:1400px; margin:50px auto; padding:30px;}
+#page     {background:#e6e6e6  /*url(img/bg_content1.gif) repeat*/; outline:1px solid #1f397c;}
+
+#page_id {position:absolute; top:-200px;}
+
+#menubar  {height:100px; position:relative;}
+#menubar  {background:url(/images/bg_header.gif) repeat-x;}
+
+  #menubar .wrapper {width:1060px; height:100px; margin:0px auto; padding:0px 0px;}
+  
+  #menubar #company_name    {float:left; margin-top:40px;}
+  #menubar #company_name h3 {font-size:30px; font-weight:bold; color:#2f4d70; letter-spacing: 0.04em; text-shadow:#fff 0px 1px 0, #2f4d70 0 -1px 0;}
+
+  #menubar #page_title       {float:left; margin-left:40px; margin-top:40px;}
+  #menubar #page_title input {height:30px; width:300px; padding-left:5px; }
+  #menubar #page_title input {font-size:14px; background-color:rgba(256,256,256,.2); border:1px solid #9db8d0;}
+
+  #menubar .center  {width:100px; margin:10px auto;}
+  #menubar .center h3 {font-size:12px; font-weight:normal; color:#fff;}
+
+
+.container {float:left; position:relative; min-width:200px;}
+.container {}
+
+#page > .container {margin-top:10px;}
+
+.buffer   {width:100%;  border-bottom:2px solid #ccc;}
+.buffer   {border-right:2px solid #ccc; border-left:1.5px solid #ccc;}
+
+  .buffer_header {height:20px; padding:5px 10px;}
+  .buffer_header {line-height:20px; background-color:#4da9d3; border-bottom:1px solid #555;} 
+  
+  .buffer_header .label {float:left; min-width:60px; height:20px;}
+  .buffer_header .label {line-height:20px; color:#f8f8f8;}
+    
+  .buffer_header ul {float:right; margin-top:-30px; padding:0px 2px; z-index:50;}
+  .buffer_header ul {list-style:none; background-color:#253e5f; border-bottom:2px solid #333; border-left:2px solid #333;}
+  
+  .buffer_header li {float:left; width:20px; height:20px; padding:0px 2px; margin:0px 2px;} 
+  .buffer_header li {color:#dcdcdc; background-color:#253e5f; text-align:center;}
+  .buffer_header li:hover {background-color:#203654;}
+
+  .buffer_body   {min-height:200px; padding:10px;}
+  .buffer_body   {background-color:#f5f5f5;}
+  .buffer_body:focus {outline: 0px solid transparent;}
+
+
+.divider            {position:relative; float:left;}
+.divider            {background-color:Transparent; border:none;}
+
+
+  .divider.vertical   {width:20px; height:1px;}
+  .divider.horizontal {height:20px; width:1px;}
+  .divider.hover      {background-color:#ccc;}
+  
+  .divider ul {position:absolute; width:10px; height:20px; left:6px; padding:0px; margin:0px; list-style:none;}
+  .divider li {float:left; width:2px; height:10px; margin-left: 2px; background-color:#666;}
+  
+  
+  
+  
+#small-page     {width:600px; height:420px; margin:50px auto; padding:30px;}
+#small-page     {background: #e6e6e6; outline:1px solid #1f397c;}
+
+#small-page .field {width:100%; margin-bottom:40px;}
+#small-page h4  {font-size:24px; font-weight:normal; text-align:center; color:#333; margin-bottom:40px;}
+#small-page h5  {font-size:14px; font-weight:normal; color:#111;}
+#small-page input {width:300px; line-height:24px; font-size:14px; background-color:#faffbd; margin-top:10px; padding-left:5px;}
+#small-page input.btn  {width:160px; height:48px; margin:40px 0px 0px 240px; background:url(/images/btn_std.jpg); border:none;}
+#small-page input.btn:hover {background:url(/images/btn_hover.jpg);}
+/*#small-page input.btn.b2 {margin-top:160px;}*/
+
+#small-page .listing {width:560px; height:40px; margin-bottom:10px; padding-left:40px; background: url(/images/page.png) no-repeat;}
+#small-page .listing {border-bottom: 4px solid #ccc;}
+#small-page .listing h5 {line-height:40px; font-size:16px; color:#333;}
+
+#small-page .header  {width:500px; height:100px; padding-left:100px; background: url(/images/pages.png) no-repeat;}
+#small-page .header h3 {line-height:100px; font-size:24px; color:#333;}
+

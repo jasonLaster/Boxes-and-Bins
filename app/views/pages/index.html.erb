@@ -1,0 +1,14 @@
+<div id="small-page">
+
+	<div class="header">
+		<h3><%= @user.name %>'s Collection</h3>
+	</div>
+
+	<% @pages.each do |page| %>
+	<div class="listing">
+		<h5> <%= link_to page.title , show_path(:user_id => @user.id, :page_id => page.id) %></h5>
+	</div>
+
+	<% end %>
+
+</div>

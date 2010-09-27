@@ -6,11 +6,13 @@ ActionController::Routing::Routes.draw do |map|
 
   map.index '/pages/index/:user_id', :controller => 'pages', :action => 'index'
   map.show '/pages/show/:user_id/:page_id', :controller => 'pages', :action => 'show'
+  map.doc '/pages/doc/', :controller => 'pages', :action => 'doc'
 
   map.resources :users
   # map.resources :pages
 
   map.resource :session
+  
   
 
   # The priority is based upon order of creation: first created -> highest priority.

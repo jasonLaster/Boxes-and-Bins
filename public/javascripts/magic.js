@@ -36,27 +36,28 @@ var create_container = function(){
   var buffer_header = $('<div class="buffer_header">');
   var buffer_body = $('<div class="buffer_body">').attr('contenteditable', 'true')
   var clear = $('<div class="clear">');
-
-  buffer_header
-    .append($('<div class="label">').attr('contenteditable', 'true').text("label"))
-    .append($('<ul class="buttons">')
+  var label = $('<div class="label">').attr('contenteditable', 'true').text("label");
+  var buttons = $('<ul class="buttons">')
       .append($('<li class="button yellow left">').html("&larr;"))
       .append($('<li class="button yellow right">').html("&rarr;"))
       .append($('<li class="button yellow up">').html("&uarr;"))
       .append($('<li class="button yellow down">').html("&darr;"))
-      .append($('<li class="button red remove">').html("&otimes;"))
-    )
-    .append(clear);
+      .append($('<li class="button red remove">').html("&otimes;"));
 
-  $('.buttons', buffer_header).hide()
+
 
   // buffer header colors
   // var colors = ['#4da9d3', '#76b75d', '#d89f4b', '#bc3b26'];
   var colors = [['145', '145', '145'], ['229', '184', '88'], ['66', '112', '150'], ['138', '108', '178'], ['214', '206', '92']];
   var color = colors[iterator++ % 5]
   rgb = sprintf('rgba(%s, %s, %s, 0.6)', color[0], color[1], color[2])
-  buffer_header.css('background-color', rgb);
 
+  buffer_header.css('background-color', rgb);
+  // buttons.find('ul').css('background-color', rgb);
+  // alert(buttons.find('ul').css('background-color', rgb))
+
+  label.appendTo(buffer_header);
+  buttons.appendTo(buffer_header);
 
   buffer.append(buffer_header);
   buffer.append(buffer_body);
@@ -149,11 +150,14 @@ var create_vertical_container_components = function(a_container){
 
 var events = function(){
 
+
   $('.buffer').live('mouseover', function(){
     $('.buttons').hide()
     $('.buttons', this).show()
+  })
 
-    // set_divider_position(this);
+  $('.container').live('mouseover', function(){
+    set_divider_position(this);
   })
 
   $('.button.right').live('click', function(){
@@ -257,21 +261,19 @@ var events = function(){
 
       if (parent.hasClass("vertical")) {
         console.log('slide up')
-        remove_element();
-        // container.jq
-          // .animate({opacity: 0.0}, 150)
-          // .hide("blind", { direction: "vertical" }, 250, function(){
-          //   remove_element()
-          // });
+        container.jq
+          .animate({opacity: 0.0}, 150)
+          .hide("blind", { direction: "vertical" }, 250, function(){
+            remove_element()
+          });
 
       } else {
         console.log('fade');
-        remove_element();
-        // container.jq
-          // .animate({opacity: 0.0}, 150)
-          // .fadeOut('fast').hide("blind", { direction: "horizontal" }, 250, function(){
-          //   remove_element()
-          // });
+        container.jq
+          .animate({opacity: 0.0}, 150)
+          .fadeOut('fast').hide("blind", { direction: "horizontal" }, 250, function(){
+            remove_element()
+          });
       }
 
 
@@ -311,10 +313,11 @@ var resize_container = function(width, container){
 
 var set_divider_position = function(element){
 
-  var container = get_container_properties($(element).closest('.container').parent());
+  var container = get_container_properties($(element).closest('.horizontal').parent());
   var top_position = (container.height / 2) - 10;
   console.log(top_position);
 
+  $('.divider ul').hide();
   $('.divider ul', container.jq)
     .fadeIn('fast')
     .css("top", top_position)

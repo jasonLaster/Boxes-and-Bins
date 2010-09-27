@@ -10,4 +10,7 @@ class PagesController < ApplicationController
     @page = Page.find_by_id(params[:page_id])
   end
   
+  def doc
+  end
+  
 end

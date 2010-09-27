@@ -263,19 +263,22 @@ var events = function(){
 
       if (parent.hasClass("vertical")) {
         console.log('slide up')
-        container.jq
-          .animate({opacity: 0.0}, 150)
-          .hide("blind", { direction: "vertical" }, 250, function(){
-            remove_element()
-          });
+
+        remove_element()
+//            container.jq
+          // .animate({opacity: 0.0}, 150)
+          // .hide("blind", { direction: "vertical" }, 250, function(){
+          //   remove_element()
+          // });
 
       } else {
         console.log('fade');
-        container.jq
-          .animate({opacity: 0.0}, 150)
-          .fadeOut('fast').hide("blind", { direction: "horizontal" }, 250, function(){
-            remove_element()
-          });
+        remove_element()
+        // container.jq
+        //   .animate({opacity: 0.0}, 150)
+        //   .fadeOut('fast').hide("blind", { direction: "horizontal" }, 250, function(){
+        //     remove_element()
+        //   });
       }
 
 

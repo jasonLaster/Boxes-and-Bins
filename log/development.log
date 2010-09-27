@@ -3431,3 +3431,248 @@ Rendering template within layouts/application
 Rendering pages/doc
 Rendered pages/_header (0.1ms)
 Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 13:57:24) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 13:57:26) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 13:57:46) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 13:58:08) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:02:48) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:04:22) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 64ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:04:40) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:05:17) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:05:21) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:06:11) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:08:02) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:08:48) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:09:12) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:09:57) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:12:10) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:12:43) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:13:16) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:14:23) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:14:24) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:14:42) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 60ms (View: 59, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:14:43) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:15:00) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:16:09) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:16:26) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:18:07) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:18:20) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:18:35) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:18:42) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:18:51) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:19:03) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:19:08) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:19:12) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:19:21) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:19:48) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 14:20:10) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]

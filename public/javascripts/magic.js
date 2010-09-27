@@ -44,7 +44,7 @@ var create_container = function(){
       .append($('<li class="button yellow down">').html("&darr;"))
       .append($('<li class="button red remove">').html("&otimes;"));
 
-
+  var triangle = $('<div class="triangle">');
 
   // buffer header colors
   // var colors = ['#4da9d3', '#76b75d', '#d89f4b', '#bc3b26'];
@@ -57,13 +57,20 @@ var create_container = function(){
   // alert(buttons.find('ul').css('background-color', rgb))
 
   buttons.hide();
+  triangle.hide();
 
-  label.appendTo(buffer_header);
-  buttons.appendTo(buffer_header);
+  buffer_header
+    .append(label)
+    .append(buttons);
 
-  buffer.append(buffer_header);
-  buffer.append(buffer_body);
-  buffer.appendTo(container);
+  buffer
+    .append(buffer_header)
+    .append(buffer_body)
+    .append(triangle);
+
+  container
+    .append(buffer);
+
   return container;
 }
 
@@ -154,8 +161,11 @@ var events = function(){
 
 
   $('.buffer').live('mouseover', function(){
-    $('.buttons').hide()
-    $('.buttons', this).show()
+    $('.buttons').hide();
+    $('.buttons', this).show();
+
+    $('.triangle').hide();
+    $('.triangle', this).show();
   })
 
   $('.container').live('mouseover', function(){

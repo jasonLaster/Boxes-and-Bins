@@ -3396,3 +3396,10 @@ Rendering template within layouts/application
 Rendering pages/doc
 Rendered pages/_header (0.1ms)
 Completed in 62ms (View: 61, DB: 0) | 200 OK [http://localhost/pages/doc]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 10:56:22) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/pages/doc]

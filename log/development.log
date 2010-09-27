@@ -3424,3 +3424,10 @@ Rendering template within layouts/application
 Rendering pages/doc
 Rendered pages/_header (0.1ms)
 Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-09-27 11:17:55) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]

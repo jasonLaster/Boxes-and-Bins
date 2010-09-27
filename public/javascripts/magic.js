@@ -229,58 +229,60 @@ var events = function(){
   });
 
   $('.button.remove').live('click', function(){
+    if ($('.buffer').length > 1 ){
+          // get content
+          var container = get_container_properties($(this).closest('.container'));
+          var wrapper_container = {};
+          wrapper_container.jq = container.jq.parent();
 
-    // get content
-    var container = get_container_properties($(this).closest('.container'));
-    var wrapper_container = {};
-    wrapper_container.jq = container.jq.parent();
+          if (wrapper_container.jq.attr('id') == "page") {
+            container.jq.fadeOut('fast', function(){
+              container.jq.next().remove();
+              container.jq.remove();
+            });
 
-    if (wrapper_container.jq.attr('id') == "page") {
-      container.jq.fadeOut('fast', function(){
-        container.jq.next().remove();
-        container.jq.remove();
-      });
+          } else {
 
-    } else {
+            // remove divs
+            var parent = wrapper_container.jq.parent();
 
-      // remove divs
-      var parent = wrapper_container.jq.parent();
+            var remove_element = function(){
+              console.log('remove element')
+              container.jq.remove();
+              var other_container = wrapper_container.jq.children('.container')
 
-      var remove_element = function(){
-        console.log('remove element')
-        container.jq.remove();
-        var other_container = wrapper_container.jq.children('.container')
+              // resize other container
+              if (wrapper_container.jq.hasClass("horizontal")) {
+                var width = container.width;
+                resize_container(width, other_container);
+              } 
 
-        // resize other container
-        if (wrapper_container.jq.hasClass("horizontal")) {
-          var width = container.width;
-          resize_container(width, other_container);
-        } 
+              wrapper_container.jq
+                .replaceWith(other_container);
+            }
 
-        wrapper_container.jq
-          .replaceWith(other_container);
-      }
+            if (parent.hasClass("vertical")) {
+              console.log('slide up')
 
-      if (parent.hasClass("vertical")) {
-        console.log('slide up')
+              remove_element()
+      //            container.jq
+                // .animate({opacity: 0.0}, 150)
+                // .hide("blind", { direction: "vertical" }, 250, function(){
+                //   remove_element()
+                // });
 
-        remove_element()
-//            container.jq
-          // .animate({opacity: 0.0}, 150)
-          // .hide("blind", { direction: "vertical" }, 250, function(){
-          //   remove_element()
-          // });
+            } else {
+              console.log('fade');
+              remove_element()
+              // container.jq
+              //   .animate({opacity: 0.0}, 150)
+              //   .fadeOut('fast').hide("blind", { direction: "horizontal" }, 250, function(){
+              //     remove_element()
+              //   });
+            }
 
-      } else {
-        console.log('fade');
-        remove_element()
-        // container.jq
-        //   .animate({opacity: 0.0}, 150)
-        //   .fadeOut('fast').hide("blind", { direction: "horizontal" }, 250, function(){
-        //     remove_element()
-        //   });
-      }
 
+          }
 
     }
 

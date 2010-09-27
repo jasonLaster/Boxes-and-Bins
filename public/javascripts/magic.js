@@ -157,7 +157,7 @@ var events = function(){
   })
 
   $('.container').live('mouseover', function(){
-    set_divider_position(this);
+    // set_divider_position(this);
   })
 
   $('.button.right').live('click', function(){

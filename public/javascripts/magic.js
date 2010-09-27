@@ -6,7 +6,6 @@ $(document).ready(function(){
 })
 
 
-
 var set_divider_height = function(divider){
 
   var container = {};
@@ -36,7 +35,7 @@ var create_container = function(){
   var buffer_header = $('<div class="buffer_header">');
   var buffer_body = $('<div class="buffer_body">').attr('contenteditable', 'true')
   var clear = $('<div class="clear">');
-  var label = $('<div class="label">').attr('contenteditable', 'true').text("label");
+  var label = $('<div class="label">').attr('contenteditable', 'true').text("");
   var buttons = $('<ul class="buttons">')
       .append($('<li class="button yellow left">').html("&larr;"))
       .append($('<li class="button yellow right">').html("&rarr;"))
@@ -60,6 +59,9 @@ var create_container = function(){
     var triangle_y_position = d.pageY;
     var height = parseInt(buffer_body.css('height'));
     var buffer_y_position = triangle_y_position - height;
+
+
+    $('#page, .buffer, .buffer_body, .buffer_header, .label, ul, li').addClass('triangle_on');
 
     $('#page').bind('mousemove', function(e){
       var current_position = e.pageY;
@@ -117,7 +119,11 @@ var append_container_to_page = function(){
   var container = {};
   container.jq = create_container();
   container.width = page.width; 
-  container.jq.css("width", container.width)
+  container.jq
+    .css("width", container.width)
+  container.jq.find('.label').text("Add Label")
+  container.jq.find('.buffer_body').text("Add Text Here")
+
 
   container.jq.appendTo(page.jq);
   clear_div().appendTo(page.jq);
@@ -175,11 +181,27 @@ var events = function(){
 
 
   $('.buffer').live('mouseover', function(){
-    $('.buttons').hide();
-    $('.buttons', this).show();
 
     $('.triangle').hide();
     $('.triangle', this).show();
+
+    $('.label', this).addClass('white_dashed_border')
+    // $('.buffer_body', this).addClass('blue_dashed_border')
+  })
+
+  $('.buffer_header').live('mouseover', function(){
+    $('.buttons').hide();
+    $('.buttons', this).show();
+  });
+
+  $('.container').live('mouseout', function(){
+    $('.buttons').hide();
+  });
+
+
+  $('.buffer').live('mouseout', function(){
+    $('.label').removeClass('white_dashed_border')
+    // $('.buffer_body').removeClass('blue_dashed_border')
   })
 
   $('.container').live('mouseover', function(){
@@ -188,8 +210,19 @@ var events = function(){
 
   $('#page').mouseup(function(){
     $('#page').unbind('mousemove');
+    $('.triangle_on').removeClass('triangle_on');
+    document.selection.clear;
   })
 
+  // $('.label').focusin(function(){
+  //   alert('hello')
+  //   $(this).addClass('clearselection');
+  // })
+  // 
+  // $('.label').focusout(function(){
+  //   alert('world');
+  //   $(this).removeClass('clearselection');
+  // })
 
 
   $('.button.right').live('click', function(){

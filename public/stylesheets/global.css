@@ -3,6 +3,9 @@ body, div, span, h1, h2, h3, h4, h5 {margin:0; padding:0; border:none;}
 body      {background-color: #253e5f}
 div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 .clear    {clear:both;}
+.clear_selection::selection {background: transparent;}
+.white_dashed_border {outline: 1px dashed #f3f3f3;}
+.blue_dashed_border {outline: 1px dashed #5d83a1;}
 #page_id  {position:absolute; top:-200px;}
 
 
@@ -10,11 +13,14 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
 #menubar  {height:100px; position:relative; margin-bottom:50px;}
 #menubar  {background:url(/images/bg_header.gif) repeat-x;}
+#menubar::selection {background: transparent;}
 
   .wrapper {width:1060px; margin:0px auto; padding:0px 0px;}
   
   #menubar #company_name    {float:left; height:50px; margin-top:40px;}
+  #menubar #company_name::selection {background: transparent;}
   #menubar #company_name h3 {font-size:30px; font-weight:bold; color:#2f4d70; letter-spacing: 0.04em; text-shadow:#fff 0px 1px 0, #2f4d70 0 -1px 0;}
+  #menubar #company_name h3::selection {background: transparent;}
 
   #menubar #page_title       {float:left; margin-left:40px; margin-top:40px;}
   #menubar #page_title input {height:30px; width:300px; padding-left:5px; }
@@ -45,30 +51,40 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
 .buffer   {position:relative; width:100%;  border-bottom:2px solid #ccc;}
 .buffer   {border-right:2px solid #ccc; border-left:1.5px solid #ccc;}
+.buffer::selection {background: transparent;}
 
-  .buffer_header {height:20px; padding:5px 10px;}
-  .buffer_header {line-height:20px; background-color:#4da9d3; border-bottom:1px solid #555;} 
+
+  .buffer_header {height:20px; line-height:20px; padding:5px 0px 5px 0px; background-color:#4da9d3; border-bottom:1px solid #555;} 
+  .buffer_header::selection {background: transparent;}
   
-  .buffer_header .label {min-width:60px; height:20px;}
+  .buffer_header .label {min-width:60px; height:20px; margin: 0px 10px 0px 10px; padding-left:5px;}
   .buffer_header .label {line-height:20px; color:#f8f8f8;}
   .buffer_header .label:focus {outline: 1px dashed #f3f3f3;}
   
-  .buffer_header ul {width:140px; height:20px; margin-top:-50px; padding:0px 2px; z-index:10; cursor:default;}
-  .buffer_header ul {list-style:none; background-color:#253e5f; }
+  
+  .buffer_header ul {height:20px; margin-top:-45px; padding:0px 2px; z-index:10; cursor:default;}
+  .buffer_header ul {list-style:none; background-color:#444; }
   
   .buffer_header li {float:left; width:20px; height:20px; padding:0px 2px; margin:0px 2px;} 
-  .buffer_header li {color:#dcdcdc; background-color:#253e5f; text-align:center;}
-  .buffer_header li:hover {background-color:#203654;}
+  .buffer_header li {color:#dcdcdc; text-align:center;}
+  .buffer_header li::selection {background: transparent;}
+  .buffer_header li:hover {background-color:#333;}
   
   
 
   .buffer_body   {min-height:200px; padding:10px;}
   .buffer_body   {background-color:#f5f5f5;}
+  .buffer_body::selection {background: transparent;}
   .buffer_body:focus {outline: 0px solid transparent;}
+  
+
+  .triangle_on {}
+  .triangle_on::selection {background: transparent;}
 
     .triangle {position:absolute; width:8px; height:8px; right:0px; bottom:0px;  z-index:10;}
     .triangle {background:url(/images/triangle.png) no-repeat;}    
-    .triangle:hover {cursor:default; }
+    .triangle:hover {cursor:default;}
+    
 
 .divider            {position:relative; float:left;}
 .divider            {background-color:Transparent; border:none;}

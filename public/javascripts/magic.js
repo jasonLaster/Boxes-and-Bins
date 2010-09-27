@@ -56,6 +56,20 @@ var create_container = function(){
   // buttons.find('ul').css('background-color', rgb);
   // alert(buttons.find('ul').css('background-color', rgb))
 
+  triangle.mousedown(function(d){
+    var triangle_y_position = d.pageY;
+    var height = parseInt(buffer_body.css('height'));
+    var buffer_y_position = triangle_y_position - height;
+
+    $('#page').bind('mousemove', function(e){
+      var current_position = e.pageY;
+      buffer_body.height = current_position - buffer_y_position;
+      buffer_body.css('height', buffer_body.height)
+    });
+  })
+
+
+
   buttons.hide();
   triangle.hide();
 
@@ -171,6 +185,12 @@ var events = function(){
   $('.container').live('mouseover', function(){
     // set_divider_position(this);
   })
+
+  $('#page').mouseup(function(){
+    $('#page').unbind('mousemove');
+  })
+
+
 
   $('.button.right').live('click', function(){
 

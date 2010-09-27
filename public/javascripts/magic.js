@@ -56,6 +56,8 @@ var create_container = function(){
   // buttons.find('ul').css('background-color', rgb);
   // alert(buttons.find('ul').css('background-color', rgb))
 
+  buttons.hide();
+
   label.appendTo(buffer_header);
   buttons.appendTo(buffer_header);
 

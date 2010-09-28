@@ -22,7 +22,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   #menubar #company_name h3 {font-size:30px; font-weight:bold; color:#2f4d70; letter-spacing: 0.04em; text-shadow:#fff 0px 1px 0, #2f4d70 0 -1px 0;}
   #menubar #company_name h3::selection {background: transparent;}
 
-  #menubar #page_title       {float:left; margin-left:40px; margin-top:40px;}
+  #menubar #page_title       {float:left; margin-left:140px; margin-top:40px;}
   #menubar #page_title input {height:30px; width:300px; padding-left:5px; }
   #menubar #page_title input {font-size:14px; background-color:rgba(256,256,256,.2); border:1px solid #9db8d0;}
   #menubar #page_title input:focus {background-color:rgba(255,239,0,.22); outline:0px solid black;}
@@ -30,7 +30,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   #menubar .center  {width:100px; margin:10px auto;}
   #menubar .center h3 {font-size:12px; font-weight:normal; color:#fff;}
 
-#page     {width:1000px; min-height:1400px; margin:0px auto; padding:30px;}
+#page     {width:1000px; min-height:500px; margin:0px auto; padding:30px;}
 #page     {background:#e6e6e6  /*url(img/bg_content1.gif) repeat; outline:1px solid #1f397c;*/}
 
 
@@ -45,7 +45,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 #toolbar li:hover {background-color:#203654;}
 */
 
-.container {float:left; position:relative; min-width:200px;}
+.container {float:left; position:relative; min-width:60px;}
 .container {}
 
 #page > .container {margin-top:10px;}

@@ -37,11 +37,11 @@ var create_container = function(){
   var clear = $('<div class="clear">');
   var label = $('<div class="label">').attr('contenteditable', 'true').text("");
   var buttons = $('<ul class="buttons">')
+      .append($('<li class="button red remove">').html("&otimes;"))
       .append($('<li class="button yellow left">').html("&larr;"))
       .append($('<li class="button yellow right">').html("&rarr;"))
       .append($('<li class="button yellow up">').html("&uarr;"))
-      .append($('<li class="button yellow down">').html("&darr;"))
-      .append($('<li class="button red remove">').html("&otimes;"));
+      .append($('<li class="button yellow down">').html("&darr;"));
 
   var triangle = $('<div class="triangle">');
 

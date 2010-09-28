@@ -180,33 +180,42 @@ var create_vertical_container_components = function(a_container){
 var events = function(){
 
 
+
+
+  $('.container').live('mouseover', function(){
+    // set_divider_position(this);
+  })
+
+  $('.container').live('mouseout', function(){
+    $('.buttons').hide();
+  });
+
   $('.buffer').live('mouseover', function(){
+
 
     $('.triangle').hide();
     $('.triangle', this).show();
 
     $('.label', this).addClass('white_dashed_border')
+
+    // $('.buffer').removeClass('buffer_border');
+    // $('.buffer', this).addClass('buffer_border');
+
     // $('.buffer_body', this).addClass('blue_dashed_border')
   })
+
+  $('.buffer').live('mouseout', function(){
+    $('.label').removeClass('white_dashed_border')
+    // $('.buffer').removeClass('buffer_border');
+    // $('.buffer_body').removeClass('blue_dashed_border')
+  })
+
 
   $('.buffer_header').live('mouseover', function(){
     $('.buttons').hide();
     $('.buttons', this).show();
   });
 
-  $('.container').live('mouseout', function(){
-    $('.buttons').hide();
-  });
-
-
-  $('.buffer').live('mouseout', function(){
-    $('.label').removeClass('white_dashed_border')
-    // $('.buffer_body').removeClass('blue_dashed_border')
-  })
-
-  $('.container').live('mouseover', function(){
-    // set_divider_position(this);
-  })
 
   $('#page').mouseup(function(){
     $('#page').unbind('mousemove');

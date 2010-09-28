@@ -49,10 +49,9 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
 #page > .container {margin-top:10px;}
 
-.buffer   {position:relative; width:100%;  border-bottom:2px solid #ccc;}
-.buffer   {border-right:2px solid #ccc; border-left:1.5px solid #ccc;}
+.buffer   {position:relative; width:100%;  }
 .buffer::selection {background: transparent;}
-
+.buffer   {border-right:2px solid #ccc; border-left:1.5px solid #ccc; border-bottom:2px solid #ccc;}
 
   .buffer_header {height:20px; line-height:20px; padding:5px 0px 5px 0px; background-color:#4da9d3; border-bottom:1px solid #555;} 
   .buffer_header::selection {background: transparent;}
@@ -62,13 +61,14 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   .buffer_header .label:focus {outline: 1px dashed #f3f3f3;}
   
   
-  .buffer_header ul {height:20px; margin-top:-45px; padding:0px 2px; z-index:10; cursor:default;}
+  .buffer_header ul {height:20px; margin: -45px 0px 0px 0px; padding:0px 2px; z-index:10; cursor:default;}
   .buffer_header ul {list-style:none; background-color:#444; }
   
   .buffer_header li {float:left; width:20px; height:20px; padding:0px 2px; margin:0px 2px;} 
   .buffer_header li {color:#dcdcdc; text-align:center;}
   .buffer_header li::selection {background: transparent;}
   .buffer_header li:hover {background-color:#333;}
+  
   
   
 

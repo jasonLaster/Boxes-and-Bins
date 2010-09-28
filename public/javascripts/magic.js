@@ -61,7 +61,7 @@ var create_container = function(){
     var buffer_y_position = triangle_y_position - height;
 
 
-    $('#page, .buffer, .buffer_body, .buffer_header, .label, ul, li').addClass('triangle_on');
+    $('#page, .buffer, .buffer_header, .label, ul, li').addClass('triangle_on');
 
     $('#page').bind('mousemove', function(e){
       var current_position = e.pageY;
@@ -222,6 +222,7 @@ var events = function(){
     $('.triangle_on').removeClass('triangle_on');
     document.selection.clear;
   })
+
 
   // $('.label').focusin(function(){
   //   alert('hello')

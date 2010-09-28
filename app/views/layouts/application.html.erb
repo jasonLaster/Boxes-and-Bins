@@ -13,12 +13,10 @@
 <body>
 	
 	
-	<div class="container">
-		<p class="flash"><%= flash[:notice] %></p>
-	</div>
+	
 	
 	<%= yield %>
 
-	
+	<p class="flash"><%= flash[:notice] %></p>	
 </body>
 </html>

@@ -25,6 +25,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   #menubar #page_title       {float:left; margin-left:40px; margin-top:40px;}
   #menubar #page_title input {height:30px; width:300px; padding-left:5px; }
   #menubar #page_title input {font-size:14px; background-color:rgba(256,256,256,.2); border:1px solid #9db8d0;}
+  #menubar #page_title input:focus {background-color:rgba(255,239,0,.22); outline:0px solid black;}
 
   #menubar .center  {width:100px; margin:10px auto;}
   #menubar .center h3 {font-size:12px; font-weight:normal; color:#fff;}
@@ -51,9 +52,10 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
 .buffer   {position:relative; width:100%;  }
 .buffer::selection {background: transparent;}
-.buffer   {border-right:2px solid #ccc; border-left:1.5px solid #ccc; border-bottom:2px solid #ccc;}
+.buffer   {border-right:2px solid #ccc; border-left:1.5px solid #ccc; border-bottom:2px solid #ccc; border-top:1.5px solid #ccc;}
 
-  .buffer_header {height:20px; line-height:20px; padding:5px 0px 5px 0px; background-color:#4da9d3; border-bottom:1px solid #555;} 
+  .buffer_header {height:20px; line-height:20px; padding:5px 0px 5px 0px;} 
+  .buffer_header {background-color:#4da9d3; border-bottom:2px solid #ccc;}
   .buffer_header::selection {background: transparent;}
   
   .buffer_header .label {min-width:60px; height:20px; margin: 0px 10px 0px 10px; padding-left:5px;}

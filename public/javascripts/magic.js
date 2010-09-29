@@ -37,22 +37,23 @@ var create_container = function(){
   var clear = $('<div class="clear">');
   var label = $('<div class="label">').attr('contenteditable', 'true').text("");
   var buttons = $('<ul class="buttons">')
-      .append($('<li class="button red remove">').html("&otimes;"))
       .append($('<li class="button yellow left">').html("&larr;"))
       .append($('<li class="button yellow right">').html("&rarr;"))
       .append($('<li class="button yellow up">').html("&uarr;"))
       .append($('<li class="button yellow down">').html("&darr;"));
-
+  var remove = $('<div class="remove_button">');
   var triangle = $('<div class="triangle">');
 
   // buffer header colors
   // var colors = ['#4da9d3', '#76b75d', '#d89f4b', '#bc3b26'];
-  var colors = [['145', '145', '145'], ['229', '184', '88'], ['66', '112', '150'], ['138', '108', '178'], ['214', '206', '92']];
+  // var colors = [['145', '145', '145'], ['229', '184', '88'], ['66', '112', '150'], ['138', '108', '178'], ['214', '206', '92']];
+  // var colors = ['blue', 'grey']; //, 'orange', 'purple', 'green'];
+  var colors = [];
   var color = colors[iterator++ % 5]
-  rgb = sprintf('rgba(%s, %s, %s, 0.6)', color[0], color[1], color[2])
+  // rgb = sprintf('rgba(%s, %s, %s, 0.6)', color[0], color[1], color[2])
 
-  buffer_header.css('background-color', rgb);
-  // buttons.find('ul').css('background-color', rgb);
+  buffer_header.addClass(color);
+  buttons.find('li').addClass(color);
   // alert(buttons.find('ul').css('background-color', rgb))
 
   triangle.mousedown(function(d){
@@ -66,18 +67,21 @@ var create_container = function(){
     $('#page').bind('mousemove', function(e){
       var current_position = e.pageY;
       buffer_body.height = current_position - buffer_y_position;
-      buffer_body.css('height', buffer_body.height)
+      buffer_body.css('min-height', buffer_body.height)
     });
   })
 
 
 
   buttons.hide();
+  remove.hide();
   triangle.hide();
 
   buffer_header
-    .append(label)
-    .append(buttons);
+    .append(remove)
+    // .append(label)
+    .append(buttons)
+    .append(clear_div());
 
   buffer
     .append(buffer_header)
@@ -192,11 +196,11 @@ var events = function(){
 
   $('.buffer').live('mouseover', function(){
 
-
     $('.triangle').hide();
     $('.triangle', this).show();
 
-    $('.label', this).addClass('white_dashed_border')
+    $('.label', this).addClass('white_dashed_border');
+
 
     // $('.buffer').removeClass('buffer_border');
     // $('.buffer', this).addClass('buffer_border');
@@ -205,15 +209,24 @@ var events = function(){
   })
 
   $('.buffer').live('mouseout', function(){
-    $('.label').removeClass('white_dashed_border')
+    $('.label').removeClass('white_dashed_border');
+
     // $('.buffer').removeClass('buffer_border');
     // $('.buffer_body').removeClass('blue_dashed_border')
   })
 
 
   $('.buffer_header').live('mouseover', function(){
-    $('.buttons').hide();
-    $('.buttons', this).show();
+    $('.buttons, .remove_button').hide();
+    $('.buttons, .remove_button', this).show();
+
+    $('.buffer_header').removeClass('hover');
+    $(this).addClass('hover');
+  });
+
+  $('.buffer_header').live('mouseout', function(){
+    $('.buttons, .remove_button', this).hide();
+    $('.buffer_header').removeClass('hover');
   });
 
 
@@ -222,17 +235,6 @@ var events = function(){
     $('.triangle_on').removeClass('triangle_on');
     document.selection.clear;
   })
-
-
-  // $('.label').focusin(function(){
-  //   alert('hello')
-  //   $(this).addClass('clearselection');
-  // })
-  // 
-  // $('.label').focusout(function(){
-  //   alert('world');
-  //   $(this).removeClass('clearselection');
-  // })
 
 
   $('.button.right').live('click', function(){
@@ -301,7 +303,7 @@ var events = function(){
     // set_divider_width(divs['divider']);
   });
 
-  $('.button.remove').live('click', function(){
+  $('.remove_button').live('click', function(){
     if ($('.buffer').length > 1 ){
           // get content
           var container = get_container_properties($(this).closest('.container'));

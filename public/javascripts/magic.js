@@ -1,8 +1,10 @@
 var iterator = 0;
+var start = {}
 
 $(document).ready(function(){
   events();
   append_container_to_page();
+
 })
 
 
@@ -29,69 +31,113 @@ var set_divider_width = function(divider){
 
 }
 
-var create_container = function(){
-  var container = $('<div class="container simple">');
-  var buffer = $('<div class="buffer">');
-  var buffer_header = $('<div class="buffer_header">');
-  var buffer_body = $('<div class="buffer_body">').attr('contenteditable', 'true')
-  var clear = $('<div class="clear">');
-  var label = $('<div class="label">').attr('contenteditable', 'true').text("");
-  var buttons = $('<ul class="buttons">')
-      .append($('<li class="button yellow left">').html("&larr;"))
-      .append($('<li class="button yellow right">').html("&rarr;"))
-      .append($('<li class="button yellow up">').html("&uarr;"))
-      .append($('<li class="button yellow down">').html("&darr;"));
-  var remove = $('<div class="remove_button">');
-  var triangle = $('<div class="triangle">');
 
-  // buffer header colors
-  // var colors = ['#4da9d3', '#76b75d', '#d89f4b', '#bc3b26'];
-  // var colors = [['145', '145', '145'], ['229', '184', '88'], ['66', '112', '150'], ['138', '108', '178'], ['214', '206', '92']];
-  // var colors = ['blue', 'grey']; //, 'orange', 'purple', 'green'];
-  var colors = [];
-  var color = colors[iterator++ % 5]
-  // rgb = sprintf('rgba(%s, %s, %s, 0.6)', color[0], color[1], color[2])
+// create elements
 
-  buffer_header.addClass(color);
-  buttons.find('li').addClass(color);
-  // alert(buttons.find('ul').css('background-color', rgb))
+var clear_div = function(){
+  return $('<div class="clear">');
+}
 
-  triangle.mousedown(function(d){
-    var triangle_y_position = d.pageY;
-    var height = parseInt(buffer_body.css('height'));
-    var buffer_y_position = triangle_y_position - height;
+var create_text_box = function(){
+  var e = {};
+  e.box = $('<div class="box">');
+  e.header = $('<div class="header">');
+  e.buttons = $('<ul class="buttons">')
+    .append($('<li class="left button">').html("&larr;"))
+    .append($('<li class="right button">').html("&rarr;"))
+    .append($('<li class="up button">').html("&uarr;"))
+    .append($('<li class="down button">').html("&darr;"));
+  e.remove = $('<div class="remove">');
+  e.remove_button = $('<div class="remove_button">');
+  e.triangle = $('<div class="triangle">');
+  e.body = $('<div class="body">');
+  e.content = $('<div class="content">');
 
 
-    $('#page, .buffer, .buffer_header, .label, ul, li').addClass('triangle_on');
+  e.content.attr('contenteditable', 'true');
 
-    $('#page').bind('mousemove', function(e){
-      var current_position = e.pageY;
-      buffer_body.height = current_position - buffer_y_position;
-      buffer_body.css('min-height', buffer_body.height)
-    });
-  })
+  e.remove
+    .append(e.remove_button);
 
-
-
-  buttons.hide();
-  remove.hide();
-  triangle.hide();
-
-  buffer_header
-    .append(remove)
-    // .append(label)
-    .append(buttons)
+  e.header
+    .append(e.remove)
+    .append(e.buttons)
     .append(clear_div());
 
-  buffer
-    .append(buffer_header)
-    .append(buffer_body)
-    .append(triangle);
+  e.body
+    .append(e.content)
+    .append(e.triangle);
+
+  e.box
+    .append(e.header)
+    .append(e.body);
+
+  e.buttons.hide();
+  e.remove.hide();
+  e.triangle.hide();
+
+  return e.box;
+}
+
+var create_simple_container = function(){
+  var container = $('<div class="simple container">');
+  var text_box = create_text_box();
 
   container
-    .append(buffer);
+    .append(text_box);
 
   return container;
+}
+
+var create_horizontal_container = function(){
+  var h_container = $('<div class="horizontal container">');
+  var a_container = create_simple_container();
+  var v_divider = $('<div class="vertical divider">');
+  var b_container = create_simple_container();
+
+  a_container.addClass('a');
+  b_container.addClass('b');
+
+  h_container
+    .append(a_container)
+    .append(v_divider)
+    .append(b_container)
+    .append(clear_div())
+
+  return h_container;
+}
+
+var create_vertical_container = function(){
+  var v_container = $('<div class="vertical container">');
+  var a_container = create_simple_container();
+  var h_divider = $('<div class="horizontal divider">');
+  var b_container = create_simple_container();
+
+  a_container.addClass('a');
+  b_container.addClass('b');
+
+  v_container
+    .append(a_container)
+    .append(clear_div())
+    .append(h_divider)
+    .append(clear_div())
+    .append(b_container)
+    .append(clear_div())
+
+  return v_container;
+}
+
+
+var get_parent = function(container){
+  return container.parent('.container');
+}
+
+var get_siblings = function(container){
+  var children = container.children('.container')
+  var c = {};
+  c.a = $(children[0]);
+  c.b = $(children[1]);
+  return c;
 }
 
 var create_divider_events = function(divider){
@@ -106,9 +152,6 @@ var create_divider_events = function(divider){
   return divider; 
 }
 
-var clear_div = function(){
-  return $('<div class="clear">');
-}
 
 var append_container_to_page = function(){
 
@@ -116,26 +159,23 @@ var append_container_to_page = function(){
   var page = {};
   page.jq = $('#page');
   page.width = parseInt(page.jq.css("width"));
-  page.padding_left = parseInt(page.jq.css("padding-left"));
-
 
   // create container, resize it, and append it to the pag
   var container = {};
-  container.jq = create_container();
+  container.jq = create_simple_container();
   container.width = page.width; 
-  container.jq
-    .css("width", container.width)
-  container.jq.find('.label').text("Add Label")
-  container.jq.find('.buffer_body').text("Add Text Here")
+  container.jq.css("width", container.width)
+  container.jq.find('.content').html("Welcome to Boxes & Bins")
 
 
   container.jq.appendTo(page.jq);
   clear_div().appendTo(page.jq);
 }
 
-var get_container_properties = function(c){
+var get_properties = function(c){
   var container = {}
   container.jq = c;
+  container.position = container.jq.hasClass('b') ? 'b' : 'a';
   container.width       = parseInt(container.jq.css("width"));
   container.height      = parseInt(container.jq.css("height"));
   container.min_width   = parseInt(container.jq.css("min-width"));
@@ -145,231 +185,151 @@ var get_container_properties = function(c){
   return container;
 }
 
-var append_horizontal_container = function(a_container){
-  // create wrapped container, divider, and container b
-  var wrapper_container = {};
-  wrapper_container.jq = a_container.jq.wrap('<div class="container horizontal">').parent();
-  var divider = $('<div class="divider vertical">');
-  var b_container = {};
-  b_container.jq = create_container();
-
-  // create divider dragger
-  $('<ul>')
-    .append($('<li>').html("&nbsp;"))
-    .append($('<li>').html("&nbsp;"))
-    .hide()
-    .appendTo(divider);
-
-  // resize containers & divider
-  console.log(a_container.jq.css("width"));
-  a_container.jq.css("width", a_container.append_new_width);
-  b_container.jq.css("width", a_container.append_new_width);
-
-  return {'a': a_container, 'b': b_container, 'divider': divider}
-}
-
-var create_vertical_container_components = function(a_container){
-  var wrapper_container = {};
-  wrapper_container.jq = a_container.jq.wrap('<div class="container vertical">').parent();
-  var divider = $('<div class="divider horizontal">');
-  var b_container = {};
-  b_container.jq = create_container();
-
-  b_container.jq.css("width", a_container.width)
-
-  return {'a': a_container, 'b': b_container, 'divider': divider}
-}
-
 
 var events = function(){
 
-
-
-
-  $('.container').live('mouseover', function(){
-    // set_divider_position(this);
+  // page
+  $('#page').mouseup(function(){
+    $('#page').unbind('mousemove');
+    $('.triangle_on').removeClass('triangle_on');
+    // document.selection.clear;
   })
+
+
+  //  container
+  $('.container').live('mouseover', function(){
+  });
 
   $('.container').live('mouseout', function(){
     $('.buttons').hide();
   });
 
-  $('.buffer').live('mouseover', function(){
 
+  // box
+  $('.box').live('mouseover', function(){
     $('.triangle').hide();
     $('.triangle', this).show();
+  });
 
-    $('.label', this).addClass('white_dashed_border');
+  $('.box').live('mouseout', function(){
+  });
 
+  // header
+  $('.header').live('mouseover', function(){
+    $('.buttons, .remove').hide();
+    $('.buttons, .remove', this).show();
 
-    // $('.buffer').removeClass('buffer_border');
-    // $('.buffer', this).addClass('buffer_border');
-
-    // $('.buffer_body', this).addClass('blue_dashed_border')
-  })
-
-  $('.buffer').live('mouseout', function(){
-    $('.label').removeClass('white_dashed_border');
-
-    // $('.buffer').removeClass('buffer_border');
-    // $('.buffer_body').removeClass('blue_dashed_border')
-  })
-
-
-  $('.buffer_header').live('mouseover', function(){
-    $('.buttons, .remove_button').hide();
-    $('.buttons, .remove_button', this).show();
-
-    $('.buffer_header').removeClass('hover');
+    $('.header').removeClass('hover');
     $(this).addClass('hover');
   });
 
-  $('.buffer_header').live('mouseout', function(){
-    $('.buttons, .remove_button', this).hide();
-    $('.buffer_header').removeClass('hover');
+  $('.header').live('mouseout', function(){
+    $('.buttons, .remove', this).hide();
+    $('.header').removeClass('hover');
   });
 
 
-  $('#page').mouseup(function(){
-    $('#page').unbind('mousemove');
-    $('.triangle_on').removeClass('triangle_on');
-    document.selection.clear;
-  })
-
-
-  $('.button.right').live('click', function(){
-
-    var a_container = get_container_properties($(this).closest('.container'));
-
-    if (a_container.append_new_width >= a_container.min_width) {
-      var divs = append_horizontal_container(a_container);
-
-      a_container.jq
-        .after(clear_div())
-        .after(divs['b'].jq)
-        .after(divs['divider'])
-
-      // $(divs['b'].jq, a_container.jq).hide();
-      // $(divs['b'].jq).hide();
-      // $(divs['b'].jq).show("slide", { direction: "right" }, 1000);
-
-      // set_divider_height(divs['divider']);
-    };
+  $('.button').live('click', function(){
+    direction = $(this).attr('class').split(" ")[0];
+    additive(direction, $(this).closest('.container'))
   });
 
-  $('.button.left').live('click', function(){
+  $('.remove').live('click', function(){
+    if($('.box').length > 1){
+      var original_container = {};
+      original_container.jq  = $(this).closest('.container');
+      original_container._   = get_properties(original_container.jq);
 
-    var a_container = get_container_properties($(this).closest('.container'));
+      var parent_container  = {};
+      parent_container.jq   = get_parent(original_container.jq);
+      parent_container._    = get_properties(parent_container.jq);
+      parent_container.other_position = (original_container._.position == 'a') ? 'b' : 'a';
+      parent_container.sibling = get_siblings(parent_container.jq);
 
-    if (a_container.append_new_width >= a_container.min_width) {
-
-      var divs = append_horizontal_container(a_container);
-
-      a_container.jq
-        .before(divs['b'].jq)
-        .before(divs['divider'])
-        .after(clear_div());
-
-
-      // set_divider_height(divs['divider']);
-    };
-  });
-
-  $('.button.down').live('click', function(){
-    var a_container = get_container_properties($(this).closest('.container'));
-    var divs = create_vertical_container_components(a_container);
-
-    a_container.jq
-      .after(clear_div())
-      .after(divs['b'].jq)
-      .after(clear_div())
-      .after(divs['divider'])
-      .after(clear_div())
-
-    // set_divider_width(divs['divider']);
-  });
-
-  $('.button.up').live('click', function(){
-    var a_container = get_container_properties($(this).closest('.container'));
-    var divs = create_vertical_container_components(a_container);
-
-    a_container.jq
-      .before(divs['b'].jq)
-      .before(clear_div())
-      .before(divs['divider'])
-      .before(clear_div())
-      .after(clear_div());
-
-    // set_divider_width(divs['divider']);
-  });
-
-  $('.remove_button').live('click', function(){
-    if ($('.buffer').length > 1 ){
-          // get content
-          var container = get_container_properties($(this).closest('.container'));
-          var wrapper_container = {};
-          wrapper_container.jq = container.jq.parent();
-
-          if (wrapper_container.jq.attr('id') == "page") {
-            container.jq.fadeOut('fast', function(){
-              container.jq.next().remove();
-              container.jq.remove();
-            });
-
-          } else {
-
-            // remove divs
-            var parent = wrapper_container.jq.parent();
-
-            var remove_element = function(){
-              console.log('remove element')
-              container.jq.remove();
-              var other_container = wrapper_container.jq.children('.container')
-
-              // resize other container
-              if (wrapper_container.jq.hasClass("horizontal")) {
-                var width = container.width;
-                resize_container(width, other_container);
-              } 
-
-              wrapper_container.jq
-                .replaceWith(other_container);
-            }
-
-            if (parent.hasClass("vertical")) {
-              console.log('slide up')
-
-              remove_element()
-      //            container.jq
-                // .animate({opacity: 0.0}, 150)
-                // .hide("blind", { direction: "vertical" }, 250, function(){
-                //   remove_element()
-                // });
-
-            } else {
-              console.log('fade');
-              remove_element()
-              // container.jq
-              //   .animate({opacity: 0.0}, 150)
-              //   .fadeOut('fast').hide("blind", { direction: "horizontal" }, 250, function(){
-              //     remove_element()
-              //   });
-            }
+      // other_container
+      var other_container = {};
+      other_container.jq  = parent_container.sibling[parent_container.other_position];
+      other_container._   = get_properties(other_container.jq);
 
 
-          }
+      // set new position
+      other_container.jq.removeClass('a b').addClass(parent_container._.position);
 
+
+      // set new width
+       if(parent_container.jq.hasClass('horizontal')){
+         resize_container(original_container._.width, other_container.jq);
+       }
+ 
+      // replace parent container (H or V) with the other sibling container
+      parent_container.jq.replaceWith(other_container.jq);
+      run_tests()
     }
-
-
-
   });
+
+
+  $('.triangle').live('mousedown',function(d){
+
+    var triangle_y_position = d.pageY;
+    var body = $(this).closest('.body');
+    var body_height = parseInt(body.css('height'));
+    var buffer_y_position = triangle_y_position - body_height;
+
+    $('#page, .box, .header, ul, li').addClass('triangle_on');
+
+    $('#page').bind('mousemove', function(e){
+      var current_position = e.pageY;
+      body_height = current_position - buffer_y_position;
+      body.css('min-height', body_height)
+    });
+  })
 
 }
 
+var additive = function(button, container){
+  var new_container_type = (button == 'up' || button == 'down') ? 'vertical' : 'horizontal'
+  var original_container_position = (button == 'right' || button == 'down') ? 'a' : 'b';
+
+  var original_container  = {};
+  original_container.jq   = container;
+  original_container._    = get_properties(original_container.jq);
+
+  if ((new_container_type == 'vertical') || (original_container._.append_new_width >= original_container._.min_width)){
+    var new_container = {};
+    new_container.jq = (new_container_type == 'vertical') ? create_vertical_container() : create_horizontal_container();
+    new_container.original = original_container
+      .jq.clone().
+      removeClass('a b').addClass(original_container_position)
+      .removeAttr('width');
+    new_container.sibling = get_siblings(new_container.jq);
+
+    // swap in original container
+    new_container.sibling[original_container_position].replaceWith(new_container.original);
+    new_container.sibling = get_siblings(new_container.jq);
+
+    // set new_containers position
+    new_container.jq.addClass(original_container._.position);
+
+    // set sibling properties
+    var sibling_width = (new_container_type == 'vertical') ? 'width' : 'append_new_width';
+    new_container.sibling.a.css('width', original_container._[sibling_width]);
+    new_container.sibling.b.css('width', original_container._[sibling_width]);
+
+    // replace original_container with h_container
+    original_container.jq.replaceWith(new_container.jq);
+    run_tests();
+
+  }
+}
+
+
+
 var resize_container = function(width, container){
+  console.log('initial: ' + container.attr('class'));
+  console.log(container)
+
   if (container.hasClass("simple")) {
-    console.log('simple')
+    console.log('simple');
     var c_width = parseInt(container.css("width"));
     var new_width = c_width + width + 20;
     container.css("width", new_width);
@@ -377,16 +337,14 @@ var resize_container = function(width, container){
   } else if (container.hasClass("horizontal")) {
     console.log('horizontal')
     var h_width = (width - 20) / 2;
-    $.each(container.children('.container'), function(index, value){
-      var i_container = $(value);
-      resize_container(h_width, i_container)
+    $.each(container.children('.container'), function(index, i_container){
+      resize_container(h_width, $(i_container))
     });
 
   } else if (container.hasClass("vertical")) {
     console.log('vertical')
-    $.each(container.children('.container'), function(index, value){
-      var i_container = $(value);
-      resize_container(width, i_container);
+    $.each(container.children('.container'), function(index, i_container){
+      resize_container(width, $(i_container));
     })
   } else {
     console.log("fuck: resize_container")
@@ -395,13 +353,51 @@ var resize_container = function(width, container){
 
 var set_divider_position = function(element){
 
-  var container = get_container_properties($(element).closest('.horizontal').parent());
+  var container = get_properties($(element).closest('.horizontal').parent());
   var top_position = (container.height / 2) - 10;
-  console.log(top_position);
 
   $('.divider ul').hide();
   $('.divider ul', container.jq)
     .fadeIn('fast')
     .css("top", top_position)
+
+}
+
+
+var preview_mode = function(){
+  $('#page, .box, .header, .body').addClass('preview')
+}
+
+var run_tests = function(){
+
+  // a horizontal or vertical container does not have two children
+  $.each($('.horizontal.container, .vertical.container'), function(index, container){
+    if($(container).children('.container').length != 2){
+      alert('a complex container has the wrong number of children!');
+    }
+  });
+
+  // a horizontal or vertical container has two children with the same position
+  $.each($('.horizontal.container, .vertical.container'), function(index, container){
+    if(($(container).children('.a').length == 2) || ($(container).children('.b').length == 2)){
+      alert('a complex container has two a or two b chilren!');
+    }
+  });
+
+  // B before A 
+  $.each($('.horizontal.container, .vertical.container'), function(index, container){
+    var children = $(container).children('.container')
+    if($(children[0]).hasClass('b') || $(children[1]).hasClass('a') ){
+      alert('a complex container has its chilren out of order');
+    }
+  });
+
+  // missing a divider
+  $.each($('.horizontal.container, .vertical.container'), function(index, container){
+    if($(container).children('.divider').length == 0){
+      alert('a complex container is missing a divider');
+    }
+  });
+
 
 }

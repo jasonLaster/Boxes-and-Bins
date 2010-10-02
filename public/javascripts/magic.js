@@ -1,9 +1,17 @@
 var iterator = 0;
-var start = {}
+var box_id = "";
+var container_id = "";
 
 $(document).ready(function(){
   events();
-  append_container_to_page();
+  // append_container_to_page();
+  var content = load(4);
+  $('#page')
+    .append(content)
+    .append(clear_div());
+
+  box_id = max_id('.box');
+  container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
 })
 
 
@@ -30,6 +38,7 @@ var create_text_box = function(){
 
 
   e.content.attr('contenteditable', 'true');
+  e.box.attr('id', ++box_id);
 
   e.remove
     .append(e.remove_button);
@@ -58,6 +67,8 @@ var create_simple_container = function(){
   var container = $('<div class="simple container">');
   var text_box = create_text_box();
 
+  container.attr('id', ++container_id)
+
   container
     .append(text_box);
 
@@ -70,6 +81,7 @@ var create_horizontal_container = function(){
   var v_divider = $('<div class="vertical divider">');
   var b_container = create_simple_container();
 
+  h_container.attr('id', ++container_id);
   a_container.addClass('a');
   b_container.addClass('b');
 
@@ -88,6 +100,7 @@ var create_vertical_container = function(){
   var h_divider = $('<div class="horizontal divider">');
   var b_container = create_simple_container();
 
+  v_container.attr('id', ++container_id);
   a_container.addClass('a');
   b_container.addClass('b');
 
@@ -120,6 +133,7 @@ var get_siblings = function(container){
 var get_properties = function(c){
   var container = {}
   container.jq = c;
+
   container.position = container.jq.hasClass('b') ? 'b' : 'a';
   container.width       = parseInt(container.jq.css("width"));
   container.height      = parseInt(container.jq.css("height"));
@@ -190,26 +204,6 @@ var run_tests = function(){
 }
 
 
-// append to page
-
-var append_container_to_page = function(){
-
-  // fetch page and get properties
-  var page = {};
-  page.jq = $('#page');
-  page.width = parseInt(page.jq.css("width"));
-
-  // create container, resize it, and append it to the pag
-  var container = {};
-  container.jq = create_simple_container();
-  container.width = page.width; 
-  container.jq.css("width", container.width)
-  container.jq.find('.content').html("Welcome to Boxes & Bins")
-
-
-  container.jq.appendTo(page.jq);
-  clear_div().appendTo(page.jq);
-}
 
 
 // actions + events
@@ -287,7 +281,6 @@ var events = function(){
   $('#page').mouseup(function(){
     $('#page').unbind('mousemove');
     $('.triangle_on').removeClass('triangle_on');
-    // document.selection.clear;
   })
 
 
@@ -353,6 +346,115 @@ var events = function(){
 
 }
 
+
+// load
+
+var get_page_id = function(){
+  return parseInt($('#page_id').text());
+}
+
+var load = function(id){
+  var container = {};
+  container.properties = elements.container[id];
+
+  if (container.properties.type == "simple"){
+    // create simple container
+    container.jq = create_simple_container();
+    container.box = {};
+    container.box.properties = elements.box[container.properties.a_child];
+
+    // properties
+    container.jq
+      .css('width', container.box.properties.width)
+      .addClass(container.properties.position)
+      .attr('id', container.properties.id);
+
+    $('.box', container.jq)
+      .attr('id', container.box.properties.id);
+
+    $('.body', container.jq)
+      .css('min-height', container.box.properties.min_height);
+
+    $('.content', container.jq)
+      .html(container.box.properties.content);
+
+
+    return container.jq;
+  } 
+  else {
+    // create complex container
+    container.jq = (container.properties.type == "vertical") ? create_vertical_container() : create_horizontal_container();
+    container.sibling = get_siblings(container.jq);
+    container.new_a = load(container.properties.a_child);
+    container.new_b = load(container.properties.b_child);
+
+    container.jq
+      .addClass(container.properties.position)
+      .attr('id', container.properties.id);
+
+    container.new_a
+      .addClass('a');
+
+    container.new_b
+      .addClass('b');
+
+
+    container.sibling.a.replaceWith(container.new_a);
+    container.sibling.b.replaceWith(container.new_b);
+    return container.jq;
+  }
+};
+
+var max_id = function(selector){
+  var elements = $(selector);
+  elements = $.map(elements, function(value, index){return $(value).attr('id')});
+
+  Array.max = function( array ){
+      return Math.max.apply( Math, array );
+  };
+
+  return Array.max(elements)
+}
+
+var save = function(){
+  var elements = {};
+  elements.container = {}
+  elements.box = {};
+  elements.root_id = '';
+
+  var containers = $('.horizontal.container, .vertical.container, .simple.container');
+  var boxes = $('.box');
+
+  $.each(containers, function(index, value){
+    var element   = {};
+    element_jq    = $(value);
+
+    element.id    = parseInt(element_jq.attr('id'));
+    element.type  = element_jq.hasClass('horizontal') ? 'horizontal' : (element_jq.hasClass('vertical') ? 'vertical' : 'simple');
+    element.position  = element_jq.hasClass('a') ? 'a' : 'b';
+    element.a_child   = parseInt(element_jq.children('.a, .box').attr('id'));
+    element.b_child   = parseInt(element_jq.children('.b').attr('id')) || "";
+    elements.container[element.id] = element
+  });
+
+  $.each(boxes, function(index, value){
+    var element = {}
+    var element_jq = $(value);
+
+    element.width = parseInt(element_jq.parent('.container').css('width'));
+    element.id = parseInt(element_jq.attr('id'));
+    element.min_height = parseInt(element_jq.children('.body').css('min-height'));
+    element.content = element_jq.find('.content').html();
+    elements.box[element.id] = element;
+  })
+
+  return elements
+}
+
+
+// sample content
+
+elements = {"container":{"1":{"id":1,"type":"simple","position":"a","a_child":1,"b_child":""},"3":{"id":3,"type":"simple","position":"a","a_child":3,"b_child":""},"4":{"id":4,"type":"horizontal","position":"a","a_child":10,"b_child":7},"6":{"id":6,"type":"simple","position":"a","a_child":5,"b_child":""},"7":{"id":7,"type":"horizontal","position":"b","a_child":13,"b_child":16},"9":{"id":9,"type":"simple","position":"b","a_child":7,"b_child":""},"10":{"id":10,"type":"vertical","position":"a","a_child":1,"b_child":9},"12":{"id":12,"type":"simple","position":"b","a_child":9,"b_child":""},"13":{"id":13,"type":"vertical","position":"a","a_child":3,"b_child":12},"15":{"id":15,"type":"simple","position":"b","a_child":11,"b_child":""},"16":{"id":16,"type":"vertical","position":"b","a_child":6,"b_child":15}},"box":{"1":{"width":490,"id":1,"min_height":200,"content":"<span><span style=\"color: rgb(37, 62, 95); font-size: 16px; \">Boxes &amp; Bins</span><br><span style=\"color: rgb(68, 68, 68); font-size: 14px; \">MS Word 2.0</span></span>"},"3":{"width":235,"id":3,"min_height":0,"content":"<meta charset=\"utf-8\"><font class=\"Apple-style-span\" color=\"#253E5F\" size=\"3\"><meta charset=\"utf-8\"><span class=\"Apple-style-span\" style=\"color: rgb(0, 0, 0); font-size: 12px; \"><font class=\"Apple-style-span\" color=\"#253E5F\" size=\"3\">How do I create new boxes?<br></font><span style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \"><br></span></span></font><div><font class=\"Apple-style-span\" color=\"#253E5F\" size=\"3\"><span class=\"Apple-style-span\" style=\"color: rgb(0, 0, 0); font-size: 12px; \"><span style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \">Hover over the box's header and click on an arrow.</span></span></font></div>"},"5":{"width":235,"id":5,"min_height":0,"content":"<meta charset=\"utf-8\"><font class=\"Apple-style-span\" size=\"3\" color=\"#253E5F\"><meta charset=\"utf-8\"><span class=\"Apple-style-span\" style=\"color: rgb(0, 0, 0); font-size: 12px; \"><font class=\"Apple-style-span\" size=\"3\" color=\"#253E5F\">How do I remove a box?<br></font><span style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \"><br></span></span></font><div><font class=\"Apple-style-span\" size=\"3\" color=\"#253E5F\"><span class=\"Apple-style-span\" style=\"color: rgb(0, 0, 0); font-size: 12px; \"><span style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \">Hover over the box's header and click on the circle.</span></span></font></div>"},"7":{"width":490,"id":7,"min_height":0,"content":"<meta charset=\"utf-8\"><font class=\"Apple-style-span\" color=\"#5F1A08\" size=\"3\"><br></font>"},"9":{"width":235,"id":9,"min_height":320,"content":"<meta charset=\"utf-8\"><font class=\"Apple-style-span\" color=\"#5F1A08\" size=\"3\">Why Boxes &amp; Bins?<br></font><span style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \"><br></span><div><font class=\"Apple-style-span\" color=\"#444444\"><span class=\"Apple-style-span\" style=\"font-size: 14px;\">Boxes &amp; Bins is a contextual text-editor, which means that drafting documents in BB is one part content and one part context.&nbsp;</span></font></div><div><font class=\"Apple-style-span\" color=\"#444444\"><span class=\"Apple-style-span\" style=\"font-size: 14px;\"><br></span></font></div><div><font class=\"Apple-style-span\" color=\"#444444\"><span class=\"Apple-style-span\" style=\"font-size: 14px;\">In other words, if you're not moving boxes around the page, you're doing it wrong.</span></font></div><div><font class=\"Apple-style-span\" color=\"#444444\"><span class=\"Apple-style-span\" style=\"font-size: 14px;\"><br></span></font></div><div><font class=\"Apple-style-span\" color=\"#444444\"><span class=\"Apple-style-span\" style=\"font-size: 14px;\">I hope to build Boxes &amp; Bins into a full-fledged publishing environment.</span></font></div>"},"11":{"width":235,"id":11,"min_height":319,"content":"<meta charset=\"utf-8\"><font class=\"Apple-style-span\"><font class=\"Apple-style-span\" color=\"#444444\"><span class=\"Apple-style-span\" style=\"font-size: 14px;\"><meta charset=\"utf-8\"><span class=\"Apple-style-span\" style=\"color: rgb(95, 26, 8); font-size: medium; \">Give us feedback!</span></span></font></font><div><font class=\"Apple-style-span\"><font class=\"Apple-style-span\" color=\"#5F1A08\" size=\"3\"><br></font></font><div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \"><span class=\"Apple-style-span\" style=\"font-size: 14px; color: rgb(68, 68, 68); \">Boxes &amp; Bins begun as a small side-project last weekend. If you're playing around with BB we'd love to hear from you!</span></div></div><div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \"><span class=\"Apple-style-span\" style=\"font-size: 14px; color: rgb(68, 68, 68); \"><br></span></div><div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \"><span class=\"Apple-style-span\" style=\"font-size: 14px; color: rgb(68, 68, 68); \"><br></span></div><div style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-family: Helvetica; border-width: initial; border-color: initial; \"><div style=\"color: rgb(0, 0, 0); font-size: 12px; \"><font class=\"Apple-style-span\" color=\"#444444\"><span class=\"Apple-style-span\" style=\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 14px; \"><br></span></font></div></div>"}},"root_id":""}
 
 // preview mode
 

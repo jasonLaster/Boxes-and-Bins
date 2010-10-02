@@ -32,7 +32,17 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   #menubar .center  {width:100px; margin:10px auto;}
   #menubar .center h3 {font-size:12px; font-weight:normal; color:#fff;}
 
-#page     {width:1000px; min-height:500px; margin:0px auto; padding:30px;}
+
+#footer {height:100px; position:relative; margin-top:50px;}
+#footer {border-top:1px solid #101b2b;}
+
+#footer .wrapper {padding-top:20px; }
+#footer .wrapper h4 {color:#whitesmoke; font-weight:normal; font-size:16px;}
+
+
+
+
+#page     {width:1000px; min-height:700px; margin:0px auto; padding:30px;}
 #page     {background:#e6e6e6;}
 #page.preview     {background:#fff;}
 

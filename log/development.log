@@ -7035,3 +7035,60 @@ Rendering template within layouts/application
 Rendering pages/doc
 Rendered pages/_header (0.1ms)
 Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-02 14:09:59) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (7.6ms)
+Completed in 262ms (View: 261, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-02 14:10:10) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-10-02 14:10:11) [GET]
+
+ActionController::RoutingError (No route matches "/images/bg_content2.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-02 14:11:09) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-02 14:12:09) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-02 14:12:27) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-02 14:13:17) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-02 14:18:40) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]

@@ -6,10 +6,16 @@ ActionController::Routing::Routes.draw do |map|
 
   map.index '/pages/index/:user_id', :controller => 'pages', :action => 'index'
   map.show '/pages/show/:user_id/:page_id', :controller => 'pages', :action => 'show'
+  map.load '/pages/load/:user_id/:page_id', :controller => 'pages', :action => 'load'
+  map.save '/pages/save/:user_id/:page_id/:data', :controller => 'pages', :action => 'save'
   map.doc '/pages/doc/', :controller => 'pages', :action => 'doc'
 
+
+
   map.resources :users
-  # map.resources :pages
+  
+  map.resources :pages,
+              :collection => {:save => :post}
 
   map.resource :session
   

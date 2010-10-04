@@ -9,7 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100926162144) do
+ActiveRecord::Schema.define(:version => 20101003172910) do
+
+  create_table "boxes", :force => true do |t|
+    t.integer  "page_id"
+    t.integer  "width"
+    t.integer  "min_height"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "b_id"
+  end
+
+  create_table "containers", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "c_type"
+    t.integer  "a_child"
+    t.integer  "b_child"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "c_id"
+    t.string   "c_position", :limit => nil
+  end
 
   create_table "contents", :force => true do |t|
     t.integer  "page_id"
@@ -30,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20100926162144) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "root"
   end
 
   create_table "users", :force => true do |t|

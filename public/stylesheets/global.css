@@ -1,6 +1,6 @@
 body, div, span, h1, h2, h3, h4, h5 {margin:0; padding:0; border:none;}
 
-body      {background-color: #253e5f}
+body      {background-color: #eeeeee}
 div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 .clear    {clear:both;}
 .clear_selection::selection {background: transparent;}
@@ -43,7 +43,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
 
 #page     {width:1000px; min-height:700px; margin:0px auto; padding:30px;}
-#page     {background:#e6e6e6;}
+#page     {background:#fff; border:1px solid #bbbbbb;}
 #page.preview     {background:#fff;}
 
 
@@ -53,16 +53,16 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
 
 .box   {position:relative; width:100%;}
-.box   {border-right:2px solid #ccc; border-left:1.5px solid #ccc; border-bottom:2px solid #ccc; border-top:1.5px solid #ccc;}
+.box   {border:1px solid #ccc;}
 .box::selection {background: transparent; margin:0;}
 
   .box.preview {background-color:#fff; border:none;}
 
   .header {height:8px; line-height:20px; padding:5px 0px;} 
-  .header {border-bottom:2px solid #ccc;}
+  .header {border-bottom:1px solid #ccc; background-color:#eee;}
   .header::selection {background: transparent;}
   
-    .header.hover  {background-color:#d8d8d8;}
+    .header.hover  {background-color:;}
     .header.preview {background-color:#fff; border:none;}
   
     
@@ -83,7 +83,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   
 
   .body   {}
-  .body   {background-color:#f5f5f5;}
+  .body   {background-color:#fff;}
   
     .body.preview {background-color:#fff; }
     
@@ -99,6 +99,8 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
     .triangle {background:url(/images/triangle.png) no-repeat;}    
     .triangle:hover {cursor:default;}
     
+      .triangle.preview {background:none;}
+    
 
 .divider            {position:relative; float:left;}
 .divider            {background-color:Transparent; border:none;}
@@ -108,6 +110,8 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   .divider.horizontal {height:20px; width:1px;}
   .divider.hover      {background-color:#ccc;}
   
+    .divider.vertical.preview {width:1px;}
+    .divider.horizontal.preview {height:1px;}
   
   
   

@@ -4,12 +4,12 @@
 			<h3>Boxes & Bins</h3>
 		</div>
 		<div id="page_title">
-			<input value=" <%= page || "Add Page Title" %> ">
+			<input value=" <%= page ? page.title : "Add Page Title" %> ">
 		</div>
 	</div>
 		
 		<div id="page_id">
-			<p><%= id %></p>
+			<p><%= page ? page.id : "0" %></p>
 		</div>
 	</div>
 </div>

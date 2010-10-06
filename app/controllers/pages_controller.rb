@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_filter :login_required, :only => [:show, :load]
+  before_filter :login_required, :only => [:load]
 
 
   def new

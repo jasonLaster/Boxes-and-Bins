@@ -7,6 +7,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 .white_dashed_border {outline: 1px dashed #f3f3f3;}
 .blue_dashed_border {outline: 1px dashed #5d83a1;}
 #page_id  {position:absolute; top:-200px;}
+#user_id  {position:absolute; top:-200px;}
 
 
 .start.welecome span {color:#3054b4; font-size:16px;}

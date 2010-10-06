@@ -16,8 +16,9 @@ class Page < ActiveRecord::Base
     containers.each {|i| containers_h[i[:id]] = i}
     
     root = self.root
+    title = self.title
     
-    {:box => boxes_h, :container => containers_h, :root => root}
+    {:box => boxes_h, :container => containers_h, :root => root, :title => title}
   end
 
 end

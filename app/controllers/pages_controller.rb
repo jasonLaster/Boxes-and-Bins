@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def new
     @user = User.find_by_id(params[:user_id])
-    @page = Page.create({'user_id'=>@user, 'title'=> ""})
+    @page = Page.create({'user_id'=>@user.id, 'title'=> ""})
   end
 
   def index

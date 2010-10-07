@@ -11028,3 +11028,1001 @@ Processing PagesController#load (for 127.0.0.1 at 2010-10-05 21:44:42) [GET]
   [4;36;1mBox Load (0.6ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 7) [0m
   [4;35;1mContainer Load (0.8ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 7) [0m
 Completed in 83ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/7]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:42:56) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.5ms)
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:43:57) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:43:58) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:43:59) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:44:20) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.5ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:44:47) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.5ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:45:05) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:45:20) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:45:27) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:45:30) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:45:38) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:45:49) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:46:18) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+ERROR: compiling _run_erb_app47views47pages47_header46html46erb_locals_header_object_page_user RAISED compile error
+/Users/jlaster ning/CODE/projects/boxes/app/views/pages/_header.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+...t(( link_to 'login' login_path ).to_s); @output_buffer.conca...
+                              ^
+Function body:           def _run_erb_app47views47pages47_header46html46erb_locals_header_object_page_user(local_assigns)
+            old_output_buffer = output_buffer;page = local_assigns[:page];header = local_assigns[:header];user = local_assigns[:user];object = local_assigns[:object];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<div id=\"menubar\">\n\t<div class=\"wrapper\">\n\t\t<div id=\"company_name\">\n\t\t\t<h3>Boxes & Bins</h3>\n\t\t</div>\n\t\t<div id=\"page_title\">\n\t\t\t<input value=\" "
+
+
+
+
+
+; @output_buffer.concat(( page ? page.title : "Add Page Title" ).to_s); @output_buffer.concat " \">\n\t\t</div>\n\t\t<div class=\"links\">\n\t\t\t<ul>\n\t\t\t\t<li>"
+
+
+
+; @output_buffer.concat(( link_to 'login' login_path ).to_s); @output_buffer.concat " </li>\n\t\t\t</ul>\n\t\t</div>\n\t\t\n\t</div>\n\t\t\n\t\t<div id=\"page_id\">\n\t\t\t<p>"
+
+
+
+
+
+
+; @output_buffer.concat(( page ? page.id : "0" ).to_s); @output_buffer.concat "</p>\n\t\t</div>\n\t\t<div id=\"user_id\">\n\t\t\t<p>"
+
+
+; @output_buffer.concat(( user ? user.id : "0" ).to_s); @output_buffer.concat "</p>\n\t\t</div>\n\n\n\t</div>\n</div>\n"
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/jlaster ning/CODE/projects/boxes/app/views/pages/_header.html.erb:30:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable_partial.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable_partial.rb:19:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/partials.rb:184:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:267:in `render'
+/Users/jlaster ning/CODE/projects/boxes/app/views/pages/doc.html.erb:1:in `_run_erb_app47views47pages47doc46html46erb'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:34:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:306:in `with_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:30:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/urlmap.rb:41:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:67:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.1.0/lib/rack/handler/mongrel.rb:38:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/jlaster ning/CODE/projects/boxes/app/views/pages/_header.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+...t(( link_to 'login' login_path ).to_s); @output_buffer.conca...
+                              ^) on line #11 of app/views/pages/_header.html.erb:
+8: 		</div>
+9: 		<div class="links">
+10: 			<ul>
+11: 				<li><%= link_to 'login' login_path %> </li>
+12: 			</ul>
+13: 		</div>
+14: 		
+
+    app/views/pages/_header.html.erb:30:in `compile!'
+    app/views/pages/doc.html.erb:1
+
+Rendered rescues/_trace (97.1ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:47:51) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.7ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:48:08) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.2ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:48:51) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.2ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:49:01) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.2ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:49:14) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.2ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:49:35) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.7ms)
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-10-06 21:49:50) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_header (0.5ms)
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-10-06 21:49:52) [POST]
+  Parameters: {"commit"=>"", "authenticity_token"=>"hkvg8UJPOnP8mFLeYUHbNTODNSuJ/TG9AVIsJ97MTcA=", "login"=>"test_acct", "password"=>"test123"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'test_acct' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#doc (for 127.0.0.1 at 2010-10-06 21:49:52) [GET]
+Rendering template within layouts/application
+Rendering pages/doc
+Rendered pages/_header (0.2ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-10-06 21:53:05) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_header (0.6ms)
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-10-06 21:53:07) [POST]
+  Parameters: {"commit"=>"", "authenticity_token"=>"hkvg8UJPOnP8mFLeYUHbNTODNSuJ/TG9AVIsJ97MTcA=", "login"=>"test_acct", "password"=>"test123"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'test_acct' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/pages/index/1
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:53:07) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 22ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:53:40) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:53:49) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 74ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:54:33) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:54:52) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:55:11) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 81ms (View: 11, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:55:19) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:55:41) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:55:47) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 77ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:55:48) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:55:49) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.1ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:55:49) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 96ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:56:14) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:56:20) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:56:43) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 76ms (View: 65, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:56:55) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:57:00) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:57:03) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:57:10) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:57:39) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:57:40) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:58:01) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 22ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:58:10) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 20ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:58:26) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 78ms (View: 67, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 21:58:33) [GET]
+  Parameters: {"page_id"=>"3", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '3') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (1.2ms)
+Completed in 18ms (View: 6, DB: 0) | 200 OK [http://localhost/pages/show/1/3]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:58:44) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:59:39) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 81ms (View: 70, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:59:40) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 21:59:44) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:04) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 76ms (View: 65, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:05) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:12) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:12) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:16) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:17) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:20) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.7ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:24) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:25) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.1ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:33) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-06 22:00:34) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/index
+Rendered shared/_header (0.2ms)
+  [4;35;1mPage Load (0.6ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+Completed in 75ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/index/1]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:04:30) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (3.2ms)
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/pages/show/1/11]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:04:36) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+  [4;36;1mBox Load (0.1ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 11) [0m
+  [4;35;1mContainer Load (0.1ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 11) [0m
+Completed in 18ms (View: 1, DB: 1) | 200 OK [http://localhost/pages/load/1/11]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:05:01) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (2.7ms)
+Completed in 76ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/show/1/11]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:05:03) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+  [4;36;1mBox Load (0.1ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 11) [0m
+  [4;35;1mContainer Load (0.1ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 11) [0m
+Completed in 18ms (View: 1, DB: 1) | 200 OK [http://localhost/pages/load/1/11]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:05:37) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (2.4ms)
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/show/1/11]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:05:42) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+  [4;36;1mBox Load (0.2ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 11) [0m
+  [4;35;1mContainer Load (0.1ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 11) [0m
+Completed in 74ms (View: 1, DB: 1) | 200 OK [http://localhost/pages/load/1/11]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages".user_id = 1) [0m
+  [4;36;1mContainer Load (0.2ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+  [4;35;1mContainer Load (0.1ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 2) [0m
+  [4;36;1mContainer Load (0.1ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 3) [0m
+  [4;35;1mContainer Load (1.1ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 4) [0m
+  [4;36;1mContainer Load (0.1ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 6) [0m
+  [4;35;1mContainer Load (0.1ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 8) [0m
+  [4;36;1mContainer Load (0.1ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 9) [0m
+  [4;35;1mContainer Load (1.0ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 10) [0m
+  [4;36;1mContainer Load (0.1ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 11) [0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:07:07) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (2.3ms)
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/show/1/4]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:07:11) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 4) [0m
+  [4;35;1mContainer Load (0.8ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 4) [0m
+Completed in 25ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:07:39) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (2.6ms)
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/show/1/4]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:07:40) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 4) [0m
+  [4;35;1mContainer Load (0.8ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 4) [0m
+Completed in 25ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:09:00) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (3.2ms)
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/show/1/4]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:09:02) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 4) [0m
+  [4;35;1mContainer Load (0.8ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 4) [0m
+Completed in 25ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:09:08) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (3.2ms)
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/show/1/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:09:17) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (3.3ms)
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/show/1/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:09:22) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (3.3ms)
+Completed in 19ms (View: 7, DB: 1) | 200 OK [http://localhost/pages/show/1/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:09:28) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (2.6ms)
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/show/1/11]
+
+
+Processing PagesController#save (for 127.0.0.1 at 2010-10-06 22:09:34) [POST]
+  Parameters: {"data"=>"{\"container\":{\"1\":{\"id\":1,\"type\":\"simple\",\"position\":\"a\",\"a_child\":1,\"b_child\":\"\"},\"3\":{\"id\":3,\"type\":\"simple\",\"position\":\"a\",\"a_child\":3,\"b_child\":\"\"},\"4\":{\"id\":4,\"type\":\"horizontal\",\"position\":\"a\",\"a_child\":10,\"b_child\":7},\"6\":{\"id\":6,\"type\":\"simple\",\"position\":\"a\",\"a_child\":5,\"b_child\":\"\"},\"7\":{\"id\":7,\"type\":\"horizontal\",\"position\":\"b\",\"a_child\":13,\"b_child\":16},\"9\":{\"id\":9,\"type\":\"simple\",\"position\":\"b\",\"a_child\":7,\"b_child\":\"\"},\"10\":{\"id\":10,\"type\":\"vertical\",\"position\":\"a\",\"a_child\":1,\"b_child\":9},\"12\":{\"id\":12,\"type\":\"simple\",\"position\":\"b\",\"a_child\":9,\"b_child\":\"\"},\"13\":{\"id\":13,\"type\":\"vertical\",\"position\":\"a\",\"a_child\":3,\"b_child\":12},\"15\":{\"id\":15,\"type\":\"simple\",\"position\":\"b\",\"a_child\":11,\"b_child\":\"\"},\"16\":{\"id\":16,\"type\":\"vertical\",\"position\":\"b\",\"a_child\":6,\"b_child\":15}},\"box\":{\"1\":{\"width\":490,\"id\":1,\"min_height\":200,\"content\":\"<span><span style=\\\"color: rgb(37, 62, 95); font-size: 16px; \\\">Boxes &amp; Bins</span><br><span style=\\\"color: rgb(68, 68, 68); font-size: 14px; \\\">MS Word 2.0</span></span>\"},\"3\":{\"width\":235,\"id\":3,\"min_height\":0,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#253E5F\\\" size=\\\"3\\\"><br></font>\"},\"5\":{\"width\":235,\"id\":5,\"min_height\":0,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" size=\\\"3\\\" color=\\\"#253E5F\\\"><meta charset=\\\"utf-8\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><font class=\\\"Apple-style-span\\\" size=\\\"3\\\" color=\\\"#253E5F\\\">How do I remove a box?<br></font><span style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \\\"><br></span></span></font><div><font class=\\\"Apple-style-span\\\" size=\\\"3\\\" color=\\\"#253E5F\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><span style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \\\">Hover over the box's header and click on the circle.</span></span></font></div>\"},\"7\":{\"width\":490,\"id\":7,\"min_height\":0,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#5F1A08\\\" size=\\\"3\\\"><br></font>\"},\"9\":{\"width\":235,\"id\":9,\"min_height\":320,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#5F1A08\\\" size=\\\"3\\\"><br></font>\"},\"11\":{\"width\":235,\"id\":11,\"min_height\":319,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\"><meta charset=\\\"utf-8\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(95, 26, 8); font-size: medium; \\\">Give us feedback!</span></span></font></font><div><font class=\\\"Apple-style-span\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#5F1A08\\\" size=\\\"3\\\"><br></font></font><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px; color: rgb(68, 68, 68); \\\">Boxes &amp; Bins begun as a small side-project last weekend. If you're playing around with BB we'd love to hear from you!</span></div></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px; color: rgb(68, 68, 68); \\\"><br></span></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; \\\"><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><a class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\" href=\\\"https://spreadsheets.google.com/viewform?formkey=dGJycFlwRjR4TVRnYlN5dHh4SDg1T2c6MQ\\\">Feedback!</a></font></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px; color: rgb(68, 68, 68); \\\"><br></span></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; font-family: Helvetica; \\\"><div style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 14px; \\\"><br></span></font></div></div>\"}},\"root_id\":4,\"page_title\":\"  \"}", "page_id"=>"11", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+  [4;36;1mContainer Load (0.2ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 11) [0m
+  [4;35;1mBox Load (0.1ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 11) [0m
+  [4;36;1mPage Update (0.3ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-07 05:09:34', "title" = ' ', "root" = 4 WHERE "id" = 11[0m
+  [4;35;1mBox Create (0.4ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(319, '2010-10-07 05:09:34', '2010-10-07 05:09:34', 11, 11, '<meta charset="utf-8"><font class="Apple-style-span"><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="font-size: 14px;"><meta charset="utf-8"><span class="Apple-style-span" style="color: rgb(95, 26, 8); font-size: medium; ">Give us feedback!</span></span></font></font><div><font class="Apple-style-span"><font class="Apple-style-span" color="#5F1A08" size="3"><br></font></font><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); "><span class="Apple-style-span" style="font-size: 14px; color: rgb(68, 68, 68); ">Boxes &amp; Bins begun as a small side-project last weekend. If you''re playing around with BB we''d love to hear from you!</span></div></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); "><span class="Apple-style-span" style="font-size: 14px; color: rgb(68, 68, 68); "><br></span></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; "><font class="Apple-style-span" color="#444444"><a class="Apple-style-span" style="font-size: 14px;" href="https://spreadsheets.google.com/viewform?formkey=dGJycFlwRjR4TVRnYlN5dHh4SDg1T2c6MQ">Feedback!</a></font></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); "><span class="Apple-style-span" style="font-size: 14px; color: rgb(68, 68, 68); "><br></span></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; font-family: Helvetica; "><div style="color: rgb(0, 0, 0); font-size: 12px; "><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 14px; "><br></span></font></div></div>', 235)[0m
+  [4;36;1mBox Create (0.3ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(0, '2010-10-07 05:09:34', '2010-10-07 05:09:34', 11, 7, '<meta charset="utf-8"><font class="Apple-style-span" color="#5F1A08" size="3"><br></font>', 490)[0m
+  [4;35;1mBox Create (0.3ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(320, '2010-10-07 05:09:34', '2010-10-07 05:09:34', 11, 9, '<meta charset="utf-8"><font class="Apple-style-span" color="#5F1A08" size="3"><br></font>', 235)[0m
+  [4;36;1mBox Create (0.4ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(200, '2010-10-07 05:09:34', '2010-10-07 05:09:34', 11, 1, '<span><span style="color: rgb(37, 62, 95); font-size: 16px; ">Boxes &amp; Bins</span><br><span style="color: rgb(68, 68, 68); font-size: 14px; ">MS Word 2.0</span></span>', 490)[0m
+  [4;35;1mBox Create (0.3ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(0, '2010-10-07 05:09:34', '2010-10-07 05:09:34', 11, 3, '<meta charset="utf-8"><font class="Apple-style-span" color="#253E5F" size="3"><br></font>', 235)[0m
+  [4;36;1mBox Create (0.3ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(0, '2010-10-07 05:09:34', '2010-10-07 05:09:34', 11, 5, '<meta charset="utf-8"><font class="Apple-style-span" size="3" color="#253E5F"><meta charset="utf-8"><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-size: 12px; "><font class="Apple-style-span" size="3" color="#253E5F">How do I remove a box?<br></font><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; "><br></span></span></font><div><font class="Apple-style-span" size="3" color="#253E5F"><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-size: 12px; "><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; ">Hover over the box''s header and click on the circle.</span></span></font></div>', 235)[0m
+  [4;35;1mContainer Create (0.4ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:34', 6, '2010-10-07 05:09:34', 11, 'a', 5)[0m
+  [4;36;1mContainer Create (0.3ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:34', 12, '2010-10-07 05:09:34', 11, 'b', 9)[0m
+  [4;35;1mContainer Create (0.4ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('horizontal', 16, '2010-10-07 05:09:34', 7, '2010-10-07 05:09:34', 11, 'b', 13)[0m
+  [4;36;1mContainer Create (0.5ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('vertical', 12, '2010-10-07 05:09:34', 13, '2010-10-07 05:09:34', 11, 'a', 3)[0m
+  [4;35;1mContainer Create (0.4ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:34', 9, '2010-10-07 05:09:34', 11, 'b', 7)[0m
+  [4;36;1mContainer Create (0.3ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:34', 15, '2010-10-07 05:09:34', 11, 'b', 11)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('vertical', 15, '2010-10-07 05:09:34', 16, '2010-10-07 05:09:34', 11, 'b', 6)[0m
+  [4;36;1mContainer Create (0.3ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:34', 1, '2010-10-07 05:09:34', 11, 'a', 1)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:34', 3, '2010-10-07 05:09:34', 11, 'a', 3)[0m
+  [4;36;1mContainer Create (0.3ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('vertical', 9, '2010-10-07 05:09:34', 10, '2010-10-07 05:09:34', 11, 'a', 1)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('horizontal', 7, '2010-10-07 05:09:34', 4, '2010-10-07 05:09:34', 11, 'a', 10)[0m
+Completed in 230ms (View: 1, DB: 7) | 200 OK [http://localhost/pages/save/]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:09:37) [GET]
+  Parameters: {"page_id"=>"11", "user_id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '11') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 11) [0m
+  [4;36;1mContainer Load (0.9ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 11) [0m
+Completed in 26ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/11]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:09:47) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (2.5ms)
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/show/1/4]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:09:49) [GET]
+  Parameters: {"page_id"=>"4", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '4') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 4) [0m
+  [4;36;1mContainer Load (0.8ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 4) [0m
+Completed in 25ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/4]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:09:53) [GET]
+  Parameters: {"page_id"=>"2", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered pages/_header (2.9ms)
+Completed in 75ms (View: 4, DB: 1) | 200 OK [http://localhost/pages/show/1/2]
+
+
+Processing PagesController#save (for 127.0.0.1 at 2010-10-06 22:09:55) [POST]
+  Parameters: {"data"=>"{\"container\":{\"1\":{\"id\":1,\"type\":\"simple\",\"position\":\"a\",\"a_child\":1,\"b_child\":\"\"},\"3\":{\"id\":3,\"type\":\"simple\",\"position\":\"a\",\"a_child\":3,\"b_child\":\"\"},\"4\":{\"id\":4,\"type\":\"horizontal\",\"position\":\"a\",\"a_child\":10,\"b_child\":7},\"6\":{\"id\":6,\"type\":\"simple\",\"position\":\"a\",\"a_child\":5,\"b_child\":\"\"},\"7\":{\"id\":7,\"type\":\"horizontal\",\"position\":\"b\",\"a_child\":13,\"b_child\":16},\"9\":{\"id\":9,\"type\":\"simple\",\"position\":\"b\",\"a_child\":7,\"b_child\":\"\"},\"10\":{\"id\":10,\"type\":\"vertical\",\"position\":\"a\",\"a_child\":1,\"b_child\":9},\"12\":{\"id\":12,\"type\":\"simple\",\"position\":\"b\",\"a_child\":9,\"b_child\":\"\"},\"13\":{\"id\":13,\"type\":\"vertical\",\"position\":\"a\",\"a_child\":3,\"b_child\":12},\"15\":{\"id\":15,\"type\":\"simple\",\"position\":\"b\",\"a_child\":11,\"b_child\":\"\"},\"16\":{\"id\":16,\"type\":\"vertical\",\"position\":\"b\",\"a_child\":6,\"b_child\":15}},\"box\":{\"1\":{\"width\":490,\"id\":1,\"min_height\":200,\"content\":\"<span><span style=\\\"color: rgb(37, 62, 95); font-size: 16px; \\\">Boxes &amp; Bins</span><br><span style=\\\"color: rgb(68, 68, 68); font-size: 14px; \\\">MS Word 2.0</span></span>\"},\"3\":{\"width\":235,\"id\":3,\"min_height\":0,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#253E5F\\\" size=\\\"3\\\"><meta charset=\\\"utf-8\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><font class=\\\"Apple-style-span\\\" color=\\\"#253E5F\\\" size=\\\"3\\\">How do I create new boxes?<br></font><span style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \\\"><br></span></span></font><div><font class=\\\"Apple-style-span\\\" color=\\\"#253E5F\\\" size=\\\"3\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><span style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \\\">Hover over the box's header and click on an arrow.</span></span></font></div>\"},\"5\":{\"width\":235,\"id\":5,\"min_height\":0,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" size=\\\"3\\\" color=\\\"#253E5F\\\"><meta charset=\\\"utf-8\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><font class=\\\"Apple-style-span\\\" size=\\\"3\\\" color=\\\"#253E5F\\\">How do I remove a box?<br></font><span style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \\\"><br></span></span></font><div><font class=\\\"Apple-style-span\\\" size=\\\"3\\\" color=\\\"#253E5F\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><span style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \\\">Hover over the box's header and click on the circle.</span></span></font></div>\"},\"7\":{\"width\":490,\"id\":7,\"min_height\":0,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#5F1A08\\\" size=\\\"3\\\"><br></font>\"},\"9\":{\"width\":235,\"id\":9,\"min_height\":320,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#5F1A08\\\" size=\\\"3\\\">Why Boxes &amp; Bins?<br></font><span style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; \\\"><br></span><div><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\">Boxes &amp; Bins is a contextual text-editor, which means that drafting documents in BB is one part content and one part context.&nbsp;</span></font></div><div><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\"><br></span></font></div><div><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\">In other words, if you're not moving boxes around the page, you're doing it wrong.</span></font></div><div><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\"><br></span></font></div><div><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\">I hope to build Boxes &amp; Bins into a full-fledged publishing environment.</span></font></div>\"},\"11\":{\"width\":235,\"id\":11,\"min_height\":319,\"content\":\"<meta charset=\\\"utf-8\\\"><font class=\\\"Apple-style-span\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\"><meta charset=\\\"utf-8\\\"><span class=\\\"Apple-style-span\\\" style=\\\"color: rgb(95, 26, 8); font-size: medium; \\\">Give us feedback!</span></span></font></font><div><font class=\\\"Apple-style-span\\\"><font class=\\\"Apple-style-span\\\" color=\\\"#5F1A08\\\" size=\\\"3\\\"><br></font></font><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px; color: rgb(68, 68, 68); \\\">Boxes &amp; Bins begun as a small side-project last weekend. If you're playing around with BB we'd love to hear from you!</span></div></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px; color: rgb(68, 68, 68); \\\"><br></span></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; \\\"><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><a class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px;\\\" href=\\\"https://spreadsheets.google.com/viewform?formkey=dGJycFlwRjR4TVRnYlN5dHh4SDg1T2c6MQ\\\">Feedback!</a></font></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); \\\"><span class=\\\"Apple-style-span\\\" style=\\\"font-size: 14px; color: rgb(68, 68, 68); \\\"><br></span></div><div style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; font-family: Helvetica; \\\"><div style=\\\"color: rgb(0, 0, 0); font-size: 12px; \\\"><font class=\\\"Apple-style-span\\\" color=\\\"#444444\\\"><span class=\\\"Apple-style-span\\\" style=\\\"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 14px; \\\"><br></span></font></div></div>\"}},\"root_id\":4,\"page_title\":\" test page \"}", "page_id"=>"2", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '2') LIMIT 1[0m
+  [4;36;1mContainer Load (0.1ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 2) [0m
+  [4;35;1mBox Load (0.1ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 2) [0m
+  [4;36;1mPage Update (0.3ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-07 05:09:55', "title" = ' test page ', "root" = 4 WHERE "id" = 2[0m
+  [4;35;1mBox Create (0.3ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(319, '2010-10-07 05:09:55', '2010-10-07 05:09:55', 2, 11, '<meta charset="utf-8"><font class="Apple-style-span"><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="font-size: 14px;"><meta charset="utf-8"><span class="Apple-style-span" style="color: rgb(95, 26, 8); font-size: medium; ">Give us feedback!</span></span></font></font><div><font class="Apple-style-span"><font class="Apple-style-span" color="#5F1A08" size="3"><br></font></font><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); "><span class="Apple-style-span" style="font-size: 14px; color: rgb(68, 68, 68); ">Boxes &amp; Bins begun as a small side-project last weekend. If you''re playing around with BB we''d love to hear from you!</span></div></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); "><span class="Apple-style-span" style="font-size: 14px; color: rgb(68, 68, 68); "><br></span></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; "><font class="Apple-style-span" color="#444444"><a class="Apple-style-span" style="font-size: 14px;" href="https://spreadsheets.google.com/viewform?formkey=dGJycFlwRjR4TVRnYlN5dHh4SDg1T2c6MQ">Feedback!</a></font></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 12px; font-family: Helvetica; border-width: initial; border-color: initial; color: rgb(0, 0, 0); "><span class="Apple-style-span" style="font-size: 14px; color: rgb(68, 68, 68); "><br></span></div><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; font-family: Helvetica; "><div style="color: rgb(0, 0, 0); font-size: 12px; "><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 14px; "><br></span></font></div></div>', 235)[0m
+  [4;36;1mBox Create (0.3ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(0, '2010-10-07 05:09:55', '2010-10-07 05:09:55', 2, 7, '<meta charset="utf-8"><font class="Apple-style-span" color="#5F1A08" size="3"><br></font>', 490)[0m
+  [4;35;1mBox Create (0.4ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(320, '2010-10-07 05:09:55', '2010-10-07 05:09:55', 2, 9, '<meta charset="utf-8"><font class="Apple-style-span" color="#5F1A08" size="3">Why Boxes &amp; Bins?<br></font><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; "><br></span><div><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="font-size: 14px;">Boxes &amp; Bins is a contextual text-editor, which means that drafting documents in BB is one part content and one part context.&nbsp;</span></font></div><div><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="font-size: 14px;"><br></span></font></div><div><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="font-size: 14px;">In other words, if you''re not moving boxes around the page, you''re doing it wrong.</span></font></div><div><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="font-size: 14px;"><br></span></font></div><div><font class="Apple-style-span" color="#444444"><span class="Apple-style-span" style="font-size: 14px;">I hope to build Boxes &amp; Bins into a full-fledged publishing environment.</span></font></div>', 235)[0m
+  [4;36;1mBox Create (0.3ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(200, '2010-10-07 05:09:55', '2010-10-07 05:09:55', 2, 1, '<span><span style="color: rgb(37, 62, 95); font-size: 16px; ">Boxes &amp; Bins</span><br><span style="color: rgb(68, 68, 68); font-size: 14px; ">MS Word 2.0</span></span>', 490)[0m
+  [4;35;1mBox Create (0.3ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(0, '2010-10-07 05:09:55', '2010-10-07 05:09:55', 2, 3, '<meta charset="utf-8"><font class="Apple-style-span" color="#253E5F" size="3"><meta charset="utf-8"><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-size: 12px; "><font class="Apple-style-span" color="#253E5F" size="3">How do I create new boxes?<br></font><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; "><br></span></span></font><div><font class="Apple-style-span" color="#253E5F" size="3"><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-size: 12px; "><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; ">Hover over the box''s header and click on an arrow.</span></span></font></div>', 235)[0m
+  [4;36;1mBox Create (0.3ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "content", "width") VALUES(0, '2010-10-07 05:09:55', '2010-10-07 05:09:55', 2, 5, '<meta charset="utf-8"><font class="Apple-style-span" size="3" color="#253E5F"><meta charset="utf-8"><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-size: 12px; "><font class="Apple-style-span" size="3" color="#253E5F">How do I remove a box?<br></font><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; "><br></span></span></font><div><font class="Apple-style-span" size="3" color="#253E5F"><span class="Apple-style-span" style="color: rgb(0, 0, 0); font-size: 12px; "><span style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-width: initial; border-color: initial; border-width: initial; border-color: initial; color: rgb(68, 68, 68); font-size: 14px; ">Hover over the box''s header and click on the circle.</span></span></font></div>', 235)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:55', 6, '2010-10-07 05:09:55', 2, 'a', 5)[0m
+  [4;36;1mContainer Create (0.5ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:55', 12, '2010-10-07 05:09:55', 2, 'b', 9)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('horizontal', 16, '2010-10-07 05:09:55', 7, '2010-10-07 05:09:55', 2, 'b', 13)[0m
+  [4;36;1mContainer Create (0.6ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('vertical', 12, '2010-10-07 05:09:55', 13, '2010-10-07 05:09:55', 2, 'a', 3)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:55', 9, '2010-10-07 05:09:55', 2, 'b', 7)[0m
+  [4;36;1mContainer Create (0.4ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:55', 15, '2010-10-07 05:09:55', 2, 'b', 11)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('vertical', 15, '2010-10-07 05:09:55', 16, '2010-10-07 05:09:55', 2, 'b', 6)[0m
+  [4;36;1mContainer Create (0.4ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:55', 1, '2010-10-07 05:09:55', 2, 'a', 1)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('simple', NULL, '2010-10-07 05:09:55', 3, '2010-10-07 05:09:55', 2, 'a', 3)[0m
+  [4;36;1mContainer Create (0.5ms)[0m   [0;1mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('vertical', 9, '2010-10-07 05:09:55', 10, '2010-10-07 05:09:55', 2, 'a', 1)[0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("c_type", "b_child", "created_at", "c_id", "updated_at", "page_id", "c_position", "a_child") VALUES('horizontal', 7, '2010-10-07 05:09:55', 4, '2010-10-07 05:09:55', 2, 'a', 10)[0m
+Completed in 207ms (View: 1, DB: 7) | 200 OK [http://localhost/pages/save/]
+
+
+Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:10:00) [GET]
+  Parameters: {"page_id"=>"2", "user_id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '2') LIMIT 1[0m
+  [4;35;1mBox Load (0.7ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 2) [0m
+  [4;36;1mContainer Load (0.9ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 2) [0m
+Completed in 84ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/2]

@@ -33,6 +33,15 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   #menubar .center  {width:100px; margin:10px auto;}
   #menubar .center h3 {font-size:12px; font-weight:normal; color:#fff;}
 
+  #menubar .links {float:right; margin-top:40px; margin-right:5px;}
+  #menubar .links {}
+  #menubar .links ul {list-style:none;}
+  #menubar .links li {float:left; margin-left:10px;}
+
+  #menubar .links a {color:#2f4d70; text-decoration:none;}
+  #menubar .links a:hover {text-decoration:underline;}
+  #menubar .links a:visited {color:#2f4d70;}
+  
 
 #footer {height:100px; position:relative; margin-top:50px;}
 #footer {border-top:1px solid #101b2b;}
@@ -118,7 +127,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   
   
 #small-page     {width:600px; height:420px; margin:50px auto; padding:30px;}
-#small-page     {background: #e6e6e6; outline:1px solid #1f397c;}
+#small-page     {background: #fff; outline:1px solid #ccc;}
 
 #small-page .field {width:100%; margin-bottom:40px;}
 #small-page h4  {font-size:24px; font-weight:normal; text-align:center; color:#333; margin-bottom:40px;}
@@ -135,3 +144,6 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 #small-page .header  {width:500px; height:100px; padding-left:100px; background: url(/images/pages.png) no-repeat;}
 #small-page .header h3 {line-height:100px; font-size:24px; color:#333;}
 
+#small-page a {color:#2f4d70; text-decoration:none;}
+#small-page ul { padding-left:10px;}
+#small-page li {margin-top:10px;}

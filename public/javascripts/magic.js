@@ -368,11 +368,10 @@ var set_page_title = function(title){
 }
 
 
-
 var load = function(id, elements){
   var container = {};
   container.properties = elements.container[id];
-
+  console.log(container)
   if (container.properties.type == "simple"){
 
     // create simple container
@@ -475,15 +474,10 @@ var load_request = function(){
   var url = sprintf("/pages/load/%s/%s", user_id, page_id);
 
   $.get(url, function(data){
-
+      console.log('yay')
       data = JSON.parse(data);
-      var content = load(data.root, data);
-      set_page_title(data.title);
-
-      $('#page')
-       .html(content)
-       .append(clear_div());
-
+      console.log(data)
+      load_page(data.root, data);
   });
 }
 
@@ -502,7 +496,13 @@ var save_request = function(){
 }
 
 var new_page = function(){
-  var content = load(1, e2);
+  load_page(1, e2);
+}
+
+var load_page = function(root_id, json){
+  var content = load(root_id, json);
+  set_page_title(json.title);
+
   $('#page')
     .html(content)
     .append(clear_div());

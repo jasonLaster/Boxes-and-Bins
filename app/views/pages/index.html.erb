@@ -2,15 +2,14 @@
 
 <div id="small-page">
 
-	<div class="header">
-		<h3><%= @user.name %>'s Collection</h3>
-	</div>
 
-	<% @pages.each do |page| %>
-	<div class="listing">
-		<h5> <%= link_to page.title , show_path(:user_id => @user.id, :page_id => page.id) %></h5>
-	</div>
+		<h2><%= @user.name %>'s Collection</h2>
 
-	<% end %>
-
+		<ul>
+		<% @pages.each do |page| %>
+			<li><%= link_to (page.title != "" ? page.title : "Untitled Document") , show_path(:user_id => @user.id, :page_id => page.id) %></li>
+		<% end %>
+	</ul>
+	
+	<div style="clear"></div>
 </div>

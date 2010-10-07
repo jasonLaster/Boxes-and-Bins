@@ -8,13 +8,13 @@
 		</div>
 		<div class="links">
 			<ul>
-				<% if current_user %>
+
 				<li><%= puts user.inspect %></li>
 				<li><%= link_to_function 'Save', 'save_request();' %></li>				
 				<li><%= link_to_function 'Load', 'load_request();' %></li>				
 				<li><%= link_to 'Signup', signup_path %></li>
 				<li><%= link_to 'Login', login_path %></li>	
-				<% end %>
+
 			</ul>
 		</div>
 		

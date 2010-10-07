@@ -12026,3 +12026,13 @@ Processing PagesController#load (for 127.0.0.1 at 2010-10-06 22:10:00) [GET]
   [4;35;1mBox Load (0.7ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 2) [0m
   [4;36;1mContainer Load (0.9ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 2) [0m
 Completed in 84ms (View: 3, DB: 2) | 200 OK [http://localhost/pages/load/1/2]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2010-10-06 22:33:46) [GET]
+  Parameters: {"page_id"=>"2", "user_id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/show
+Rendered pages/_header (2.2ms)
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://localhost/pages/show/1/2]

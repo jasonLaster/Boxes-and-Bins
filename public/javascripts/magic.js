@@ -473,6 +473,7 @@ var load_request = function(){
   var page_id = get_page_id();
   var url = sprintf("/pages/load/%s/%s", user_id, page_id);
 
+  console.log(url)
   $.get(url, function(data){
       console.log('yay')
       data = JSON.parse(data);

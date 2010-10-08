@@ -69,24 +69,24 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   .box.preview {background-color:#fff; border:none;}
 
   .header {height:8px; line-height:20px; padding:5px 0px;} 
-  .header {border-bottom:1px solid #ccc; background-color:#eee;}
+  .header {/*border-bottom:1px solid #ccc; background-color:#eee;*/}
   .header::selection {background: transparent;}
   
-    .header.hover  {background-color:;}
+    .header.hover  {/*background-color:;*/}
     .header.preview {background-color:#fff; border:none;}
   
     
   .header .remove        {float:left; width:6px; height:6px; margin:2px 6px;}
   .remove .remove_button {width:6px; height:6px;}
-  .remove .remove_button {background-color:#333;}
+  .remove .remove_button {background-color:#888;}
   .remove .remove_button {border-bottom-left-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px;}
   
   
     ul.buttons {width:120px; height:8px; margin: 0px auto; padding:0px 2px;}
     ul.buttons {list-style:none; cursor:default;}
     ul.buttons li {float:left; width:20px; line-height:8px; padding:0px 2px; margin:0px 2px;} 
-    ul.buttons li {text-align:center;}
-    ul.buttons li:hover {color:#535353;}
+    ul.buttons li {text-align:center; color:#555;}
+    ul.buttons li:hover {}
     ul.buttons li::selection {background: transparent;}      
 
     
@@ -97,7 +97,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
   
     .body.preview {background-color:#fff; }
     
-  .content {min-height:200px; padding:10px;}
+  .content {min-height:200px; padding:10px; padding-top:5px;}
   .content {background:transparent;}
   .content:focus {outline: 0px solid transparent;}
   

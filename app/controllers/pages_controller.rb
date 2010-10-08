@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_filter :login_required, :only => [:load]
+  before_filter :login_required, :only => []
 
 
   def new
@@ -27,6 +27,8 @@ class PagesController < ApplicationController
     @user = User.find_by_id(params[:user_id])
     @page = Page.find_by_id(params[:page_id])
     @content = @page.load
+    puts "\n"*5 + "load data"
+    puts @content.inspect
     render :json => @content
   end
   

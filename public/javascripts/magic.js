@@ -468,14 +468,14 @@ var save = function(){
 }
 
 var load_request = function(){
-
+  console.log('start load request 1');
   var user_id = get_user_id();
   var page_id = get_page_id();
   var url = sprintf("/pages/load/%s/%s", user_id, page_id);
 
-  console.log(url)
+  console.log('initiate get request ' + url)
   $.get(url, function(data){
-      console.log('yay')
+      console.log('data returned')
       data = JSON.parse(data);
       console.log(data)
       load_page(data.root, data);

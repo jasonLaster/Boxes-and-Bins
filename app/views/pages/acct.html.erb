@@ -1,0 +1,15 @@
+<%= render :partial => "shared/header" %>
+
+<div id="small-page">
+
+
+		<h2><%= @user.name %>'s Collection</h2>
+
+		<ul>
+		<% @pages.each do |page| %>
+			<li><%= link_to (page.title != "" ? page.title : "Untitled Document") , show_path(:user_id => @user.id, :page_id => page.id) %></li>
+		<% end %>
+	</ul>
+	
+	<div style="clear"></div>
+</div>

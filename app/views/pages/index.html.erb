@@ -1,15 +1,26 @@
-<%= render :partial => "shared/header" %>
-
-<div id="small-page">
-
-
-		<h2><%= @user.name %>'s Collection</h2>
-
-		<ul>
-		<% @pages.each do |page| %>
-			<li><%= link_to (page.title != "" ? page.title : "Untitled Document") , show_path(:user_id => @user.id, :page_id => page.id) %></li>
-		<% end %>
-	</ul>
-	
-	<div style="clear"></div>
+<div id="menubar">
+	<div class="wrapper">
+		<div id="company_name">
+			<h3>Boxes & Bins</h3>
+		</div>
+		<div id="page_title">
+			<input value="Page Title">
+		</div>
+		<div class="links">
+			<ul>
+				<li><%= link_to_function 'Save', 'save_request();' %></li>				
+        <!-- <li><%= link_to 'Login', login_path %></li>   -->
+        <!-- <li><%= link_to 'Signup', signup_path %></li> -->
+			</ul>
+		</div>  
+	</div>
 </div>
+
+
+<div id="page">
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  var content = <%= @content %>;
+  var uid = "<%= @uid %>";
+</script>

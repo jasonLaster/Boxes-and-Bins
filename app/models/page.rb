@@ -4,21 +4,36 @@ class Page < ActiveRecord::Base
   has_many :boxs
   has_many :containers
   
-  def load
-    boxes = self.boxs
-    boxes.map! {|i| {:id => i.b_id, :width => i.width, :min_height => i.min_height, :content => i.content}}
-    boxes_h = Hash.new
-    boxes.each {|i| boxes_h[i[:id]] = i}
-
-    containers = self.containers
-    containers.map! {|i| {:id => i.c_id, :type => i.c_type, :position => i.c_position, :a_child => i.a_child, :b_child => i.b_child}} 
-    containers_h = Hash.new
-    containers.each {|i| containers_h[i[:id]] = i}
-    
-    root = self.root
-    title = self.title
-    
-    {:box => boxes_h, :container => containers_h, :root => root, :title => title}
+  
+  def get_version
+    self.boxs.first.version
   end
+
+  def self.create_uid
+    input = (48..57).to_a + (65..90).to_a + (97..120).to_a
+    indeces = (input.length.to_a * 7).map {|i| rand(i)}
+    return indeces.map {|j| input[j].chr}.join()
+  end
+
+
+  def copy_content(other_id)
+    
+    def copy_objs (objects)
+      objects.each do |o| 
+        obj = o.clone
+        obj.page_id = self.id
+        obj.version = 1
+        obj.save
+      end
+    end
+
+    temp_page = Page.find_by_id(other_id) # 0 is probably a bad id
+    self.root = temp_page.root
+    self.save
+    copy_objs(temp_page.boxs)
+    copy_objs(temp_page.containers)
+  end
+    
+
 
 end

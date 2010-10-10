@@ -4,19 +4,21 @@ ActionController::Routing::Routes.draw do |map|
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
 
-  map.index '/pages/index/:user_id', :controller => 'pages', :action => 'index'
+  map.acct '/pages/acct/:user_id', :controller => 'pages', :action => 'index'
   map.show '/pages/show/:user_id/:page_id', :controller => 'pages', :action => 'show'
   map.load '/pages/load/:user_id/:page_id', :controller => 'pages', :action => 'load'
   map.save '/pages/save/:user_id/:page_id/:data', :controller => 'pages', :action => 'save'
   map.new '/pages/new/:user_id', :controller => 'pages', :action => 'new'
   map.doc '/pages/doc/', :controller => 'pages', :action => 'doc'
 
-
+  map.index '/:uid', :controller => 'pages', :action => 'index'
 
   map.resources :users
-  
+  map.resources :pages
 
   map.resource :session
+  
+
   
   
 
@@ -52,7 +54,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "pages", :action => "doc"
+  map.root :controller => "pages", :action => "index"
 
   # See how all your routes lay out with "rake routes"
 

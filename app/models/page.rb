@@ -11,7 +11,7 @@ class Page < ActiveRecord::Base
 
   def self.create_uid
     input = (48..57).to_a + (65..90).to_a + (97..120).to_a
-    indeces = (input.length.to_a * 7).map {|i| rand(i)}
+    indeces = (input.length.to_a * 7).map {|input| rand(i)}
     return indeces.map {|j| input[j].chr}.join()
   end
 

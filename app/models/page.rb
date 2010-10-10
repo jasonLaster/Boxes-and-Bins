@@ -27,7 +27,7 @@ class Page < ActiveRecord::Base
       end
     end
 
-    temp_page = Page.find_by_id(other_id) # 0 is probably a bad id
+    temp_page = Page.find_by_uid('default') # 0 is probably a bad id
     self.root = temp_page.root
     self.save
     copy_objs(temp_page.boxs)

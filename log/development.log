@@ -15265,3 +15265,136 @@ NameError (undefined local variable or method `i' for #<Class:0x1036de0d0>):
 Rendered rescues/_trace (25.1ms)
 Rendered rescues/_request_and_response (1.1ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:46:55) [GET]
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:46:55', 'Page Title', '2010-10-10 07:46:55', 'EDmHnHP', NULL, NULL)[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [4;36;1mPage Update (0.3ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-10 07:46:55', "root" = 1 WHERE "id" = 31[0m
+  [4;35;1mBox Load (0.4ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+  [4;36;1mBox Create (0.4ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "version", "content", "width") VALUES(200, '2010-10-09 23:26:46', '2010-10-10 05:29:41', 31, 1, 1, 'Default page', 1000)[0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+  [4;36;1mContainer Create (0.3ms)[0m   [0;1mINSERT INTO "containers" ("b_child", "c_type", "c_id", "created_at", "updated_at", "page_id", "c_position", "version", "a_child") VALUES(NULL, 'simple', 1, '2010-10-09 23:07:18', '2010-10-10 05:28:42', 31, NULL, 1, 1)[0m
+Redirected to http://localhost:3000/EDmHnHP
+Completed in 32ms (DB: 2) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:46:56) [GET]
+  Parameters: {"uid"=>"EDmHnHP"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'EDmHnHP') LIMIT 1[0m
+  [4;36;1mBox Load (0.4ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 31) [0m
+  [4;35;1mContainer Load (0.3ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 31) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 22ms (View: 3, DB: 1) | 200 OK [http://localhost/EDmHnHP]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:49:47) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:49:47', 'Page Title', '2010-10-10 07:49:47', 'XtUg5G0', NULL, NULL)[0m
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+
+NoMethodError (undefined method `root' for nil:NilClass):
+  app/models/page.rb:31:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (72.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:49:54) [GET]
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:49:54', 'Page Title', '2010-10-10 07:49:54', 'hsVUg5K', NULL, NULL)[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+
+NoMethodError (undefined method `root' for nil:NilClass):
+  app/models/page.rb:31:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (22.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:50:36) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:50:36', 'Page Title', '2010-10-10 07:50:36', 'O7rUEsF', NULL, NULL)[0m
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+
+NoMethodError (undefined method `root' for nil:NilClass):
+  app/models/page.rb:31:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (77.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+** [Hoptoad] Notifier 2.3.8 ready to catch errors
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 1) [0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:51:42) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:51:42', 'Page Title', '2010-10-10 07:51:42', 'vVYxVhI', NULL, NULL)[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+
+NoMethodError (undefined method `root' for nil:NilClass):
+  app/models/page.rb:31:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (22.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:51:43) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:51:43', 'Page Title', '2010-10-10 07:51:43', 'NCCNXMx', NULL, NULL)[0m
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+
+NoMethodError (undefined method `root' for nil:NilClass):
+  app/models/page.rb:31:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (75.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:51:44) [GET]
+  [4;36;1mPage Create (0.5ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:51:44', 'Page Title', '2010-10-10 07:51:44', '5quYnmh', NULL, NULL)[0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+
+NoMethodError (undefined method `root' for nil:NilClass):
+  app/models/page.rb:31:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;36;1mPage Update (0.6ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-10 07:52:02', "uid" = 'default' WHERE "id" = 1[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:52:04) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:52:04', 'Page Title', '2010-10-10 07:52:04', 'P7rFXKY', NULL, NULL)[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;36;1mPage Update (0.2ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-10 07:52:04', "root" = 1 WHERE "id" = 38[0m
+  [4;35;1mBox Load (0.2ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+  [4;36;1mBox Create (0.3ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "version", "content", "width") VALUES(200, '2010-10-09 23:26:46', '2010-10-10 05:29:41', 38, 1, 1, 'Default page', 1000)[0m
+  [4;35;1mContainer Load (0.2ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+  [4;36;1mContainer Create (0.3ms)[0m   [0;1mINSERT INTO "containers" ("b_child", "c_type", "c_id", "created_at", "updated_at", "page_id", "c_position", "version", "a_child") VALUES(NULL, 'simple', 1, '2010-10-09 23:07:18', '2010-10-10 05:28:42', 38, NULL, 1, 1)[0m
+Redirected to http://localhost:3000/P7rFXKY
+Completed in 83ms (DB: 2) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:52:04) [GET]
+  Parameters: {"uid"=>"P7rFXKY"}
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'P7rFXKY') LIMIT 1[0m
+  [4;36;1mBox Load (0.2ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 38) [0m
+  [4;35;1mContainer Load (0.2ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 38) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://localhost/P7rFXKY]

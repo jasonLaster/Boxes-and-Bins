@@ -15398,3 +15398,165 @@ Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:52:04) [GET]
 Rendering template within layouts/application
 Rendering pages/index
 Completed in 16ms (View: 2, DB: 1) | 200 OK [http://localhost/P7rFXKY]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:00:40) [GET]
+  Parameters: {"uid"=>"P7rFXKY"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'P7rFXKY') LIMIT 1[0m
+  [4;35;1mBox Load (0.2ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 38) [0m
+  [4;36;1mContainer Load (0.2ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 38) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 19ms (View: 5, DB: 1) | 200 OK [http://localhost/P7rFXKY]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:00:47) [GET]
+  Parameters: {"uid"=>"P7rFXKY"}
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'P7rFXKY') LIMIT 1[0m
+  [4;36;1mBox Load (0.2ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 38) [0m
+  [4;35;1mContainer Load (0.3ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 38) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 64ms (View: 2, DB: 1) | 200 OK [http://localhost/P7rFXKY]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:00:58) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:00:58', 'Page Title', '2010-10-10 08:00:58', 'mZFEXNW', NULL, NULL)[0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/pages_controller.rb:28:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (21.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:01:30) [GET]
+  [4;35;1mPage Create (0.3ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:01:30', 'Page Title', '2010-10-10 08:01:30', 'se2CThS', NULL, NULL)[0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/pages_controller.rb:28:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (78.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:01:30) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:01:30', 'Page Title', '2010-10-10 08:01:30', 'EujQ1B3', NULL, NULL)[0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/pages_controller.rb:28:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (26.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:02:11) [GET]
+  [4;35;1mPage Create (0.3ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:02:11', 'Page Title', '2010-10-10 08:02:11', 'ioPidod', NULL, NULL)[0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/pages_controller.rb:28:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (76.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:02:21) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:02:21', 'Page Title', '2010-10-10 08:02:21', 'xCNrEYV', NULL, NULL)[0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/pages_controller.rb:28:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (22.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:02:21) [GET]
+  [4;35;1mPage Create (0.3ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:02:21', 'Page Title', '2010-10-10 08:02:21', 'IUgqj32', NULL, NULL)[0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/pages_controller.rb:28:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (93.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:02:51) [GET]
+  [4;36;1mPage Create (0.3ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:02:51', 'Page Title', '2010-10-10 08:02:51', 'sYccVOR', NULL, NULL)[0m
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;36;1mPage Update (0.2ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-10 08:02:51', "root" = 1 WHERE "id" = 45[0m
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/models/page.rb:34:in `copy_objs'
+  app/models/page.rb:34:in `copy_content'
+  app/controllers/pages_controller.rb:28:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (22.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:03:09) [GET]
+  [4;35;1mPage Create (0.3ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:03:09', 'Page Title', '2010-10-10 08:03:09', 'xmKw26G', NULL, NULL)[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;35;1mPage Update (0.1ms)[0m   [0mUPDATE "pages" SET "updated_at" = '2010-10-10 08:03:09', "root" = 1 WHERE "id" = 46[0m
+  [4;36;1mBox Load (0.2ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+create a new element
+  [4;35;1mBox Create (0.3ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "version", "content", "width") VALUES(200, '2010-10-09 23:26:46', '2010-10-10 05:29:41', 46, 1, 1, 'Default page', 1000)[0m
+  [4;36;1mContainer Load (0.2ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+create a new element
+  [4;35;1mContainer Create (0.2ms)[0m   [0mINSERT INTO "containers" ("b_child", "c_type", "c_id", "created_at", "updated_at", "page_id", "c_position", "version", "a_child") VALUES(NULL, 'simple', 1, '2010-10-09 23:07:18', '2010-10-10 05:28:42', 46, NULL, 1, 1)[0m
+Redirected to http://localhost:3000/xmKw26G
+Completed in 81ms (DB: 2) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:03:09) [GET]
+  Parameters: {"uid"=>"xmKw26G"}
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'xmKw26G') LIMIT 1[0m
+  [4;35;1mBox Load (0.2ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 46) [0m
+  [4;36;1mContainer Load (0.2ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 46) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/xmKw26G]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:03:24) [GET]
+  [4;35;1mPage Create (0.3ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 08:03:24', 'Page Title', '2010-10-10 08:03:24', 'xJpX5eo', NULL, NULL)[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;35;1mPage Update (0.2ms)[0m   [0mUPDATE "pages" SET "updated_at" = '2010-10-10 08:03:24', "root" = 1 WHERE "id" = 47[0m
+  [4;36;1mBox Load (0.3ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+create a new element
+  [4;35;1mBox Create (0.3ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "version", "content", "width") VALUES(200, '2010-10-09 23:26:46', '2010-10-10 05:29:41', 47, 1, 1, 'Default page', 1000)[0m
+  [4;36;1mContainer Load (0.2ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+create a new element
+  [4;35;1mContainer Create (0.2ms)[0m   [0mINSERT INTO "containers" ("b_child", "c_type", "c_id", "created_at", "updated_at", "page_id", "c_position", "version", "a_child") VALUES(NULL, 'simple', 1, '2010-10-09 23:07:18', '2010-10-10 05:28:42', 47, NULL, 1, 1)[0m
+Redirected to http://localhost:3000/xJpX5eo
+Completed in 28ms (DB: 2) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 01:03:24) [GET]
+  Parameters: {"uid"=>"xJpX5eo"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'xJpX5eo') LIMIT 1[0m
+  [4;35;1mBox Load (0.2ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 47) [0m
+  [4;36;1mContainer Load (0.3ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 47) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 65ms (View: 2, DB: 1) | 200 OK [http://localhost/xJpX5eo]

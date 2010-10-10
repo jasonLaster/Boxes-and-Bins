@@ -25,7 +25,7 @@ class PagesController < ApplicationController
       @page.title = "Page Title"
       @page.save  
       
-      @page.copy_content(1)
+      @page.copy_content
       puts "\n"*5 + "created content!!!"
 
       # redirect to index_path(:uid => @page.an_id)

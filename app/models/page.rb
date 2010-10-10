@@ -16,7 +16,7 @@ class Page < ActiveRecord::Base
   end
 
 
-  def copy_content(other_id)
+  def copy_content
     
     def copy_objs (objects)
       objects.each do |o| 

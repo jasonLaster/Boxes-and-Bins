@@ -15214,3 +15214,54 @@ Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:24:30) [GET]
 Rendering template within layouts/application
 Rendering pages/index
 Completed in 19ms (View: 2, DB: 2) | 200 OK [http://localhost/65UoDLA]
+** [Hoptoad] Notifier 2.3.8 ready to catch errors
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:46:10) [GET]
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "updated_at", "uid", "user_id", "root") VALUES('2010-10-10 07:46:10', 'Page Title', '2010-10-10 07:46:10', 'wiMaCTH', NULL, NULL)[0m
+  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) LIMIT 1[0m
+  [4;36;1mPage Update (0.2ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-10 07:46:10', "root" = 1 WHERE "id" = 30[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+  [4;36;1mBox Create (0.4ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "version", "content", "width") VALUES(200, '2010-10-09 23:26:46', '2010-10-10 05:29:41', 30, 1, 1, 'Default page', 1000)[0m
+  [4;35;1mContainer Load (0.3ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+  [4;36;1mContainer Create (0.4ms)[0m   [0;1mINSERT INTO "containers" ("b_child", "c_type", "c_id", "created_at", "updated_at", "page_id", "c_position", "version", "a_child") VALUES(NULL, 'simple', 1, '2010-10-09 23:07:18', '2010-10-10 05:28:42', 30, NULL, 1, 1)[0m
+Redirected to http://localhost:3000/wiMaCTH
+Completed in 49ms (DB: 2) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:46:10) [GET]
+  Parameters: {"uid"=>"wiMaCTH"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'wiMaCTH') LIMIT 1[0m
+  [4;36;1mBox Load (0.3ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 30) [0m
+  [4;35;1mContainer Load (0.2ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 30) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 88ms (View: 69, DB: 1) | 200 OK [http://localhost/wiMaCTH]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:46:15) [GET]
+  Parameters: {"uid"=>"wiMaCTH"}
+  [4;36;1mPage Load (0.1ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'wiMaCTH') LIMIT 1[0m
+  [4;35;1mBox Load (0.2ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 30) [0m
+  [4;36;1mContainer Load (0.5ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 30) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://localhost/wiMaCTH]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-10 00:46:18) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NameError (undefined local variable or method `i' for #<Class:0x1036de0d0>):
+  app/models/page.rb:14:in `create_uid'
+  app/models/page.rb:14:in `map'
+  app/models/page.rb:14:in `create_uid'
+  app/controllers/pages_controller.rb:24:in `index'
+  vendor/gems/hoptoad_notifier-2.3.8/lib/hoptoad_notifier/rack.rb:27:in `call'
+
+Rendered rescues/_trace (25.1ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)

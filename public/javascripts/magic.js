@@ -9,6 +9,7 @@ $(document).ready(function(){
   // $('#page')
   //   .append(content)
   //   .append(clear_div());
+  $('#flash').hide()
   load_page(content)
   box_id = max_id('.box');
   container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
@@ -494,6 +495,11 @@ var save_request = function(){
     'data': elements
   }, function(data) {
       console.log('save request succeeded');
+      $('#flash').fadeIn(1000, function(){
+        setTimeout(function(){ 
+          $('#flash').fadeOut(1000) 
+        }, 4000);
+      })
   });
 }
 

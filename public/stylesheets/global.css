@@ -49,8 +49,14 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 #footer .wrapper {padding-top:20px; }
 #footer .wrapper h4 {color:#whitesmoke; font-weight:normal; font-size:16px;}
 
+#notifications {position:absolute; top:0px; width:100%;}
 
-
+#flash {margin:5px auto; height:30px; width:200px; line-height:30px; }
+#flash {text-align:center; color:#eee;}
+#flash {background-color:#444; border:2px solid #efefef;}
+#flash:hover {cursor:default;}
+#flash span::selection {background: transparent}
+#flash::selection {background: transparent}
 
 #page     {width:1000px; min-height:700px; margin:0px auto; padding:30px;}
 #page     {background:#fff; border:1px solid #bbbbbb;}

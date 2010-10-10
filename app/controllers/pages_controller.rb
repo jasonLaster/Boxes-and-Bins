@@ -91,12 +91,14 @@ class PagesController < ApplicationController
   protected
   
   def load_page (page)
-    boxes = page.boxs
+
+    version = page.get_version
+    boxes = page.boxs.select {|i| i.version == version}
     boxes.map! {|i| {:id => i.b_id, :width => i.width, :min_height => i.min_height, :content => i.content}}
     boxes_h = Hash.new
     boxes.each {|i| boxes_h[i[:id]] = i}
 
-    containers = page.containers
+    containers = page.containers.select {|i| i.version == version}
     containers.map! {|i| {:id => i.c_id, :type => i.c_type, :position => i.c_position, :a_child => i.a_child, :b_child => i.b_child}} 
     containers_h = Hash.new
     containers.each {|i| containers_h[i[:id]] = i}

@@ -6,7 +6,7 @@ class Page < ActiveRecord::Base
   
   
   def get_version
-    self.boxs.first.version
+    self.boxs.map {|i| i.version}.max
   end
 
   def self.create_uid

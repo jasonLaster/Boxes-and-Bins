@@ -4,20 +4,26 @@ class PagesController < ApplicationController
 
   def index
     @uid = params[:uid]
+    version = params[:v]
+    author = params[:u]
     
     if @uid
       # load page
       @page = Page.find_by_uid(@uid)
       
+      @page.assign_author(author) if author
+      
       # get content
       j = ActiveSupport::JSON
-      @content = load_page(@page)
+      @content = load_page(@page, version)
       @content = j.encode(@content)
 
       
       puts "\n"*5 + "rendered page with uid: " + @page.uid
       puts @content
       puts @uid
+      puts author
+      puts version
     else
 
       @page = Page.new
@@ -34,6 +40,16 @@ class PagesController < ApplicationController
     end
     
   end
+
+  def author 
+    @author = params[:author]
+    @docs = Page.find(:all, :conditions => [ "author = ?", @author])
+    
+    
+  end
+
+
+
 
   def new
     @user = User.find_by_id(params[:user_id])
@@ -58,7 +74,8 @@ class PagesController < ApplicationController
   def load
     @user = User.find_by_id(params[:user_id])
     @page = Page.find_by_id(params[:page_id])
-    @content = load_page(@page)
+    version = nil
+    @content = load_page(@page, version)
 
     puts "\n"*5 + "load data"
     puts @content.inspect
@@ -90,9 +107,10 @@ class PagesController < ApplicationController
   
   protected
   
-  def load_page (page)
-
-    version = page.get_version
+  def load_page (page, version)
+    
+    
+    version = version ? version.to_i : page.get_version
     boxes = page.boxs.select {|i| i.version == version}
     boxes.map! {|i| {:id => i.b_id, :width => i.width, :min_height => i.min_height, :content => i.content}}
     boxes_h = Hash.new

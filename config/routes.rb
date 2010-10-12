@@ -11,7 +11,8 @@ ActionController::Routing::Routes.draw do |map|
   map.new '/pages/new/:user_id', :controller => 'pages', :action => 'new'
   map.doc '/pages/doc/', :controller => 'pages', :action => 'doc'
 
-  map.index '/:uid', :controller => 'pages', :action => 'index'
+  map.index '/:uid/.:format', :controller => 'pages', :action => 'index'
+  map.author '/author/:author', :controller => 'pages', :action => 'author'
 
   map.resources :users
   map.resources :pages

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101009213003) do
+ActiveRecord::Schema.define(:version => 20101012182623) do
 
   create_table "boxes", :force => true do |t|
     t.integer  "page_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20101009213003) do
     t.datetime "updated_at"
     t.integer  "root"
     t.string   "uid"
+    t.string   "author"
   end
 
   create_table "users", :force => true do |t|

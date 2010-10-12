@@ -15,6 +15,10 @@ class Page < ActiveRecord::Base
     return indeces.map {|j| input[j].chr}.join()
   end
 
+  def assign_author (author)
+    self.author = author
+    self.save
+  end
 
   def copy_content
     

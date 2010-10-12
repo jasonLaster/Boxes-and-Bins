@@ -1,0 +1,18 @@
+<div id="menubar">
+	<div class="wrapper">
+		<div id="company_name">
+			<h3>Boxes & Bins</h3>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="page">
+  <h3><%= @author %>'s Files</h3> 
+  <br />
+
+  <% @docs.each do |d| %>
+    <%= link_to d.title, index_path(d.uid)  %> <br/>
+  <% end %>
+</div>

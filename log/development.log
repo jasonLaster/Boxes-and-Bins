@@ -18040,3 +18040,327 @@ Processing PagesController#index (for 127.0.0.1 at 2010-10-16 16:10:28) [GET]
 Rendering template within layouts/application
 Rendering pages/index
 Completed in 17ms (View: 2, DB: 1) | 200 OK [http://localhost/F7Ase9K]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:05:21) [GET]
+  [4;36;1mPage Create (0.5ms)[0m   [0;1mINSERT INTO "pages" ("created_at", "title", "author", "updated_at", "uid", "user_id", "root") VALUES('2010-10-18 04:05:21', 'Page Title', NULL, '2010-10-18 04:05:21', 'FQRijhs', NULL, NULL)[0m
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;36;1mPage Update (0.4ms)[0m   [0;1mUPDATE "pages" SET "updated_at" = '2010-10-18 04:05:21', "root" = 1 WHERE "id" = 65[0m
+  [4;35;1mBox Load (0.7ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+  [4;36;1mBox Create (1.8ms)[0m   [0;1mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "version", "content", "width") VALUES(200, '2010-10-09 23:26:46', '2010-10-10 18:32:38', 65, 1, 1, '', 1000)[0m
+  [4;35;1mContainer Load (0.5ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+  [4;36;1mContainer Create (0.4ms)[0m   [0;1mINSERT INTO "containers" ("b_child", "c_type", "c_id", "created_at", "updated_at", "page_id", "c_position", "version", "a_child") VALUES(NULL, 'simple', 1, '2010-10-09 23:07:18', '2010-10-10 05:28:42', 65, NULL, 1, 1)[0m
+Redirected to http://localhost:3000/FQRijhs
+Completed in 90ms (DB: 5) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:05:21) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.6ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 55ms (View: 18, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:05:34) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.6ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.4ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.4ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:07:26) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 32ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:07:33) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.4ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.4ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 27ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:07:47) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.4ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 32ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:07:57) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.4ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:09:05) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 29ms (View: 5, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:11:14) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.3ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.3ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 97ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:11:19) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.5ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 31ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:11:26) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.6ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.3ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:11:39) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.3ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 95ms (View: 71, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:11:48) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.5ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 28ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:03) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 30ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:04) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.4ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.5ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 29ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:09) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.5ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:28) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.5ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.6ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.4ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:28) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.4ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.5ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:35) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.5ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 98ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:45) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.3ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 27ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:12:57) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.3ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 30ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:13:10) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 100ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:13:11) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.4ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 31ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:14:38) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:14:46) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.5ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.5ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:15:05) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.3ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 26ms (View: 4, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:15:12) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.7ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.5ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 30ms (View: 3, DB: 2) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:15:18) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;35;1mPage Load (0.5ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;36;1mBox Load (0.5ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-17 21:15:34) [GET]
+  Parameters: {"uid"=>"FQRijhs"}
+  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'FQRijhs') LIMIT 1[0m
+  [4;35;1mBox Load (0.3ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 65) [0m
+  [4;36;1mContainer Load (0.4ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 65) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 23ms (View: 3, DB: 1) | 200 OK [http://localhost/FQRijhs]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-18 00:40:20) [GET]
+  [4;35;1mPage Create (1.8ms)[0m   [0mINSERT INTO "pages" ("created_at", "title", "author", "updated_at", "uid", "user_id", "root") VALUES('2010-10-18 07:40:20', 'Page Title', NULL, '2010-10-18 07:40:20', '6SQUMIK', NULL, NULL)[0m
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;35;1mPage Update (0.2ms)[0m   [0mUPDATE "pages" SET "updated_at" = '2010-10-18 07:40:20', "root" = 1 WHERE "id" = 66[0m
+  [4;36;1mBox Load (0.4ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+  [4;35;1mBox Create (0.3ms)[0m   [0mINSERT INTO "boxes" ("min_height", "created_at", "updated_at", "page_id", "b_id", "version", "content", "width") VALUES(200, '2010-10-09 23:26:46', '2010-10-10 18:32:38', 66, 1, 1, '', 1000)[0m
+  [4;36;1mContainer Load (0.3ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+  [4;35;1mContainer Create (0.3ms)[0m   [0mINSERT INTO "containers" ("b_child", "c_type", "c_id", "created_at", "updated_at", "page_id", "c_position", "version", "a_child") VALUES(NULL, 'simple', 1, '2010-10-09 23:07:18', '2010-10-10 05:28:42', 66, NULL, 1, 1)[0m
+Redirected to http://localhost:3000/6SQUMIK
+Completed in 38ms (DB: 4) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-18 00:40:20) [GET]
+  Parameters: {"uid"=>"6SQUMIK"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = '6SQUMIK') LIMIT 1[0m
+  [4;35;1mBox Load (0.4ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 66) [0m
+  [4;36;1mContainer Load (0.3ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 66) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 31ms (View: 8, DB: 1) | 200 OK [http://localhost/6SQUMIK]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-10-18 00:40:29) [GET]
+  Parameters: {"uid"=>"6SQUMIK"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = '6SQUMIK') LIMIT 1[0m
+  [4;36;1mBox Load (0.3ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 66) [0m
+  [4;35;1mContainer Load (0.4ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 66) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 92ms (View: 3, DB: 1) | 200 OK [http://localhost/6SQUMIK]

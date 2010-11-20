@@ -268,15 +268,14 @@ var remove_container = function(container){
   other_container.jq  = parent_container.sibling[parent_container.other_position];
   other_container._   = get_properties(other_container.jq);
 
-
   // set new position
   other_container.jq.removeClass('a b').addClass(parent_container._.position);
 
 
   // set new width
-   if(parent_container.jq.hasClass('horizontal')){
-     resize_container(original_container._.width, other_container.jq);
-   }
+  if(parent_container.jq.hasClass('horizontal')){
+    resize_container(original_container._.width, other_container.jq);
+  }
 
   // replace parent container (H or V) with the other sibling container
   parent_container.jq.replaceWith(other_container.jq);
@@ -290,6 +289,7 @@ var events = function(){
     $('#page').unbind('mousemove');
     $('.triangle_on').removeClass('triangle_on');
   })
+
 
   //  container
   $('.container').live('mouseover', function(){
@@ -307,6 +307,47 @@ var events = function(){
 
   $('.box').live('mouseout', function(){
   });
+  
+  $('.box').live('click', function(d){
+    var click = {};
+    click.y = d.pageY;
+    click.x = d.pageX;
+    
+    var box = {};
+    box.jq = $(this);
+    box.offset = box.jq.offset();
+    box.y = box.offset.top;
+    box.x = box.offset.left;
+    box.width = parseInt(box.jq.css('width'));
+    box.height = parseInt(box.jq.css('height'));
+    box.o = {};
+    box.o.x = box.width / 2 + box.x;
+    box.o.y = box.height /2 + box.y;
+    
+    // corrected values
+    click.pos = {};
+    click.pos.x = click.x - box.o.x;
+    click.pos.y = box.o.y - click.y;
+    
+    // regions
+    if        ((click.pos.y > 0) && (click.pos.y > (box.height / box.width) * Math.abs(click.pos.x))) {
+      console.log('region 1');
+    } else if ((click.pos.x > 0) && (click.pos.x > (box.height / box.width) * Math.abs(click.pos.y))) {
+      console.log('region 2');
+    } else if ((click.pos.y < 0) && (click.pos.y < (box.height / box.width) * Math.abs(click.pos.x))) {
+      console.log('region 3');
+    } else if ((click.pos.x < 0) && (click.pos.x < (box.height / box.width) * Math.abs(click.pos.y))) {
+      console.log('region 4');
+    } else {
+      console.log('shit');
+    }
+    
+    console.log('click: ' + click.y + " " + click.x);
+    // console.log('box: ' + box.y + " " + box.x);
+    // console.log('box: ' + box.width + " " + box.height);
+    // console.log('box o: ' + box.o.x + " " + box.o.y)
+    console.log('click c: ' + click.pos.x + " " + click.pos.y)
+  })
 
   // header
   $('.header').live('mouseover', function(){

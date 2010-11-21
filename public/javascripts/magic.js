@@ -22,6 +22,7 @@ var clear_div = function(){
   return $('<div class="clear">');
 }
 
+// this code will probably change with Jons changes
 var create_text_box = function(){
   var e = {};
   e.box = $('<div class="box">');
@@ -64,6 +65,7 @@ var create_text_box = function(){
   return e.box;
 }
 
+// also changed
 var create_simple_container = function(){
   var container = $('<div class="simple container">');
   var text_box = create_text_box();

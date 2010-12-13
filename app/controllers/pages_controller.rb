@@ -28,6 +28,7 @@ class PagesController < ApplicationController
 
       # create new page
       @page = Page.new
+      puts "hello"
       @page.uid = Page.create_uid
       @page.title = "Page Title"
       @page.save

@@ -13,6 +13,7 @@ class Page < ActiveRecord::Base
     input = (48..57).to_a + (65..90).to_a + (97..120).to_a
     indeces = (Array.new(1, input.length) * 7).map {|i| rand(i)}
     puts indeces.inspect
+    puts "test"
     return indeces.map {|j| input[j].chr}.join()
   end
 

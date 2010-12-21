@@ -39,7 +39,4 @@ class Page < ActiveRecord::Base
     copy_objs(temp_page.boxs)
     copy_objs(temp_page.containers)
   end
-    
-
-
 end

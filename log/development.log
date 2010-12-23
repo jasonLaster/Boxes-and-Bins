@@ -27660,3 +27660,36 @@ Processing PagesController#index (for 127.0.0.1 at 2010-12-12 16:45:16) [GET]
 Rendering template within layouts/application
 Rendering pages/index
 Completed in 60ms (View: 8, DB: 1) | 200 OK [http://localhost/PxLcZwl]
+** [Hoptoad] Notifier 2.3.8 ready to catch errors
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-12-23 14:31:25) [GET]
+  [4;36;1mPage Create (0.4ms)[0m   [0;1mINSERT INTO "pages" ("title", "user_id", "created_at", "updated_at", "root", "uid", "author") VALUES('Page Title', NULL, '2010-12-23 22:31:25', '2010-12-23 22:31:25', NULL, 'sFdBlMU', NULL)[0m
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'default') LIMIT 1[0m
+  [4;36;1mPage Update (0.2ms)[0m   [0;1mUPDATE "pages" SET "root" = 1, "updated_at" = '2010-12-23 22:31:25' WHERE "id" = 83[0m
+  [4;35;1mBox Load (0.4ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 1) [0m
+  [4;36;1mBox Create (0.3ms)[0m   [0;1mINSERT INTO "boxes" ("b_id", "content", "created_at", "min_height", "page_id", "updated_at", "version", "width") VALUES(1, '', '2010-10-09 23:26:46', 200, 83, '2010-10-10 18:32:38', 1, 1000)[0m
+  [4;35;1mContainer Load (0.5ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 1) [0m
+  [4;36;1mContainer Create (0.4ms)[0m   [0;1mINSERT INTO "containers" ("a_child", "b_child", "c_id", "c_position", "c_type", "created_at", "page_id", "updated_at", "version") VALUES(1, NULL, 1, NULL, 'simple', '2010-10-09 23:07:18', 83, '2010-10-10 05:28:42', 1)[0m
+Redirected to http://localhost:3000/sFdBlMU
+Completed in 106ms (DB: 2) | 302 Found [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-12-23 14:31:26) [GET]
+  Parameters: {"uid"=>"sFdBlMU"}
+  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."uid" = 'sFdBlMU') LIMIT 1[0m
+  [4;36;1mBox Load (0.3ms)[0m   [0;1mSELECT * FROM "boxes" WHERE ("boxes".page_id = 83) [0m
+  [4;35;1mContainer Load (0.5ms)[0m   [0mSELECT * FROM "containers" WHERE ("containers".page_id = 83) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 89ms (View: 63, DB: 1) | 200 OK [http://localhost/sFdBlMU]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2010-12-23 14:32:02) [GET]
+  Parameters: {"uid"=>"sFdBlMU"}
+  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."uid" = 'sFdBlMU') LIMIT 1[0m
+  [4;35;1mBox Load (0.4ms)[0m   [0mSELECT * FROM "boxes" WHERE ("boxes".page_id = 83) [0m
+  [4;36;1mContainer Load (0.4ms)[0m   [0;1mSELECT * FROM "containers" WHERE ("containers".page_id = 83) [0m
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 60ms (View: 10, DB: 1) | 200 OK [http://localhost/sFdBlMU]

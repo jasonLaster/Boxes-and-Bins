@@ -15,7 +15,7 @@ $(document).ready(function(){
   container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
   inspector();
   fix_toolbar();
-  $('#toolbar').hide();
+  // $('#toolbar').hide();
   $('.values').hide();
 })
 

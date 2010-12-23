@@ -15,6 +15,7 @@ $(document).ready(function(){
   container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
   inspector();
   fix_toolbar();
+  $('#toolbar').hide();
   $('.values').hide();
 })
 
@@ -420,7 +421,7 @@ var events = function(){
     $('.values').hide();
   })
   
-  var colors = $('#toolbar .colors ul.base li, #toolbar .colors ul.theme li');
+  var colors = $('.toolbar .colors ul.base li, .toolbar .colors ul.theme li');
   colors.live('mouseup', function(){
     var color = $(this).css('background-color');
     $('#colors').css('background-color', color);    
@@ -699,7 +700,7 @@ var inspector = function(){
 var fix_toolbar = function(){
    var msie6 = $.browser == 'msie' && $.browser.version < 7;
    if (!msie6) {
-     var top = $('#toolbar').offset().top - parseFloat($('#toolbar').css('margin-top').replace(/auto/, 0));
+     var top = $('.toolbar').offset().top - parseFloat($('.toolbar').css('margin-top').replace(/auto/, 0));
      var left = $('#page').offset().left;
      $(window).scroll(function (event) {
        console.log('hello');
@@ -709,12 +710,12 @@ var fix_toolbar = function(){
        // whether that's below the form
        if (y >= top) {
          // if so, ad the fixed class
-         $('#toolbar').addClass('fixed').css('left', left);
+         $('.toolbar').addClass('fixed').css('left', left);
          $('#ruler').addClass('fixed').css('left', left);
          $('#page').addClass('toolbarFixed');
        } else {
          // otherwise remove it
-         $('#toolbar').removeClass('fixed');
+         $('.toolbar').removeClass('fixed');
          $('#ruler').removeClass('fixed');
          $('#page').removeClass('toolbarFixed');
        }

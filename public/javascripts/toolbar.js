@@ -3,6 +3,8 @@ $(document).ready(function(){
   setupFontSizes();
   fix_toolbar();
   toolbar_events();
+  $('#toolbar2').hide();
+  $('#toolbar3').hide();
 });
 
 var setupFontSizes = function(){
@@ -88,6 +90,14 @@ var toolbar_events = function(){
     colors.children('.hl-color').remove();
     $(this).append($('<div class="hl-color">'));
   });
+
+  // styles
+  $('#bold').click(function(e){
+    editor('style', 'bold');
+    return false;
+  });
+
+
 
   // inspector
   $('.inspector-header').live('mouseover', function(){

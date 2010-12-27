@@ -11,11 +11,11 @@ $(document).ready(function(){
   container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
   inspector();
   $('.values').hide();
+  $('.simple.container, .horizontal.container, .vertical.container .header').removeClass('ce');
 })
 
 
 // create elements
-
 var clear_div = function(){
   return $('<div class="clear">');
 }
@@ -46,6 +46,8 @@ var create_text_box = function(){
 
   e.remove
     .append(e.remove_button);
+
+  e.header.addClass('ce');
 
   e.header
     .append(e.remove)
@@ -355,10 +357,9 @@ var events = function(){
   })
 
   // content
-  $('.content').live('mouseup', function(){
+  $('.body .content').live('mouseup', function(){
     var sel = window.getSelection();
     text_selection = !sel.isCollapsed ? sel : null;
-    console.log(text_selection);
   });
 
   // header / menubar
@@ -385,18 +386,27 @@ var events = function(){
     $('.simple.container, .horizontal.container, .vertical.container').addClass('ce');
     $('.box').removeClass('preview');
     $('.header').addClass('ce');
+    $('#toolbar').hide()
+    $('#toolbar3').hide();
+    $('#toolbar2').show()
   })
 
   $('#viewing-modes .typing').live('click', function(){
     $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
     $('.box').removeClass('preview');
     $('.header').removeClass('ce');
+    $('#toolbar').show()
+    $('#toolbar2').hide()
+    $('#toolbar3').hide();
   })
 
   $('#viewing-modes .preview').live('click', function(){
     $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
     $('.box').addClass('preview');
     $('.header').removeClass('ce');
+    $('#toolbar').hide();
+    $('#toolbar2').hide();
+    $('#toolbar3').show();
   })
 
   // container & boxes
@@ -451,11 +461,7 @@ var events = function(){
 }
 
 
-
-
 // preview mode
-
-var grey_text = $('span class="f16 c12"').text('lorem ipsum')
 
 var preview_mode = function(){
   $('#page, .box, .header, .body, .divider, .triangle').addClass('preview')

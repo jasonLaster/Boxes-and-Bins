@@ -12,6 +12,9 @@
 .s20 {font-size:20px;}
 .s22 {font-size:22px;}
 
+.style-font-bold {font-weight:bold;}
+.style-font-normal {font-weight:normal;}
+
 #bachi span {border-right:4px solid blue;}
 
 /* UI ICON */
@@ -146,7 +149,7 @@
 /* RULER */
 /*       */
 
-#ruler {width:1060px; overflow-y:hidden; height:15px; margin:0px auto; background-color:#fff; border:1px solid #797979;}
+#ruler {width:1060px; overflow-y:hidden; height:15px; margin:0px auto; background-color:#fff; border:1px solid #797979; z-index:1000;}
 #ruler .hundred-pixels {position:relative; float:left;}
 #ruler .hundred-pixels span.value {position:absolute; top:1px; left:2px; font-size:9px; color:#333;}
 #ruler .hundred-pixels span.value::selection {background:transparent;}
@@ -158,3 +161,10 @@
 #ruler li.four, #ruler li.six {height:8px; margin-top:8px;}
 #ruler li.five {height:9px; margin-top:7px;}
 #ruler li.ten {height:15px; margin-top:0px;}
+
+#ruler {
+  -moz-box-shadow:     0px 2px 3px #e1e1e1;
+  -webkit-box-shadow:  0px 2px 3px #e1e1e1;
+   box-shadow:         0px 2px 3px #e1e1e1;
+}
+

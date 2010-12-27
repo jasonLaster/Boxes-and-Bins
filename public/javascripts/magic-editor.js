@@ -1,16 +1,33 @@
 // figure out if the anchor is ahead of the focus
 
-var selectSpans = function(selection) {
+var selectSpans = function() {
   $('span').css('background-color', 'transparent');
 
-  // if (!window.getSelection().anchorNode) {
-  //   alert('you must select something');
-  // }
+  if (!window.getSelection().anchorNode) {
+    alert('you must select something');
+  }
 
-  var sel = selection; //window.getSelection();
-  // var range = sel.getRangeAt(0);
-  anchor = {node: $(sel.anchorNode.parentNode), offset: sel.anchorOffset};
-  focus = {node: $(sel.focusNode.parentNode), offset: sel.focusOffset};
+  sel = window.getSelection();
+
+  var anchor_is_p = sel.anchorNode.nodeName == "P";
+  var focus_is_p = sel.focusNode.nodeName == "P";
+
+  if (!focus_is_p) {
+    focus = {node: $(sel.focusNode.parentNode), offset: sel.focusOffset};
+  } else {
+    var focusNode = $(sel.focusNode.previousElementSibling.lastChild);
+    var focusOffset = focusNode.text().length;
+    focus = {node: focusNode, offset: focusOffset};
+  }
+
+  if (!anchor_is_p) {
+    anchor = {node: $(sel.anchorNode.parentNode), offset: sel.anchorOffset};
+  } else {
+    var anchorNode = $(sel.anchorNode.previousElementSibling.lastChild);
+    var anchorOffset = anchorNode.text().length;
+    anchor = {node: anchorNode, offset: anchorOffset};
+  }
+
   cross_paragraph = $(anchor.node).parent().text() !== $(focus.node).parent().text();
   cross_span = ($(anchor.node).text() !== $(focus.node).text());
   left_buffer = [];
@@ -29,12 +46,6 @@ var selectSpans = function(selection) {
   }
   var left_selection  = left_to_rt ? anchor : focus;
   var right_selection = left_to_rt ? focus  : anchor;
-
-  // console.log('yay');
-  // console.log(cross_span);
-  // console.log($(anchor.node.index()) < $(focus.node.index()));
-  // $(left_selection.node).css('background-color', 'green');
-  // $(right_selection.node).css('background-color', 'red');
 
   // create left_buffer if necessary
   if (left_selection.offset != 0) {
@@ -139,22 +150,28 @@ var changeFontSize = function(elements, size){
   transformText(elements, oldClass, newClass);
 }
 
-var editor = function(type, param, selection) {
-  console.log('editor called');
-  console.log(selection);
-  if (selection && !selection.isCollapsed) {
-    selectSpans(selection);
+var changeFontStyle = function(elements, style){
+  var oldClass = new RegExp('style-font-\\w+', 'g');
+  var newClass = 'style-font-' + style;
+  transformText(elements, oldClass, newClass);
+}
 
-    switch (type) {
-      case 'color':
-        changeColor(selected_elements, param);
-        break;
-      case 'size':
-        changeFontSize(selected_elements, param);
-        break;
-    }
+var editor = function(type, param) {
 
-    mergeSpans();
+  selectSpans();
+
+  switch (type) {
+    case 'color':
+      changeColor(selected_elements, param);
+      break;
+    case 'size':
+      changeFontSize(selected_elements, param);
+      break;
+    case 'style':
+      changeFontStyle(selected_elements, param);
+      break;
   }
+
+  mergeSpans();
 }
 

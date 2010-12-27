@@ -25,7 +25,6 @@ var set_page_title = function(title){
 var load = function(id, elements){
   var container = {};
   container.properties = elements.container[id];
-  console.log(container);
   if (container.properties.type == "simple"){
 
     // create simple container

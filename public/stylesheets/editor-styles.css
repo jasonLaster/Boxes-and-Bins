@@ -123,7 +123,7 @@
 
 .toolbar div::selection, .toolbar span::selection, .toolbar ul::selection, .toolbar li::selection {background: transparent; margin:0;} 
 
-#toolbar2 {background-color:#947f67;}
+/*#toolbar2 {background-color:#947f67;}*/
 
 #information {margin:2px;}
 #information.d {}

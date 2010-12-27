@@ -5,6 +5,7 @@ $(document).ready(function(){
   toolbar_events();
   $('#toolbar2').hide();
   $('#toolbar3').hide();
+  $('.header').removeClass('ce')
 });
 
 var setupFontSizes = function(){

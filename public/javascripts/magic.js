@@ -11,7 +11,7 @@ $(document).ready(function(){
   container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
   inspector();
   $('.values').hide();
-  $('.simple.container, .horizontal.container, .vertical.container .header').removeClass('ce');
+  box_edit_mode();
 })
 
 
@@ -20,7 +20,6 @@ var clear_div = function(){
   return $('<div class="clear">');
 }
 
-// this code will probably change with Jons changes
 var create_text_box = function(){
 
   var e = {};
@@ -69,7 +68,6 @@ var create_text_box = function(){
   return e.box;
 }
 
-// also changed
 var create_simple_container = function(){
   var container = $('<div class="simple container">');
   var text_box = create_text_box();
@@ -125,7 +123,6 @@ var create_vertical_container = function(){
 
 
 // helper methods
-
 var get_parent = function(container){
   return $(container.parent('.container'));
 }
@@ -218,9 +215,7 @@ var run_tests = function(){
   });
 }
 
-
 // actions + events
-
 var additive = function(button, container){
   var new_container_type = (button == 'up' || button == 'down') ? 'vertical' : 'horizontal'
   var original_container_position = (button == 'right' || button == 'down') ? 'a' : 'b';
@@ -382,12 +377,6 @@ var events = function(){
     $(this).parent().find('.values').show();
   })
 
-  $('#viewing-modes .content-edit').live('click', bin_edit_mode)
-
-  $('#viewing-modes .typing').live('click', box_edit_mode)
-
-  $('#viewing-modes .preview').live('click', preview_mode)
-
   // container & boxes
   $('.button').live('click', function(){
     direction = $(this).attr('class').split(" ")[0];
@@ -439,39 +428,3 @@ var events = function(){
   })
 }
 
-// preview mode
-var box_edit_mode = function(){
-  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview');
-  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
-  $('.box').removeClass('preview');
-  $('.header').removeClass('ce').hide();
-  $('#toolbar').show()
-  $('#toolbar2').hide()
-  $('#toolbar3').hide();
-}
-
-var preview_mode = function(){
-  $('#page, .box, .header, .body, .divider, .triangle').addClass('preview');
-  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
-  $('.triangle').hide();
-  $('.content').attr('content-editable', 'false');
-
-  $('.box').addClass('preview');
-  $('.header').removeClass('ce').hide();
-  $('#toolbar').hide();
-  $('#toolbar2').hide();
-  $('#toolbar3').show();
-}
-
-var bin_edit_mode = function(){
-  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview')
-  $('.simple.container, .horizontal.container, .vertical.container').addClass('ce');
-
-  $('.triangle').show();
-  $('.content').attr('content-editable', 'false');
-  $('.box').removeClass('preview');
-  $('.header').show().addClass('ce');
-  $('#toolbar').hide()
-  $('#toolbar3').hide();
-  $('#toolbar2').show()
-}

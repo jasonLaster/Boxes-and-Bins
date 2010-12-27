@@ -98,8 +98,6 @@ var toolbar_events = function(){
     return false;
   });
 
-
-
   // inspector
   $('.inspector-header').live('mouseover', function(){
     $('.inspector-close-button').addClass('inspector-close-button-hl');
@@ -123,4 +121,56 @@ var toolbar_events = function(){
     $(this).toggleClass('ui-icon-radio-off');
     $('#inspector').toggle();
   })
+
+  $('#viewing-modes .content-edit').live('click', bin_edit_mode)
+
+  $('#viewing-modes .typing').live('click', box_edit_mode)
+
+  $('#viewing-modes .preview').live('click', preview_mode)
+}
+
+// preview mode
+var box_edit_mode = function(){
+  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview');
+  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
+
+  $('.triangle').hide();
+  $('.content').attr('contenteditable', 'true');
+
+  $('.box').removeClass('preview');
+  $('.header').removeClass('ce').hide();
+
+  $('#toolbar').show()
+  $('#toolbar2').hide()
+  $('#toolbar3').hide();
+}
+
+var preview_mode = function(){
+  $('#page, .box, .header, .body, .divider, .triangle').addClass('preview');
+  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
+
+  $('.triangle').hide();
+  $('.content').attr('contenteditable', 'false');
+
+  $('.box').addClass('preview');
+  $('.header').removeClass('ce').hide();
+
+  $('#toolbar').hide();
+  $('#toolbar2').hide();
+  $('#toolbar3').show();
+}
+
+var bin_edit_mode = function(){
+  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview')
+  $('.simple.container, .horizontal.container, .vertical.container').addClass('ce');
+
+  $('.triangle').show();
+  $('.content').attr('contenteditable', 'false');
+
+  $('.box').removeClass('preview');
+  $('.header').show().addClass('ce');
+
+  $('#toolbar').hide()
+  $('#toolbar3').hide();
+  $('#toolbar2').show()
 }

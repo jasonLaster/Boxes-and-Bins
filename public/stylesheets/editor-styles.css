@@ -92,19 +92,11 @@
 .toolbar .values.colors ul.base.top li {border-top:1px solid #878787;}
 .toolbar .values.colors ul.base.bottom li {border-bottom:1px solid #878787;}
 
-/*.toolbar .selected-color {float:left;position:absolute; top:0px; left:0px; width:8px; height:8px;  border:2px solid red; z-index:10;}*/
 .toolbar .hl-color {float:left;position:absolute; top:0px; left:0px; width:10px; height:10px; border:1px solid #fff; z-index:10;}
 
 
 .toolbar #viewing-modes ul      {margin-top:1px;}
 .toolbar #viewing-modes li.mode {float:left;padding:0px;}
-/*.toolbar #viewing-modes li.typing {background:url('/images/toolbar/mode-boxes.jpg');}
-.toolbar #viewing-modes li.content-edit {background:url('/images/toolbar/mode-bins.jpg');}
-.toolbar #viewing-modes li.preview {background:url('/images/toolbar/mode-preview.jpg');}}
-*/
-/*.toolbar .values.colors ul.base li.selected {border:1px solid #efefef;;}*/
-
-
 
 .toolbar .values {
   -moz-box-shadow:     0px 2px 4px #ccc;

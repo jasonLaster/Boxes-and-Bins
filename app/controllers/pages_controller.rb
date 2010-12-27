@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
 
   # before_filter :login_required, :only => []
+  
+  def foo
+  end
 
   def index
     @uid = params[:uid]

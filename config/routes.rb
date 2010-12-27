@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.save '/pages/save/:user_id/:page_id/:data', :controller => 'pages', :action => 'save'
   map.new '/pages/new/:user_id', :controller => 'pages', :action => 'new'
   map.doc '/pages/doc/', :controller => 'pages', :action => 'doc'
+  map.foo '/foo', :controller => 'pages', :action => 'foo'
 
   map.index '/:uid/.:format', :controller => 'pages', :action => 'index'
   map.author '/author/:author', :controller => 'pages', :action => 'author'

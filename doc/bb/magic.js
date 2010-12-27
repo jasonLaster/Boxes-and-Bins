@@ -38,7 +38,7 @@ var create_text_box = function(){
   e.content = $('<div class="content">');
 
 
-  e.content.attr('contenteditable', 'true');
+  e.content.attr('contenteditable', 'true').html($('<p>'));
   e.box.attr('id', ++box_id);
 
   e.remove
@@ -148,7 +148,7 @@ var get_properties = function(c){
   container.width       = parseInt(container.jq.css("width"));
   container.height      = parseInt(container.jq.css("height"));
   container.min_width   = parseInt(container.jq.css("min-width"));
-  container.append_new_width = (container.width - 20) / 2; 
+  container.append_new_width = (container.width - 20) / 2;
   container.remove_new_width = (container.width * 2) + 20;
 
   return container;
@@ -197,7 +197,7 @@ var run_tests = function(){
     }
   });
 
-  // B before A 
+  // B before A
   $.each($('.horizontal.container, .vertical.container'), function(index, container){
     var children = $(container).children('.container')
     if($(children[0]).hasClass('b') || $(children[1]).hasClass('a') ){
@@ -338,7 +338,7 @@ var events = function(){
 
     // var container = $($(this).closest('.container'));
     // var other_container = get_other_sibling(container);
-        
+
     var triangle_y_position = d.pageY;
     var triangle_x_position = d.pageX;
 
@@ -355,20 +355,20 @@ var events = function(){
     $('#page').bind('mousemove', function(e){
       var current_y_position = e.pageY;
       var current_x_position = e.pageX;
-      
+
       var old_height = body_height;
       var old_width = body_width;
-      
+
       body_height = current_y_position - buffer_y_position;
       body_width = current_x_position - buffer_x_position;
 
       body.css('min-height', body_height)
-      
-      // container.css('width', body_width);        
+
+      // container.css('width', body_width);
       // resize_container((body_width - old_width), other_container)
       // console.log((body_height - old_height) + " " + (body_width - old_width))
 
-      
+
     });
   })
 }
@@ -425,9 +425,9 @@ var load = function(id, elements){
 
 
     return container.jq;
-  } 
+  }
   else {
-    console.log('complex');
+
     // create complex container
     container.jq = (container.properties.type == "vertical") ? create_vertical_container() : create_horizontal_container();
     container.sibling = get_siblings(container.jq);
@@ -525,8 +525,8 @@ var save_request = function(){
   }, function(data) {
       console.log('save request succeeded');
       $('#flash').fadeIn(1000, function(){
-        setTimeout(function(){ 
-          $('#flash').fadeOut(1000) 
+        setTimeout(function(){
+          $('#flash').fadeOut(1000)
         }, 4000);
       })
   });
@@ -539,7 +539,7 @@ var new_page = function(){
 var load_page = function(json){
   var root = json.root;
   var content = load(root, json);
- 
+
   set_page_title(json.title);
   $('#page')
     .html(content)

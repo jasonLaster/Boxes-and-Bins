@@ -3,8 +3,7 @@ $(document).ready(function(){
   setupFontSizes();
   fix_toolbar();
   toolbar_events();
-  $('#toolbar2').hide();
-  $('#toolbar3').hide();
+  setupInspector();
   $('.header').removeClass('ce')
 });
 
@@ -86,7 +85,7 @@ var fix_toolbar = function(){
    }
 }
 
-var inspector = function(){
+var setupInspector = function(){
   var inspector = $('<div id="inspector">')
   var header =
     $('<div class="inspector-header">').html(

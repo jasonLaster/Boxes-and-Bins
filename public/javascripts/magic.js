@@ -9,7 +9,6 @@ $(document).ready(function(){
   load_page(content)
   box_id = max_id('.box');
   container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
-  inspector();
   $('.values').hide();
   box_edit_mode();
   fixSquarePosition()
@@ -289,7 +288,6 @@ var remove_container = function(container){
 }
 
 var events = function(){
-
 
   var page_events = function(){
     $('#page').mouseup(function(){

@@ -40,6 +40,7 @@
 #page.toolbarFixed {margin-top:92px;}
 
 
+.toolbar .section .link {font-size:10px; color:#fff; margin:0px 10px; text-decoration:none}
 
 .toolbar #styles-button {position:relative; float:left; width:15px; height:16px; margin:3px 5px 0px 5px; background:url('/images/toolbar/paragaph-button.jpg');}
 .toolbar #styles-dropdown {position:relative; float:left; width:30px; height:16px; margin:3px 5px 0px 5px; background:url('/images/toolbar/paragaph-dropdown.jpg');}

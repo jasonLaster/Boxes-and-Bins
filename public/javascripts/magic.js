@@ -301,6 +301,11 @@ var events = function(){
     $('.buttons').hide();
   });
 
+  $('.simple.container.ce').live('mouseover', function(d){
+    $('.header').removeClass('hover');
+    $('.header', this).addClass('hover');
+  })
+
   // box
   $('.box').live('mouseover', function(){
     $('.triangle').hide();

@@ -22,6 +22,45 @@ var setupFontSizes = function(){
   div.append(list);
 }
 
+var setupColors = function(){
+  // var theme = ['#ffffff', '#000000', '#eeece1', '#1f497d', '#4f81bd', '#c0504d', '#9bbb59', '#8064a2', '#4bacc6', '#f79646'];
+  // var base = [
+  //  ['#f2f2f2', '#7f7f7f', '#ddd9c3', '#c6d9f1', '#dce6f2', '#f2dcdb', '#ebf1de', '#e6e0ec', '#dbeef4', '#fdeada'],
+  //  ['#d9d9d9', '#595959', '#c4bd97', '#8eb4e3', '#b9cde5', '#e6b9b8', '#d7e4bd', '#ccc1da', '#b7dee8', '#fcd5b5'],
+  //  ['#bfbfbf', '#404040', '#948a54', '#558ed5', '#95b3d7', '#d99694', '#c3d69b', '#b3a2c7', '#93cddd', '#fac090'],
+  //  ['#a6a6a6', '#262626', '#4a452a', '#17375e', '#376092', '#953735', '#77933c', '#604a7b', '#31859c', '#e46c0a'],
+  //  ['#7f7f7f', '#0d0d0d', '#1e1c11', '#254061', '#254061', '#632523', '#4f6228', '#403152', '#215968']
+  // ];
+  // 
+  // var div = $('.colors.values');
+  // var clear = $('<div class="clear">').css('height', '4px');
+  // var ulTheme = $('<ul class="theme clear">');
+  // _(theme).each(function(color, i){
+  //   ulTheme.append($('<li>').addClass((i + 1) + '').css('background-color', color)); 
+  // })
+  // div.append(ulTheme);
+  // div.append(clear);
+  // 
+  // _(base).each(function(colors, index){
+  //   var list = $('<ul class="base">');
+  //   if (index == 0) {
+  //     list.addClass('top');
+  //   }
+  //   if (index == 4) {
+  //     list.addClass('bottom');
+  //   }
+  //   _(colors).each(function(color, count){
+  //     var number = (((index + 1)*10) + (count + 1));
+  //     list.append($('<li>').addClass(number + '' ).css('background-color', color));
+  //   });
+  //   div.append(list);
+  // })
+  // // div.append(clear.clone());
+  // console.log(div);
+
+}
+
+
 var fix_toolbar = function(){
    var msie6 = $.browser == 'msie' && $.browser.version < 7;
    if (!msie6) {

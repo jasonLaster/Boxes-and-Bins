@@ -26,6 +26,8 @@
 .ui-icon-document { background-position: -32px -96px; }
 .ui-icon-radio-on { background-position: -112px -144px; }
 .ui-icon-radio-off { background-position: -96px -144px; }
+.ui-icon-locked { background-position: -192px -96px; }
+.ui-icon-unlocked { background-position: -208px -96px; }
 
 
 /*           */
@@ -48,25 +50,26 @@
 
 .toolbar ul.options {float:left; width:59px; height:13px; margin:3px; border:1px solid #6c6c6c; border-radius: 2px; margin-left:10px;}
 .toolbar li {float:left; height:13px; width:19px;}
-.toolbar li#bold {background:url('/images/toolbar/bold.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#italics {background:url('/images/toolbar/italics.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#underline {background:url('/images/toolbar/underline.jpg');}
 
-.toolbar li#bold.selected {background:url('/images/toolbar/bold-hl.jpg');}
-.toolbar li#italics.selected {background:url('/images/toolbar/italics-hl.jpg');}
-.toolbar li#underline.selected {background:url('/images/toolbar/underline-hl.jpg');}
+  .toolbar li#bold {background:url('/images/toolbar/bold.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#italics {background:url('/images/toolbar/italics.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#underline {background:url('/images/toolbar/underline.jpg');}
+
+  .toolbar li#bold.selected {background:url('/images/toolbar/bold-hl.jpg');}
+  .toolbar li#italics.selected {background:url('/images/toolbar/italics-hl.jpg');}
+  .toolbar li#underline.selected {background:url('/images/toolbar/underline-hl.jpg');}
 
 
 .toolbar ul.options.paragraph {width:79px;}
-.toolbar li#left-align {background:url('/images/toolbar/p-left-align.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#center-align {background:url('/images/toolbar/p-center-align.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#right-align {background:url('/images/toolbar/p-right-align.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#justify {background:url('/images/toolbar/p-justify.jpg');}
+  .toolbar li#left-align {background:url('/images/toolbar/p-left-align.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#center-align {background:url('/images/toolbar/p-center-align.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#right-align {background:url('/images/toolbar/p-right-align.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#justify {background:url('/images/toolbar/p-justify.jpg');}
 
-.toolbar li#left-align.selected {background:url('/images/toolbar/p-left-align-hl.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#center-align.selected {background:url('/images/toolbar/p-center-align-hl.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#right-align.selected {background:url('/images/toolbar/p-right-align-hl.jpg'); border-right:1px solid #6c6c6c;}
-.toolbar li#justify.selected {background:url('/images/toolbar/p-justify-hl.jpg');}
+  .toolbar li#left-align.selected {background:url('/images/toolbar/p-left-align-hl.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#center-align.selected {background:url('/images/toolbar/p-center-align-hl.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#right-align.selected {background:url('/images/toolbar/p-right-align-hl.jpg'); border-right:1px solid #6c6c6c;}
+  .toolbar li#justify.selected {background:url('/images/toolbar/p-justify-hl.jpg');}
 
 .toolbar .dropdown {float:left;  position:relative; width:90px; height:13px; background:url('/images/toolbar/dropdown-bg.jpg'); margin-left:10px; margin-right:5px; margin-top:3px; border:1px solid #6c6c6c; border-radius: 2px;}
 .toolbar .dropdown span {float:left; font-size:10px; line-height:13px; padding-left:6px;}
@@ -85,14 +88,14 @@
 
 .toolbar .values.font {top:19px;}
 
-.toolbar .values.colors {top:19px; width:162px; height:80px; padding:10px 2px;}
-.toolbar .values.colors li {position:relative; float:left; width:12px; height:12px; border:1px solid #878787; margin-left:2px; padding:0;}
-.toolbar .values.colors ul.theme {margin-bottom:5px;}
-.toolbar .values.colors ul.base li {border-bottom:none; border-top:none;}
-.toolbar .values.colors ul.base.top li {border-top:1px solid #878787;}
-.toolbar .values.colors ul.base.bottom li {border-bottom:1px solid #878787;}
+  .toolbar .values.colors {top:19px; width:162px; height:80px; padding:10px 2px;}
+  .toolbar .values.colors li {position:relative; float:left; width:12px; height:12px; border:1px solid #878787; margin-left:2px; padding:0;}
+  .toolbar .values.colors ul.theme {margin-bottom:5px;}
+  .toolbar .values.colors ul.base li {border-bottom:none; border-top:none;}
+  .toolbar .values.colors ul.base.top li {border-top:1px solid #878787;}
+  .toolbar .values.colors ul.base.bottom li {border-bottom:1px solid #878787;}
 
-.toolbar .hl-color {float:left;position:absolute; top:0px; left:0px; width:10px; height:10px; border:1px solid #fff; z-index:10;}
+.toolbar .hl-color {float:left; position:absolute; top:0px; left:0px; width:10px; height:10px; border:1px solid #fff; z-index:10;}
 
 
 .toolbar #viewing-modes ul      {margin-top:1px;}
@@ -106,16 +109,20 @@
 
 
 .toolbar .dropdown.text {width:44px;}
-.toolbar input {float:left; font-size:10px; padding-left:2px; border:0px; border-top:1px solid #dedede; height:12px; width:28px;}
+.toolbar input {float:left; font-size:10px; padding-left:2px; border:0px; border-top:1px solid #dedede; height:13px; width:28px;}
 .toolbar input:focus { outline:1px solid transparent;}
 .toolbar .down-arrow {float:left; width:14px; height:13px; background:url('/images/toolbar/down-arrow.png');}
+
+  #toolbar2 .dropdown.text {margin-left:0px; margin-right:2px;}
+  #toolbar2 input {width:43px; margin-right:2px;}
+
+.toolbar .label {float:left; font-size:11px; margin:4px; margin-left:10px;}
 
 .section {float:left; height:20px; margin-top:2px; padding-right:4px; border-right:1px solid #818181;}
 .section.right {float:right; border-right:1px solid #818181;;}
 
 .toolbar div::selection, .toolbar span::selection, .toolbar ul::selection, .toolbar li::selection {background: transparent; margin:0;} 
 
-/*#toolbar2 {background-color:#947f67;}*/
 
 #information {margin:2px;}
 #information.d {}
@@ -160,3 +167,52 @@
    box-shadow:         0px 2px 3px #e1e1e1;
 }
 
+
+
+#menubar  {height:100px; position:relative; margin-bottom:50px;}
+#menubar  {background:url(/images/bg_header.gif) repeat-x;}
+#menubar::selection {background: transparent;}
+
+  .wrapper {width:1060px; margin:0px auto; padding:0px 0px;}
+
+  #menubar #company_name    {float:left; height:50px; margin-top:40px;}
+  #menubar #company_name::selection {background: transparent;}
+  #menubar #company_name h3 {font-size:30px; font-weight:bold; color:#2f4d70; letter-spacing: 0.04em; text-shadow:#fff 0px 1px 0, #2f4d70 0 -1px 0; cursor:default;}
+  #menubar #company_name h3::selection {background: transparent; cursor:default;}
+
+  #menubar #page_title       {float:left; margin-left:140px; margin-top:40px;}
+  #menubar #page_title input {height:30px; width:300px; padding-left:5px; }
+  #menubar #page_title input {font-size:14px; background-color:rgba(256,256,256,.2); border:1px solid #9db8d0;}
+  #menubar #page_title input:focus {background-color:rgba(255,239,0,.22); outline:0px solid black;}
+
+  #menubar .center  {width:100px; margin:10px auto;}
+  #menubar .center h3 {font-size:12px; font-weight:normal; color:#fff;}
+
+  #menubar .links {float:right; margin-top:40px; margin-right:5px;}
+  #menubar .links {}
+  #menubar .links ul {list-style:none;}
+  #menubar .links li {float:left; margin-left:10px;}
+
+  #menubar .links a {color:#2f4d70; text-decoration:none;}
+  #menubar .links a:hover {text-decoration:underline;}
+  #menubar .links a:visited {color:#2f4d70;}
+
+
+#footer {height:100px; position:relative; margin-top:50px;}
+#footer {border-top:1px solid #101b2b;}
+
+#footer .wrapper {padding-top:20px; }
+#footer .wrapper h4 {color:#whitesmoke; font-weight:normal; font-size:16px;}
+
+
+/* FLASH */
+
+#flash {margin:5px auto; height:30px; width:200px; line-height:30px; }
+#flash {text-align:center; color:#eee;}
+#flash {background-color:#444; border:2px solid #efefef;}
+#flash:hover {cursor:default;}
+#flash span::selection {background: transparent}
+#flash::selection {background: transparent}
+directory: /Users/jasonlaster/src/boxesbins/public/stylesheets
+project directory: /Users/jasonlaster/src/boxesbins
+selected files 

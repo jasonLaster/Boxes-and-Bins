@@ -174,6 +174,7 @@ var box_edit_mode = function(){
   $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
 
   $('.triangle').hide();
+  $('.square').hide();
   $('.content').attr('contenteditable', 'true');
 
   $('.box').removeClass('preview');

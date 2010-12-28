@@ -22,7 +22,6 @@ var clear_div = function(){
   return $('<div class="clear">');
 }
 
-// this code will probably change with Jons changes
 var create_text_box = function(){
 
   var e = {};
@@ -256,7 +255,7 @@ var additive = function(button, container){
     // replace original_container with h_container
     original_container.jq.replaceWith(new_container.jq);
     run_tests();
-
+    fixSquarePosition();
   }
 }
 
@@ -291,173 +290,182 @@ var remove_container = function(container){
 
 var events = function(){
 
-  // page
-  $('#page').mouseup(function(){
-    $('#page').unbind('mousemove');
-    $('.triangle_on').removeClass('triangle_on');
-  });
 
-  $('#page').mouseup(function(){
-    $('.values').hide();
-  });
-
-  //  container
-  $('.simple.container').live('mouseover', function(){
-  });
-
-  $('.container').live('mouseout', function(){
-    $('.buttons').hide();
-  });
-
-  $('.simple.container.ce').live('mouseover', function(d){
-    $('.header').removeClass('hover');
-    $('.header', this).addClass('hover');
-    $('.square').hide();
-    $('.square', this).show();
-  })
-
-  // box
-  $('.box').live('mouseover', function(){
-    // $('.triangle').hide();
-    // $('.triangle', this).show();
-  });
-
-  $('.box').live('mouseout', function(){
-  });
-
-  $('.box').live('click', function(d){
-    var click = {};
-    click.y = d.pageY;
-    click.x = d.pageX;
-
-    var box = {};
-    box.jq = $(this);
-    box.offset = box.jq.offset();
-    box.y = box.offset.top;
-    box.x = box.offset.left;
-    box.width = parseInt(box.jq.css('width'));
-    box.height = parseInt(box.jq.css('height'));
-    box.o = {};
-    box.o.x = box.width / 2 + box.x;
-    box.o.y = box.height /2 + box.y;
-
-    // corrected values
-    click.pos = {};
-    click.pos.x = click.x - box.o.x;
-    click.pos.y = box.o.y - click.y;
-
-    // regions
-    if        ((click.pos.y > 0) && (click.pos.y > (box.height / box.width) * Math.abs(click.pos.x))) {
-      // console.log('region 1');
-    } else if ((click.pos.x > 0) && (click.pos.x > (box.height / box.width) * Math.abs(click.pos.y))) {
-      // console.log('region 2');
-    } else if ((click.pos.y < 0) && (click.pos.y < (box.height / box.width) * Math.abs(click.pos.x))) {
-      // console.log('region 3');
-    } else if ((click.pos.x < 0) && (click.pos.x < (box.height / box.width) * Math.abs(click.pos.y))) {
-      // console.log('region 4');
-    } else {
-      // console.log('shit');
-    }
-
-    // console.log('click: ' + click.y + " " + click.x);
-    // console.log('box: ' + box.y + " " + box.x);
-    // console.log('box: ' + box.width + " " + box.height);
-    // console.log('box o: ' + box.o.x + " " + box.o.y)
-    // console.log('click c: ' + click.pos.x + " " + click.pos.y)
-  })
-
-  // content
-  $('.body .content').live('mouseup', function(){
-    var sel = window.getSelection();
-    text_selection = !sel.isCollapsed ? sel : null;
-  });
-
-  // header / menubar
-  $('.header').live('mouseover', function(){
-    $('.buttons, .remove').hide();
-    $('.buttons, .remove', this).show();
-
-    $('.header').removeClass('hover');
-    $(this).addClass('hover');
-  });
-
-  $('.header').live('mouseout', function(){
-    $('.buttons, .remove', this).hide();
-    $('.header').removeClass('hover');
-  });
-
-  var buttons = $('.dropdown .arrows, .dropdown .down-arrow, #colors');
-  buttons.live('click', function(){
-    $('.values').hide();
-    $(this).parent().find('.values').show();
-  })
-
-  // container & boxes
-  $('.button').live('click', function(){
-    direction = $(this).attr('class').split(" ")[0];
-    additive(direction, $(this).closest('.container'))
-  });
-
-  $('.remove').live('click', function(){
-    if($('.box').length > 1){
-      remove_container($(this).closest('.container'));
-    }
-  });
-
-  $('.triangle').live('mousedown',function(d){
-
-    // var container = $($(this).closest('.container'));
-    // var other_container = get_other_sibling(container);
-
-    var triangle_y_position = d.pageY;
-    var triangle_x_position = d.pageX;
-
-    var body = $(this).closest('.body');
-    var body_height = parseInt(body.css('height'));
-    var body_width = parseInt(body.css('width'));
-
-    var right_square = body.find('.square.right');
-    var left_square = body.find('.square.left');
-    var bottom_square = body.find('.square.bottom');
-
-    var buffer_y_position = triangle_y_position - body_height;
-    var buffer_x_position = triangle_x_position - body_width;
-
-    $('#page, .box, .header, ul, li, .content, .body')
-      .addClass('triangle_on');
-
-    $('#page').bind('mousemove', function(e){
-      var current_y_position = e.pageY;
-      var current_x_position = e.pageX;
-
-      var old_height = body_height;
-      var old_width = body_width;
-
-      body_height = current_y_position - buffer_y_position;
-      body_width = current_x_position - buffer_x_position;
-
-      body.css('min-height', body_height)
-
-      left_square.css('top', body_height / 2);
-      right_square.css('top', body_height / 2);
-      bottom_square.css('right', body_width / 2);
-      // container.css('width', body_width);
-      // resize_container((body_width - old_width), other_container)
-      // console.log((body_height - old_height) + " " + (body_width - old_width))
-
-
+  var page_events = function(){
+    $('#page').mouseup(function(){
+      $('#page').unbind('mousemove');
+      $('.triangle_on').removeClass('triangle_on');
     });
-  })
 
-  $('.square').live('mouseover', function(){
-    $(this).css('background-color', '#8eb4e3')
-  });
+    $('#page').mouseup(function(){
+      $('.values').hide();
+    });
+  }
 
-  $('.square').live('mouseout', function(){
-    $('.square').css('background-color', '#fff')
-  });
+  var simple_container_events = function(){
+    $('.simple.container').live('mouseover', function(){
+    });
 
+    $('.simple.container').live('mouseout', function(){
+      $('.buttons').hide();
+    });
+
+    $('.simple.container.ce').live('mouseover', function(d){
+      $('.header').removeClass('hover');
+      $('.header', this).addClass('hover');
+      $('.square').hide();
+      $('.square', this).show();
+    });
+  }
+
+  var box_events = function(){
+
+    $('.box').live('mouseover', function(){
+      // $('.triangle').hide();
+      // $('.triangle', this).show();
+    });
+
+    $('.box').live('mouseout', function(){
+    });
+
+    $('.box').live('click', function(d){
+      var click = {};
+      click.y = d.pageY;
+      click.x = d.pageX;
+
+      var box = {};
+      box.jq = $(this);
+      box.offset = box.jq.offset();
+      box.y = box.offset.top;
+      box.x = box.offset.left;
+      box.width = parseInt(box.jq.css('width'));
+      box.height = parseInt(box.jq.css('height'));
+      box.o = {};
+      box.o.x = box.width / 2 + box.x;
+      box.o.y = box.height /2 + box.y;
+
+      // corrected values
+      click.pos = {};
+      click.pos.x = click.x - box.o.x;
+      click.pos.y = box.o.y - click.y;
+
+      // regions
+      if        ((click.pos.y > 0) && (click.pos.y > (box.height / box.width) * Math.abs(click.pos.x))) {
+        // console.log('region 1');
+      } else if ((click.pos.x > 0) && (click.pos.x > (box.height / box.width) * Math.abs(click.pos.y))) {
+        // console.log('region 2');
+      } else if ((click.pos.y < 0) && (click.pos.y < (box.height / box.width) * Math.abs(click.pos.x))) {
+        // console.log('region 3');
+      } else if ((click.pos.x < 0) && (click.pos.x < (box.height / box.width) * Math.abs(click.pos.y))) {
+        // console.log('region 4');
+      } else {
+        // console.log('shit');
+      }
+
+      // console.log('click: ' + click.y + " " + click.x);
+      // console.log('box: ' + box.y + " " + box.x);
+      // console.log('box: ' + box.width + " " + box.height);
+      // console.log('box o: ' + box.o.x + " " + box.o.y)
+      // console.log('click c: ' + click.pos.x + " " + click.pos.y)
+    })
+    // content
+    $('.body .content').live('mouseup', function(){
+      var sel = window.getSelection();
+      text_selection = !sel.isCollapsed ? sel : null;
+    });
+
+    // header / menubar
+    $('.header').live('mouseover', function(){
+      $('.buttons, .remove').hide();
+      $('.buttons, .remove', this).show();
+
+      $('.header').removeClass('hover');
+      $(this).addClass('hover');
+    });
+
+    $('.header').live('mouseout', function(){
+      $('.buttons, .remove', this).hide();
+      $('.header').removeClass('hover');
+    });
+
+    var buttons = $('.dropdown .arrows, .dropdown .down-arrow, #colors');
+    buttons.live('click', function(){
+      $('.values').hide();
+      $(this).parent().find('.values').show();
+    })
+
+    // container & boxes
+    $('.button').live('click', function(){
+      direction = $(this).attr('class').split(" ")[0];
+      additive(direction, $(this).closest('.container'))
+    });
+
+    $('.remove').live('click', function(){
+      if($('.box').length > 1){
+        remove_container($(this).closest('.container'));
+      }
+    });
+
+    $('.triangle').live('mousedown',function(d){
+
+      var triangle_y_position = d.pageY;
+      var triangle_x_position = d.pageX;
+
+      var body = $(this).closest('.body');
+      var body_height = parseInt(body.css('height'));
+      var body_width = parseInt(body.css('width'));
+
+      var right_square = body.find('.square.right');
+      var left_square = body.find('.square.left');
+      var bottom_square = body.find('.square.bottom');
+
+      var buffer_y_position = triangle_y_position - body_height;
+      var buffer_x_position = triangle_x_position - body_width;
+
+      $('*').addClass('transparent_selection');
+
+      $('#page').bind('mousemove', function(e){
+        var current_y_position = e.pageY;
+        var current_x_position = e.pageX;
+
+        var old_height = body_height;
+        var old_width = body_width;
+
+        body_height = current_y_position - buffer_y_position;
+        body_width = current_x_position - buffer_x_position;
+
+        body.css('min-height', body_height)
+
+        left_square.css('top', body_height / 2);
+        right_square.css('top', body_height / 2);
+        bottom_square.css('right', body_width / 2);
+        // container.css('width', body_width);
+        // resize_container((body_width - old_width), other_container)
+        // console.log((body_height - old_height) + " " + (body_width - old_width))
+
+
+      });
+    });
+
+    $('.triangle').live('mouseup',function(d){
+      $('*').removeClass('transparent_selection');
+    })
+
+
+    $('.square').live('mouseover', function(){
+      $(this).css('background-color', '#8eb4e3')
+    });
+
+    $('.square').live('mouseout', function(){
+      $('.square').css('background-color', '#fff')
+    });
+  }
+
+  page_events();
+  simple_container_events();
+  box_events();
 }
+
 
 var fixSquarePosition = function(){
   // squares

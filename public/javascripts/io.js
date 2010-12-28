@@ -47,7 +47,6 @@ var load = function(id, elements){
     $('.content', container.jq)
       .html(container.box.properties.content);
 
-
     return container.jq;
   }
   else {

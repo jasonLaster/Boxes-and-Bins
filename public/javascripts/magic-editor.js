@@ -3,11 +3,17 @@
 var selectSpans = function() {
   $('span').css('background-color', 'transparent');
 
-  if (!window.getSelection().anchorNode) {
-    alert('you must select something');
-  }
+  // if (!window.getSelection().anchorNode) {
+  //   alert('you must select something');
+  // }
+  // sel = window.getSelection();
 
-  sel = window.getSelection();
+  if (!text_selection) {
+    alert('you must select something');
+    return;
+  }
+  sel = text_selection;
+  console.log(sel);
 
   var anchor_is_p = sel.anchorNode.nodeName == "P";
   var focus_is_p = sel.focusNode.nodeName == "P";

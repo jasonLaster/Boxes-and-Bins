@@ -369,7 +369,9 @@ var events = function(){
     // content
     $('.body .content').live('mouseup', function(){
       var sel = window.getSelection();
-      text_selection = !sel.isCollapsed ? sel : null;
+      text_selection = !sel.isCollapsed 
+        ? {anchorNode: sel.anchorNode, anchorOffset: sel.anchorOffset, focusNode: sel.focusNode, focusOffset: sel.focusOffset} 
+        : null;
     });
 
     // header / menubar

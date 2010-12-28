@@ -27693,6 +27693,7 @@ Processing PagesController#index (for 127.0.0.1 at 2010-12-23 14:32:02) [GET]
 Rendering template within layouts/application
 Rendering pages/index
 Completed in 60ms (View: 10, DB: 1) | 200 OK [http://localhost/sFdBlMU]
+<<<<<<< HEAD
 ** [Hoptoad] Notifier 2.3.8 ready to catch errors
 
 
@@ -32208,3 +32209,5 @@ Rendering pages/index
 Rendered shared/_toolbar (0.1ms)
 Rendered shared/_ruler (0.0ms)
 Completed in 41ms (View: 4, DB: 11) | 200 OK [http://localhost/YB3vfkU]
+=======
+>>>>>>> a0780991d011bd1587436b4e61ea18e5bfce37a4

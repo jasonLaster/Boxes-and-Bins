@@ -12,6 +12,8 @@ $(document).ready(function(){
   inspector();
   $('.values').hide();
   box_edit_mode();
+  fixSquarePosition()
+  $('.square').hide();
 })
 
 
@@ -33,6 +35,7 @@ var create_text_box = function(){
   e.remove = $('<div class="remove">');
   e.remove_button = $('<div class="remove_button">');
   e.triangle = $('<div class="triangle">');
+  e.square = $('<div class="square">');
   e.body = $('<div class="body">');
   e.content = $('<div class="content">');
 
@@ -55,6 +58,9 @@ var create_text_box = function(){
 
   e.body
     .append(e.content)
+    .append(e.square.clone().addClass('left'))
+    .append(e.square.clone().addClass('bottom'))
+    .append(e.square.clone().addClass('right'))
     .append(e.triangle);
 
   e.box
@@ -294,7 +300,7 @@ var events = function(){
   });
 
   //  container
-  $('.container').live('mouseover', function(){
+  $('.simple.container').live('mouseover', function(){
   });
 
   $('.container').live('mouseout', function(){
@@ -304,12 +310,14 @@ var events = function(){
   $('.simple.container.ce').live('mouseover', function(d){
     $('.header').removeClass('hover');
     $('.header', this).addClass('hover');
+    $('.square').hide();
+    $('.square', this).show();
   })
 
   // box
   $('.box').live('mouseover', function(){
-    $('.triangle').hide();
-    $('.triangle', this).show();
+    // $('.triangle').hide();
+    // $('.triangle', this).show();
   });
 
   $('.box').live('mouseout', function(){
@@ -406,6 +414,10 @@ var events = function(){
     var body_height = parseInt(body.css('height'));
     var body_width = parseInt(body.css('width'));
 
+    var right_square = body.find('.square.right');
+    var left_square = body.find('.square.left');
+    var bottom_square = body.find('.square.bottom');
+
     var buffer_y_position = triangle_y_position - body_height;
     var buffer_x_position = triangle_x_position - body_width;
 
@@ -424,6 +436,9 @@ var events = function(){
 
       body.css('min-height', body_height)
 
+      left_square.css('top', body_height / 2);
+      right_square.css('top', body_height / 2);
+      bottom_square.css('right', body_width / 2);
       // container.css('width', body_width);
       // resize_container((body_width - old_width), other_container)
       // console.log((body_height - old_height) + " " + (body_width - old_width))
@@ -431,5 +446,27 @@ var events = function(){
 
     });
   })
+
+  $('.square').live('mouseover', function(){
+    $(this).css('background-color', '#8eb4e3')
+  });
+
+  $('.square').live('mouseout', function(){
+    $('.square').css('background-color', '#fff')
+  });
+
 }
 
+var fixSquarePosition = function(){
+  // squares
+  $('.simple.container').each(function(){
+    var container = $(this);
+    var squares = container.find('.square');
+    var y_pos = container.height() / 2;
+    var x_pos = container.width() / 2;
+
+    squares.filter('.left').css('top', y_pos);
+    squares.filter('.right').css('top', y_pos);
+    squares.filter('.bottom').css('right', x_pos);
+  })
+}

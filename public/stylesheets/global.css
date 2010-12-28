@@ -64,6 +64,13 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
       .triangle_on {}
       .triangle_on::selection {background: transparent;}
 
+    .square {position:absolute; width:5px; height:5px; z-index:1;}
+    .square {border:1px solid #333; background-color:#fff;}
+        .square.left {left:-4px; bottom:50px;}
+        .square.right {right:-4px; bottom:50px; }
+        .square.bottom {right:100px; bottom:-4px;}
+
+
 
 .divider            {position:relative; float:left;}
 .divider            {background-color:Transparent; border:none;}

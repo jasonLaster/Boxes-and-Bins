@@ -13,6 +13,7 @@ $(document).ready(function(){
   box_edit_mode();
   fixSquarePosition()
   $('.square').hide();
+  $('*').removeClass('transparent_selection');
 })
 
 
@@ -423,6 +424,7 @@ var events = function(){
       var buffer_x_position = triangle_x_position - body_width;
 
       $('*').addClass('transparent_selection');
+      console.log('yay');
 
       $('#page').bind('mousemove', function(e){
         var current_y_position = e.pageY;
@@ -449,6 +451,7 @@ var events = function(){
 
     $('.triangle').live('mouseup',function(d){
       $('*').removeClass('transparent_selection');
+      console.log('nay');
     })
 
 

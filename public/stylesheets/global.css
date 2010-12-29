@@ -43,7 +43,7 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
     ul.buttons {list-style:none; cursor:default;}
     ul.buttons li {float:left; width:20px; line-height:8px; padding:0px 2px; margin:0px 2px;}
     ul.buttons li {text-align:center; color:#fff;}
-    ul.buttons li:hover {color:#e1e1e1;}
+    ul.buttons li:hover {color:blue;}
     ul.buttons li::selection {background: transparent;}
 
 

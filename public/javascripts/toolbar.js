@@ -13,10 +13,7 @@ var setupFontSizes = function(){
   var a = _.range(1,73);
   _(a).each(function(i){
     list.append(
-      $('<li>').html($('<a>')
-        .text(i)
-        .attr('href', "javascript:editor('size', " + i + ", text_selection)")
-    ));
+      $('<li>').text(i).attr('size', i));
   });
   div.append(list);
 }
@@ -98,6 +95,58 @@ var setupInspector = function(){
   $('body').append(inspector);
 }
 
+var box_edit_mode = function(){
+  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview');
+  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
+
+  $('.triangle').hide();
+  $('.square').hide();
+  $('.content').attr('contenteditable', 'true');
+
+  $('#bold').toggle(
+    function(){editor('style', 'bold')},
+    function(){editor('style', 'normal')}
+  )
+
+  $('.box').removeClass('preview');
+  $('.header').removeClass('ce').hide();
+
+  $('#toolbar').show()
+  $('#toolbar2').hide()
+  $('#toolbar3').hide();
+}
+
+var preview_mode = function(){
+  $('#page, .box, .header, .body, .divider, .triangle').addClass('preview');
+  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
+
+  $('.triangle').hide();
+  $('.content').attr('contenteditable', 'false');
+
+  $('.box').addClass('preview');
+  $('.header').removeClass('ce').hide();
+
+  $('#toolbar').hide();
+  $('#toolbar2').hide();
+  $('#toolbar3').show();
+}
+
+var bin_edit_mode = function(){
+  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview')
+  $('.simple.container, .horizontal.container, .vertical.container').addClass('ce');
+
+  $('.triangle').show();
+  $('.content').attr('contenteditable', 'false');
+
+  $('.box').removeClass('preview');
+  $('.header').show().addClass('ce');
+
+  $('#toolbar').hide()
+  $('#toolbar3').hide();
+  $('#toolbar2').show()
+}
+
+
 var toolbar_events = function(){
 
   $('#styles-button, #styles-dropdown').live('click', function(){
@@ -113,16 +162,27 @@ var toolbar_events = function(){
   });
 
   $('.font-size.dropdown .values li').live('click', function(){
+    var element = $(this);
     var value = $(this).text();
     var parent = $(this).closest('.dropdown').find('input');
     parent.val(value);
     $('.values').hide();
+
+    var size = element.attr('size');
+    editor('size', size);
   });
 
   var colors = $('.toolbar .colors ul.base li, .toolbar .colors ul.theme li');
   colors.live('mouseup', function(){
+
+    // change the display color
     var color = $(this).css('background-color');
     $('#colors').css('background-color', color);
+
+    // change the colors
+    var index = $(this).attr('class');
+    var color_class = 'color-' + index;
+    editor('color', color_class);
   });
 
   colors.live('mouseover', function(){
@@ -168,48 +228,3 @@ var toolbar_events = function(){
 }
 
 // preview mode
-var box_edit_mode = function(){
-  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview');
-  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
-
-  $('.triangle').hide();
-  $('.square').hide();
-  $('.content').attr('contenteditable', 'true');
-
-  $('.box').removeClass('preview');
-  $('.header').removeClass('ce').hide();
-
-  $('#toolbar').show()
-  $('#toolbar2').hide()
-  $('#toolbar3').hide();
-}
-
-var preview_mode = function(){
-  $('#page, .box, .header, .body, .divider, .triangle').addClass('preview');
-  $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
-
-  $('.triangle').hide();
-  $('.content').attr('contenteditable', 'false');
-
-  $('.box').addClass('preview');
-  $('.header').removeClass('ce').hide();
-
-  $('#toolbar').hide();
-  $('#toolbar2').hide();
-  $('#toolbar3').show();
-}
-
-var bin_edit_mode = function(){
-  $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview')
-  $('.simple.container, .horizontal.container, .vertical.container').addClass('ce');
-
-  $('.triangle').show();
-  $('.content').attr('contenteditable', 'false');
-
-  $('.box').removeClass('preview');
-  $('.header').show().addClass('ce');
-
-  $('#toolbar').hide()
-  $('#toolbar3').hide();
-  $('#toolbar2').show()
-}

@@ -1,20 +1,8 @@
-// figure out if the anchor is ahead of the focus
 
 var selectSpans = function() {
-  $('span').css('background-color', 'transparent');
+  $('p span').removeClass('left_buffer right_buffer selected_elements');
 
-  // if (!window.getSelection().anchorNode) {
-  //   alert('you must select something');
-  // }
-  // sel = window.getSelection();
-
-  if (!text_selection) {
-    alert('you must select something');
-    return;
-  }
   sel = text_selection;
-  console.log(sel);
-
   var anchor_is_p = sel.anchorNode.nodeName == "P";
   var focus_is_p = sel.focusNode.nodeName == "P";
 
@@ -59,7 +47,7 @@ var selectSpans = function() {
     text = left_selection.node.text();
     left_buffer.text(text.substring(0, left_selection.offset));
     left_selection.node.before(left_buffer);
-    // left_buffer.css('background-color', '#8bb946');
+    left_buffer.addClass('left_buffer');
   }
 
   // create right_buffer if necessary
@@ -68,7 +56,7 @@ var selectSpans = function() {
     text = right_buffer.text();
     right_buffer.text(text.substring(right_selection.offset, text.length));
     right_selection.node.after(right_buffer);
-    // right_buffer.css('background-color', '#cf4330');
+    right_buffer.addClass('right_buffer');
   }
 
   // trim the left & right selections if necessary
@@ -84,19 +72,20 @@ var selectSpans = function() {
 
     // get selected spans
     if (!cross_paragraph) {
-      selected_elements = left_selection.node.parent().children().slice(left_selection.node.index(), right_selection.node.index()+1);
+      selected_elements = left_selection.node.parent().children().slice(left_selection.node.index(), right_selection.node.index() + 1);
     } else {
       left_spans = left_selection.node.parent().children();
       left_spans = left_spans.slice(left_selection.node.index(), left_spans.length);
 
       paragraphs = left_selection.node.parent().parent().children('p');
-      paragraph_spans = paragraphs.slice(left_selection.node.parent().index()+1, right_selection.node.parent().index()).children('span');
+      paragraph_spans = paragraphs.slice(left_selection.node.parent().index() + 1, right_selection.node.parent().index()).children('span');
 
       right_spans = right_selection.node.parent().children();
       right_spans = right_spans.slice(0, right_selection.node.index() + 1);
       selected_elements = $.merge(left_spans, $.merge(paragraph_spans, right_spans));
     }
   }
+  selected_elements.addClass('selected_elements');
 }
 
 // merge selected elements plus buffers if they have the same classes
@@ -145,15 +134,17 @@ var transformText = function(elements, oldClass, newClass) {
 }
 
 var changeColor = function(elements, color){
-  var oldClass = new RegExp('c\\w+', 'g');
-  var newClass = 'c' + color;
-  transformText(elements, oldClass, newClass);
+  var oldClass = new RegExp('color-\\w+', 'g');
+  transformText(elements, oldClass, color);
 }
 
 var changeFontSize = function(elements, size){
-  var oldClass = new RegExp('s\\d+', 'g');
-  var newClass = 's' + size;
+  var oldClass = new RegExp('size-\\d+', 'g');
+  var newClass = 'size-' + size;
   transformText(elements, oldClass, newClass);
+
+  console.log(newClass);
+  console.log(oldClass);
 }
 
 var changeFontStyle = function(elements, style){
@@ -163,6 +154,11 @@ var changeFontStyle = function(elements, style){
 }
 
 var editor = function(type, param) {
+
+  if (!text_selection) {
+    console.log('fail');
+    return
+  }
 
   selectSpans();
 

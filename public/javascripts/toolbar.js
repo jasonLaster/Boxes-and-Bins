@@ -106,12 +106,11 @@ var box_edit_mode = function(){
   $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview');
   $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
 
-  $('.triangle').hide();
-  $('.square').hide();
   $('.content').attr('contenteditable', 'true');
   $('p span').removeClass('transparent_selection');
   $('.box').removeClass('preview');
   $('.header').removeClass('ce').hide();
+  $('.square').hide();
 
   $('#toolbar').show()
   $('#toolbar2').hide()
@@ -122,12 +121,12 @@ var preview_mode = function(){
   $('#page, .box, .header, .body, .divider, .triangle').addClass('preview');
   $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
 
-  $('.triangle').hide();
   $('.content').attr('contenteditable', 'false');
   $('p span').removeClass('transparent_selection');
 
   $('.box').addClass('preview');
   $('.header').removeClass('ce').hide();
+  $('.square').hide();
 
   $('#toolbar').hide();
   $('#toolbar2').hide();

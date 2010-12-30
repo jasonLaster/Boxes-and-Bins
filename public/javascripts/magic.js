@@ -35,7 +35,6 @@ var create_text_box = function(){
     .append($('<li class="down button">').html("&darr;"));
   e.remove = $('<div class="remove">');
   e.remove_button = $('<div class="remove_button">');
-  e.triangle = $('<div class="triangle">');
   e.square = $('<div class="square">');
   e.body = $('<div class="body">');
   e.content = $('<div class="content">');
@@ -61,8 +60,7 @@ var create_text_box = function(){
     .append(e.content)
     .append(e.square.clone().addClass('left'))
     .append(e.square.clone().addClass('bottom'))
-    .append(e.square.clone().addClass('right'))
-    .append(e.triangle);
+    .append(e.square.clone().addClass('right'));
 
   e.box
     .append(e.header)
@@ -70,14 +68,13 @@ var create_text_box = function(){
 
   e.buttons.hide();
   e.remove.hide();
-  e.triangle.hide();
 
   return e.box;
 }
 
 // also changed
 var create_simple_container = function(){
-  var container = $('<div class="simple container">');
+  var container = $('<div class="simple container ce">');
   var text_box = create_text_box();
 
   container
@@ -317,14 +314,19 @@ var events = function(){
       $('.header', this).addClass('hover');
       $('.square').hide();
       $('.square', this).show();
+
+
+      var box = $(this);
+      $('.bin-width input').val(box.width() + 'px');
+      $('.bin-height input').val(box.height() + 'px');
+      console.log(box.height());
     });
   }
 
   var box_events = function(){
 
+
     $('.box').live('mouseover', function(){
-      // $('.triangle').hide();
-      // $('.triangle', this).show();
     });
 
     $('.box').live('mouseout', function(){

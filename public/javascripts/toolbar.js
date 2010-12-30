@@ -235,14 +235,14 @@ var toolbar_events = function(){
     editor('size', size);
   });
 
-  $('#bold').toggle(function(){
+  $('#bold').live('click', function(){
     editor('style', 'bold');
-    $(this).addClass('selected');
-    console.log($(this));
-  }, function(){
-    editor('style', 'normal');
-    $(this).removeClass('selected');
   });
+
+  $('.lock').live('click', function(){
+    $(this).toggleClass('ui-icon-unlocked');
+    $(this).toggleClass('ui-icon-locked');
+  })
 
 }
 

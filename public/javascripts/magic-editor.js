@@ -1,6 +1,6 @@
 
 var selectSpans = function() {
-  $('p span').removeClass('left_buffer right_buffer selected_elements');
+  $('p span').attr('type', '');
 
   sel = text_selection;
   var anchor_is_p = sel.anchorNode.nodeName == "P";
@@ -47,7 +47,7 @@ var selectSpans = function() {
     text = left_selection.node.text();
     left_buffer.text(text.substring(0, left_selection.offset));
     left_selection.node.before(left_buffer);
-    left_buffer.addClass('left_buffer');
+    left_buffer.attr('type' ,'left_buffer');
   }
 
   // create right_buffer if necessary
@@ -56,7 +56,7 @@ var selectSpans = function() {
     text = right_buffer.text();
     right_buffer.text(text.substring(right_selection.offset, text.length));
     right_selection.node.after(right_buffer);
-    right_buffer.addClass('right_buffer');
+    right_buffer.attr('type' ,'right_buffer');
   }
 
   // trim the left & right selections if necessary
@@ -85,7 +85,7 @@ var selectSpans = function() {
       selected_elements = $.merge(left_spans, $.merge(paragraph_spans, right_spans));
     }
   }
-  selected_elements.addClass('selected_elements');
+  selected_elements.attr('type' ,'selected_elements');
 }
 
 // merge selected elements plus buffers if they have the same classes
@@ -142,9 +142,6 @@ var changeFontSize = function(elements, size){
   var oldClass = new RegExp('size-\\d+', 'g');
   var newClass = 'size-' + size;
   transformText(elements, oldClass, newClass);
-
-  console.log(newClass);
-  console.log(oldClass);
 }
 
 var changeFontStyle = function(elements, style){
@@ -152,6 +149,14 @@ var changeFontStyle = function(elements, style){
   var newClass = 'style-font-' + style;
   transformText(elements, oldClass, newClass);
 }
+
+var selectSpanTests = function(){
+  // run through all the model tests for both left and right directions
+  // add in paragraphs and the introduction of multiple middle spans
+  // should be 2 * 2 * 4 * (# of tests)
+}
+
+
 
 var editor = function(type, param) {
 

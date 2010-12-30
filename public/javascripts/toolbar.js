@@ -1,3 +1,5 @@
+diagnostic = false;
+
 
 $(document).ready(function(){
   setupFontSizes();
@@ -5,15 +7,18 @@ $(document).ready(function(){
   toolbar_events();
   setupInspector();
   $('.header').removeClass('ce')
+  if (diagnostic) {
+    $('.content').addClass('d');
+  }
 });
 
+//  setup elements
 var setupFontSizes = function(){
   var div = $('.font-size.values');
   var list = $('<ul>');
-  var a = _.range(1,73);
+  var a = [9,10,11,12,13,14,18,24,36,48,64,72,96,144,288];
   _(a).each(function(i){
-    list.append(
-      $('<li>').text(i).attr('size', i));
+    list.append($('<li>').text(i).attr('size', i));
   });
   div.append(list);
 }
@@ -56,7 +61,6 @@ var setupColors = function(){
 
 }
 
-
 var fix_toolbar = function(){
    var msie6 = $.browser == 'msie' && $.browser.version < 7;
    if (!msie6) {
@@ -95,6 +99,7 @@ var setupInspector = function(){
   $('body').append(inspector);
 }
 
+// modes
 var box_edit_mode = function(){
   $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview');
   $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
@@ -146,12 +151,71 @@ var bin_edit_mode = function(){
   $('#toolbar2').show()
 }
 
+var different_modes = function(){
+  $('#viewing-modes .content-edit').live('click', bin_edit_mode);
 
+  $('#viewing-modes .typing').live('click', box_edit_mode);
+
+  $('#viewing-modes .preview').live('click', preview_mode);
+}
+
+// events
 var toolbar_events = function(){
+
+  var inspector_events = function(){
+    $('.inspector-header').live('mouseover', function(){
+      $('.inspector-close-button').addClass('inspector-close-button-hl');
+    });
+
+    $('.inspector-header').live('mouseout', function(){
+      $('.inspector-close-button').removeClass('inspector-close-button-hl');
+    });
+
+    $('.inspector-close-button').live('click', function(){
+      $('#inspector').hide();
+      $('#information').removeClass('ui-icon-radio-off');
+    })
+
+    $('#information').live('click', function(){
+       $(this).toggleClass('ui-icon-radio-off');
+       $('#inspector').toggle();
+    });
+
+  }
+
+  var toolbar_events = function(){
+    $('.options li').live('click', function(){
+      $(this).toggleClass('selected');
+    });
+  }
+
+  var color_events = function(){
+    var colors = $('.toolbar .colors ul.base li, .toolbar .colors ul.theme li');
+    colors.live('mouseup', function(){
+
+      // change the display color
+      var color = $(this).css('background-color');
+      $('#colors').css('background-color', color);
+
+      // change the colors
+      var index = $(this).attr('class');
+      var color_class = 'color-' + index;
+      editor('color', color_class);
+    });
+
+    colors.live('mouseover', function(){
+      colors.children('.hl-color').remove();
+      $(this).append($('<div class="hl-color">'));
+    });
+  }
+
+  inspector_events();
+  toolbar_events();
+  color_events();
 
   $('#styles-button, #styles-dropdown').live('click', function(){
     $('.values').hide();
-    $(this).find('.values').show()
+    $(this).find('.values').show();
   });
 
   $('.font.dropdown .values li').live('click', function(){
@@ -172,59 +236,14 @@ var toolbar_events = function(){
     editor('size', size);
   });
 
-  var colors = $('.toolbar .colors ul.base li, .toolbar .colors ul.theme li');
-  colors.live('mouseup', function(){
-
-    // change the display color
-    var color = $(this).css('background-color');
-    $('#colors').css('background-color', color);
-
-    // change the colors
-    var index = $(this).attr('class');
-    var color_class = 'color-' + index;
-    editor('color', color_class);
-  });
-
-  colors.live('mouseover', function(){
-    colors.children('.hl-color').remove();
-    $(this).append($('<div class="hl-color">'));
-  });
-
-  // styles
-  $('#bold').click(function(e){
+  $('#bold').toggle(function(){
     editor('style', 'bold');
-    return false;
+    $(this).addClass('selected');
+    console.log($(this));
+  }, function(){
+    editor('style', 'normal');
+    $(this).removeClass('selected');
   });
 
-  // inspector
-  $('.inspector-header').live('mouseover', function(){
-    $('.inspector-close-button').addClass('inspector-close-button-hl');
-  });
-
-  $('.inspector-header').live('mouseout', function(){
-    $('.inspector-close-button').removeClass('inspector-close-button-hl');
-  });
-
-  $('.inspector-close-button').live('click', function(){
-    $('#inspector').hide();
-    $('#information').removeClass('ui-icon-radio-off');
-  })
-
-  // toolbar
-  $('.options li').live('click', function(){
-    $(this).toggleClass('selected');
-  })
-
-  $('#information').live('click', function(){
-    $(this).toggleClass('ui-icon-radio-off');
-    $('#inspector').toggle();
-  })
-
-  $('#viewing-modes .content-edit').live('click', bin_edit_mode)
-
-  $('#viewing-modes .typing').live('click', box_edit_mode)
-
-  $('#viewing-modes .preview').live('click', preview_mode)
 }
 
-// preview mode

@@ -1,23 +1,26 @@
-
+/* GENERAL */
 body, div, span, h1, h2, h3, h4, h5, ul, li, input {margin:0; padding:0; border:none;}
 ul {list-style:none;}
 body      {position:relative; background-color: #eeeeee}
 div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 .clear    {clear:both;}
-.clear_selection::selection {background: transparent;}
-.white_dashed_border {outline: 1px dashed #f3f3f3;}
-.blue_dashed_border {outline: 1px dashed #5d83a1;}
+
+/* PAGE */
 #page_id  {position:absolute; top:-200px;}
 #user_id  {position:absolute; top:-200px;}
-#notifications {position:absolute; top:0px; width:100%;}
 
 #page     {width:1000px; min-height:700px; margin:0px auto; padding:30px;}
 #page     {background:#fff; border:1px solid #bbbbbb; border-top:none;}
   #page.preview {background:#fff;}
 
+
 .container {float:left; position:relative; min-width:180px;}
 .container {}
 
+
+/*          */
+/* TEXT BOX */
+/*          */
 
 .box   {position:relative; width:100%;}
 .box   {border:1px solid #ccc;}
@@ -25,6 +28,9 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 
   .box.preview {background-color:#fff; border:none;}
 
+  /*                 */
+  /* TEXT-BOX HEADER */
+  /*                 */
   .header {height:15px;}
   .header {}
   .header::selection {background: transparent;}
@@ -45,28 +51,36 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
     ul.buttons li {text-align:center; color:#fff;}
     ul.buttons li:hover {color:blue;}
     ul.buttons li::selection {background: transparent;}
-
-
+    
+    
+  /*               */
+  /* TEXT-BOX BODY */
+  /*               */
   .body   {}
   .body   {background-color:#fff;}
-
-    .body.preview {background-color:#fff; }
+    .body.preview {}
 
   .content {min-height:50px; padding:10px; padding-top:5px; z-index:1;}
   .content {background:transparent;}
   .content:focus {outline: 0px solid transparent;}
 
-    .triangle {position:absolute; width:8px; height:8px; right:0px; bottom:0px;  z-index:1;}
-    .triangle {background:url(/images/triangle.png) no-repeat;}
-    .triangle:hover {cursor:default;}
 
-      .triangle.preview {background:none;}
+  /* SQUARES */
+  .triangle {position:absolute; width:8px; height:8px; right:0px; bottom:0px;  z-index:1;}
+  .triangle {background:url(/images/triangle.png) no-repeat;}
+  .triangle:hover {cursor:default;}
 
-    .square {position:absolute; width:5px; height:5px; z-index:1;}
-    .square {border:1px solid #333; background-color:#fff;}
-        .square.left {left:-4px; bottom:50px;}
-        .square.right {right:-4px; bottom:50px; }
-        .square.bottom {right:100px; bottom:-4px;}
+    .triangle.preview {background:none;}
+
+  .square {position:absolute; width:5px; height:5px; z-index:1;}
+  .square {border:1px solid #333; background-color:#fff;}
+    .square.left {left:-4px; bottom:50px;}
+    .square.right {right:-4px; bottom:50px; }
+    .square.bottom {right:100px; bottom:-4px;}
+
+    .square:hover {cursor:default;}
+    
+/* DIVIDERS*/
 
 .divider            {position:relative; float:left;}
 .divider            {background-color:Transparent; border:none;}
@@ -78,4 +92,19 @@ div       {font-size:12px; font-color:#111; font-family:Helvetica;}
     .divider.horizontal.preview {height:1px;}
 
 
-*.transparent_selection::selection {background: transparent;}
+/* FIXED */
+
+#ruler.fixed {position: fixed; top:25px; border-top:none; z-index:10;}
+#page.toolbarFixed {margin-top:92px;}
+
+
+/* FLASH */
+
+#flash {margin:5px auto; height:30px; width:200px; line-height:30px; }
+#flash {text-align:center; color:#eee;}
+#flash {background-color:#444; border:2px solid #efefef;}
+#flash:hover {cursor:default;}
+#flash span::selection {background: transparent}
+#flash::selection {background: transparent}
+
+#notifications {position:absolute; top:0px; width:100%;}

@@ -14,6 +14,7 @@ $(document).ready(function(){
   fixSquarePosition()
   $('.square').hide();
   $('*').removeClass('transparent_selection');
+  different_modes();
 })
 
 

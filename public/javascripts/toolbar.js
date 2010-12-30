@@ -2,10 +2,12 @@ diagnostic = false;
 
 
 $(document).ready(function(){
+  // toolbar setup
   setupFontSizes();
   fix_toolbar();
   toolbar_events();
   setupInspector();
+
   $('.header').removeClass('ce')
   if (diagnostic) {
     $('.content').addClass('d');
@@ -107,12 +109,7 @@ var box_edit_mode = function(){
   $('.triangle').hide();
   $('.square').hide();
   $('.content').attr('contenteditable', 'true');
-
-  $('#bold').toggle(
-    function(){editor('style', 'bold')},
-    function(){editor('style', 'normal')}
-  )
-
+  $('p span').removeClass('transparent_selection');
   $('.box').removeClass('preview');
   $('.header').removeClass('ce').hide();
 
@@ -127,6 +124,7 @@ var preview_mode = function(){
 
   $('.triangle').hide();
   $('.content').attr('contenteditable', 'false');
+  $('p span').removeClass('transparent_selection');
 
   $('.box').addClass('preview');
   $('.header').removeClass('ce').hide();
@@ -142,6 +140,8 @@ var bin_edit_mode = function(){
 
   $('.triangle').show();
   $('.content').attr('contenteditable', 'false');
+  $('p span').addClass('transparent_selection');
+
 
   $('.box').removeClass('preview');
   $('.header').show().addClass('ce');

@@ -255,8 +255,10 @@ var additive = function(button, container){
 
     // replace original_container with h_container
     original_container.jq.replaceWith(new_container.jq);
+
     run_tests();
     fixSquarePosition();
+    // simple_container_events();
   }
 }
 
@@ -368,6 +370,7 @@ var events = function(){
       // console.log('box o: ' + box.o.x + " " + box.o.y)
       // console.log('click c: ' + click.pos.x + " " + click.pos.y)
     })
+
     // content
     $('.body .content').live('mouseup', function(){
       var sel = window.getSelection();
@@ -408,7 +411,7 @@ var events = function(){
       }
     });
 
-    $('.triangle').live('mousedown',function(d){
+    $('.square.bottom').live('mousedown',function(d){
 
       var triangle_y_position = d.pageY;
       var triangle_x_position = d.pageX;
@@ -425,17 +428,16 @@ var events = function(){
       var buffer_x_position = triangle_x_position - body_width;
 
       $('*').addClass('transparent_selection');
-      console.log('yay');
 
       $('#page').bind('mousemove', function(e){
         var current_y_position = e.pageY;
         var current_x_position = e.pageX;
 
         var old_height = body_height;
-        var old_width = body_width;
+        // var old_width = body_width;
 
         body_height = current_y_position - buffer_y_position;
-        body_width = current_x_position - buffer_x_position;
+        // body_width = current_x_position - buffer_x_position;
 
         body.css('min-height', body_height)
 
@@ -450,7 +452,7 @@ var events = function(){
       });
     });
 
-    $('.triangle').live('mouseup',function(d){
+    $('.square.bottom').live('mouseup',function(d){
       $('*').removeClass('transparent_selection');
       console.log('nay');
     })

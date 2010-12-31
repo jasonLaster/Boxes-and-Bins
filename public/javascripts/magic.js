@@ -68,7 +68,7 @@ var create_text_box = function(){
 
   e.buttons.hide();
   e.remove.hide();
-
+  e.square
   return e.box;
 }
 
@@ -319,7 +319,6 @@ var events = function(){
       var box = $(this);
       $('.bin-width input').val(box.width() + 'px');
       $('.bin-height input').val(box.height() + 'px');
-      console.log(box.height());
     });
   }
 
@@ -458,7 +457,6 @@ var events = function(){
       $('*').removeClass('transparent_selection');
       console.log('nay');
     })
-
 
     $('.square').live('mouseover', function(){
       $(this).css('background-color', '#8eb4e3')

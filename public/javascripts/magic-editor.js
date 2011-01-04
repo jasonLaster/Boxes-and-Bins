@@ -120,6 +120,7 @@ var mergeSpans = function() {
   });
 }
 
+
 var transformText = function(elements, oldClass, newClass) {
   _.each(elements, function(element){
     element.className = element.className.replace(oldClass, '');
@@ -150,10 +151,16 @@ var changeFontStyle = function(elements, style){
   transformText(elements, oldClass, newClass);
 }
 
+
 var selectSpanTests = function(){
   // run through all the model tests for both left and right directions
   // add in paragraphs and the introduction of multiple middle spans
   // should be 2 * 2 * 4 * (# of tests)
+
+  // simple span
+  var simple_span = $('<div class="content" contenteditable="true"><p><span>Testing 1 2 3...</span></p></div>');
+
+
 }
 
 var editorTests = function(){
@@ -176,10 +183,11 @@ var editorTests = function(){
   }
 
   if (!proper_hierarchy()) {
-    alert('content div hierarchy is blown. There are probably no spans!!!')
+    alert('content div hierarchy is blown. There are probably no spans!!!');
   }
 }
 
+// dependent on text_selection & selected_elements
 var editor = function(type, param) {
 
   if (!text_selection) {

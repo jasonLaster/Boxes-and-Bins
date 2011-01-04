@@ -1,0 +1,179 @@
+#toolbar.toolbar
+	.section
+	  #styles-button.deselected
+	    .styles.sources
+	  		%ul
+	  		  %li New York Times
+	  		  %li Reuters
+	  		  %li Facebook
+	  		  %li Google
+    #styles-dropdown
+	  	.styles.values
+	  		%ul
+	  		  %li Header 1
+	  			%li Header 2
+	  			%li Paragraph 1
+	  			%li Paragraph 2
+	  			%li Link
+	  .clear
+	.section
+	  .font.dropdown
+	    %span.selected.option Helvetica
+	    .arrows
+	    .font.values
+	      %ul
+	        %li Helvetica
+					%li Arial
+					%li Verdana 
+					%li Times New-Roman
+  .section
+    #colors.2(:style => "background-color:#000;")
+			.colors.values
+	  %ul.options
+			%li#bold
+			%li#italics
+			%li#underline
+		%ul.paragraph.options
+			%li#left-align
+			%li#center-align
+			%li#right-align
+			%li#justify
+	.right.section(:style => "border:none;")
+		#information.ui-icon.ui-icon-radio-on
+	.right.section
+		#viewing-modes
+		  %ul#viewing-modes
+			  %li.ui-icon.ui-icon-pencil.typing
+	      %li.ui-icon.ui-icon-wrench.contentent-edit
+        %li.ui-icon.ui-icon-document.preview
+	.clear
+
+#toolbar2.toolbar
+	.section
+	  #styles-button.deselected
+	    .sources.values
+	      %ul
+				  %li Text
+				  %li Image
+				  %li Html
+				  %li Table
+				  %li Latex
+		.clear
+	.section
+	  %span.label width
+	  .bin-width.dropdown.text
+	    %input(:type => 'text', :value =>'12')
+			.bin-width.values
+			.clear
+		.ui-icon.ui-icon-unlocked.lock.width(:style => 'float:left;')
+	  %span.label height
+	  .bin-height.dropdown.text
+	    %input(:type => 'text', :value =>'12')
+			.bin-height.values
+			.clear
+		.ui-icon.ui-icon-unlocked.lock.height(:style => 'float:left;')
+		.clear
+	.section
+	  %span.label padding
+	  .bin-padding.dropdown.text
+	    %input(:type => 'text', :value =>'0px')
+			.bin-padding.values
+			.clear
+		.ui-icon.ui-icon-unlocked.lock.padding(:style => 'float:left;')
+	  %span.label margin
+	  .bin-margin.dropdown.text
+	    %input(:type => 'text', :value =>'0px')
+			.bin-margin.values
+			.clear
+		.ui-icon.ui-icon-unlocked.lock.margin(:style => 'float:left;')
+		.clear
+	.right.section(:style => 'border:none;')
+		
+		
+
+<div id="toolbar2" class="toolbar">
+	<div class="section">
+    <div id="styles-button" class="deselected">
+      <div class="sources values">
+        <ul>
+          <li>Text</li>
+          <li>Image</li>
+          <li>HTML</li>
+          <li>Table</li>
+          <li>Latex</li>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  
+	<div class="section">
+		<span class="label">width</span>
+    <div class="bin-width dropdown text">
+      <input type="text" value="12" />
+      <div class="bin-width values"></div>
+      <div class="clear"></div>
+    </div>
+		<div class="ui-icon ui-icon-unlocked lock width" style="float:left;"> </div>
+
+		<span class="label">height</span>
+    <div class="bin-height dropdown text">
+      <input type="text" value="12" />
+      <div class="bin-height values"> </div>  
+      <div class="clear"></div>
+    </div>
+		<div class="ui-icon ui-icon-unlocked lock height" style="float:left;"> </div>
+		    
+    <div class="clear"></div>
+  </div>
+
+	<div class="section">
+		<span class="label">padding</span>
+    <div class="bin-padding dropdown text">
+      <input type="text" value="0px" />
+      <div class="bin-padding values">
+      </div>
+      <div class="clear"></div>
+    </div>
+
+		<span class="label">margin</span>
+    <div class="bin-margin dropdown text">
+      <input type="text" value="0px" />
+      <div class="bin-margin values">
+      </div>  
+      <div class="clear"></div>
+    </div>
+		    
+    <div class="clear"></div>
+  </div>
+
+  <div class="right section" style="border:none;">
+    <div id="information" class="ui-icon ui-icon-radio-on"></div>
+  </div>
+  <div class="right section">
+		<div id="viewing-modes">
+			<ul>
+				<li><div class="ui-icon ui-icon-pencil typing"></div></li>
+				<li><div class="ui-icon ui-icon-wrench content-edit"></div></li>
+				<li><div class="ui-icon ui-icon-document preview"></div></li>
+			</ul>
+		</div>
+	</div>
+  <div class="clear"></div>
+</div>
+
+<div id="toolbar3" class="toolbar">
+  <div class="right section" style="border:none;">
+    <div id="information" class="ui-icon ui-icon-radio-on"></div>
+  </div>
+  <div class="right section">
+		<div id="viewing-modes">
+			<ul>
+				<li><div class="ui-icon ui-icon-pencil typing"></div></li>
+				<li><div class="ui-icon ui-icon-wrench content-edit"></div></li>
+				<li><div class="ui-icon ui-icon-document preview"></div></li>
+			</ul>
+		</div>
+	</div>
+  <div class="clear"></div>
+</div>

@@ -5,95 +5,49 @@ body      {position:relative; background-color: #eeeeee}
 div       {font-size:12px; font-color:#111; font-family:Helvetica;}
 .clear    {clear:both;}
 
-/* PAGE */
+/*         */
+/* MENUBAR */
+/*         */
+
+#menubar  {height:100px; position:relative; margin-bottom:50px;}
+#menubar  {background:url(/images/bg_header.gif) repeat-x;}
+#menubar::selection {background: transparent;}
+
+  .wrapper {width:1060px; margin:0px auto; padding:0px 0px;}
+
+  #menubar #company_name    {float:left; height:50px; margin-top:40px;}
+  #menubar #company_name::selection {background: transparent;}
+  #menubar #company_name h3 {font-size:30px; font-weight:bold; color:#2f4d70; letter-spacing: 0.04em; text-shadow:#fff 0px 1px 0, #2f4d70 0 -1px 0; cursor:default;}
+  #menubar #company_name h3::selection {background: transparent; cursor:default;}
+
+  #menubar #page_title       {float:left; margin-left:270px; margin-top:40px;}
+  #menubar #page_title input {height:30px; width:300px; padding-left:5px; }
+  #menubar #page_title input {font-size:14px; background-color:rgba(256,256,256,.2); border:1px solid #9db8d0;}
+  #menubar #page_title input:focus {background-color:rgba(255,239,0,.22); outline:0px solid black;}
+
+  #menubar .center  {width:100px; margin:10px auto;}
+  #menubar .center h3 {font-size:12px; font-weight:normal; color:#fff;}
+
+  #menubar .links {float:right; margin-top:40px; margin-right:5px;}
+  #menubar .links {}
+  #menubar .links ul {list-style:none;}
+  #menubar .links li {float:left; margin-left:10px;}
+
+  #menubar .links a {color:#2f4d70; text-decoration:none;}
+  #menubar .links a:hover {text-decoration:underline;}
+  #menubar .links a:visited {color:#2f4d70;}
+
+
+#footer {height:100px; position:relative; margin-top:50px;}
+#footer {border-top:1px solid #101b2b;}
+
+#footer .wrapper {padding-top:20px; }
+#footer .wrapper h4 {color:#whitesmoke; font-weight:normal; font-size:16px;}
+
 #page_id  {position:absolute; top:-200px;}
 #user_id  {position:absolute; top:-200px;}
 
-#page     {width:1000px; min-height:700px; margin:0px auto; padding:30px;}
-#page     {background:#fff; border:1px solid #bbbbbb; border-top:none;}
-  #page.preview {background:#fff;}
-
-
-.container {float:left; position:relative; min-width:180px;}
-.container {}
-
-
-/*          */
-/* TEXT BOX */
-/*          */
-
-.box   {position:relative; width:100%;}
-.box   {border:1px solid #ccc;}
-.box::selection {background: transparent; margin:0;}
-
-  .box.preview {background-color:#fff; border:none;}
-
-  /*                 */
-  /* TEXT-BOX HEADER */
-  /*                 */
-  .header {height:15px;}
-  .header {}
-  .header::selection {background: transparent;}
-
-    .header.ce {height:15px; background:url('/images/inspector-header.jpg')}
-    .header.ce.hover  {background:url(''); background-color:#8eb4e3; }
-    .header.preview {background-color:#fff; border:none;}
-    
-    .header .remove        {float:left; width:6px; height:6px; margin:2px 6px; padding:3px 0px;}
-    .remove .remove_button {width:6px; height:6px;}
-    .remove .remove_button {background-color:#888;}
-    .remove .remove_button {border-bottom-left-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px;}
-
-
-    ul.buttons {width:120px; height:8px; margin: 0px auto; padding:3px 2px;}
-    ul.buttons {list-style:none; cursor:default;}
-    ul.buttons li {float:left; width:20px; line-height:8px; padding:0px 2px; margin:0px 2px;}
-    ul.buttons li {text-align:center; color:#fff;}
-    ul.buttons li:hover {color:blue;}
-    ul.buttons li::selection {background: transparent;}
-    
-    
-  /*               */
-  /* TEXT-BOX BODY */
-  /*               */
-  .body   {}
-  .body   {background-color:#fff;}
-    .body.preview {}
-
-  .content {min-height:50px; padding:10px; padding-top:5px; z-index:1;}
-  .content {background:transparent;}
-  .content:focus {outline: 0px solid transparent;}
-
-
-  /* SQUARES */
-  .triangle {position:absolute; width:8px; height:8px; right:0px; bottom:0px;  z-index:1;}
-  .triangle {background:url(/images/triangle.png) no-repeat;}
-  .triangle:hover {cursor:default;}
-
-    .triangle.preview {background:none;}
-
-  .square {position:absolute; width:5px; height:5px; z-index:1;}
-  .square {border:1px solid #333; background-color:#fff;}
-    .square.left {left:-4px; bottom:50px;}
-    .square.right {right:-4px; bottom:50px; }
-    .square.bottom {right:100px; bottom:-4px;}
-
-    .square:hover {cursor:default;}
-    
-/* DIVIDERS*/
-
-.divider            {position:relative; float:left;}
-.divider            {background-color:Transparent; border:none;}
-
-  .divider.vertical   {width:20px; height:1px;}
-  .divider.horizontal {height:20px; width:1px;}
-
-    .divider.vertical.preview {width:1px;}
-    .divider.horizontal.preview {height:1px;}
-
-
 /* FIXED */
-
 #ruler.fixed {position: fixed; top:25px; border-top:none; z-index:10;}
 #page.toolbarFixed {margin-top:92px;}
 

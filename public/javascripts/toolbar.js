@@ -14,6 +14,7 @@ $(document).ready(function(){
   }
 });
 
+
 //  setup elements
 var setupFontSizes = function(){
   var div = $('.font-size.values');
@@ -68,6 +69,7 @@ var fix_toolbar = function(){
    if (!msie6) {
      var top = $('.toolbar').offset().top - parseFloat($('.toolbar').css('margin-top').replace(/auto/, 0));
      var left = $('#page').offset().left;
+
      $(window).scroll(function (event) {
        // what the y position of the scroll is
        var y = $(this).scrollTop();
@@ -101,13 +103,15 @@ var setupInspector = function(){
   $('body').append(inspector);
 }
 
+
 // modes
 var box_edit_mode = function(){
+  $('#page').attr('mode', 'box');
   $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview');
   $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
 
   $('.content').attr('contenteditable', 'true');
-  $('p span').removeClass('transparent_selection');
+  $('*').removeClass('transparent_selection');
   $('.box').removeClass('preview');
   $('.header').removeClass('ce').hide();
   $('.square').hide();
@@ -118,11 +122,12 @@ var box_edit_mode = function(){
 }
 
 var preview_mode = function(){
+  $('#page').attr('mode', 'preview');
   $('#page, .box, .header, .body, .divider, .triangle').addClass('preview');
   $('.simple.container, .horizontal.container, .vertical.container').removeClass('ce');
 
   $('.content').attr('contenteditable', 'false');
-  $('p span').removeClass('transparent_selection');
+  $('*').removeClass('transparent_selection');
 
   $('.box').addClass('preview');
   $('.header').removeClass('ce').hide();
@@ -134,12 +139,13 @@ var preview_mode = function(){
 }
 
 var bin_edit_mode = function(){
+  $('#page').attr('mode', 'bin');
   $('#page, .box, .header, .body, .divider, .triangle').removeClass('preview')
   $('.simple.container, .horizontal.container, .vertical.container').addClass('ce');
 
   $('.triangle').show();
   $('.content').attr('contenteditable', 'false');
-  $('p span').addClass('transparent_selection');
+  $('*').addClass('transparent_selection');
 
 
   $('.box').removeClass('preview');
@@ -183,6 +189,12 @@ var toolbar_events = function(){
   }
 
   var toolbar_events = function(){
+    var buttons = $('.dropdown .arrows, .dropdown .down-arrow, #colors');
+    buttons.live('click', function(e){
+      $('.values').hide();
+      $(this).parent().find('.values').show();
+    });
+
     $('.options li').live('click', function(){
       $(this).toggleClass('selected');
     });
@@ -190,8 +202,7 @@ var toolbar_events = function(){
 
   var color_events = function(){
     var colors = $('.toolbar .colors ul.base li, .toolbar .colors ul.theme li');
-    colors.live('mouseup', function(){
-
+    colors.live('mouseup', function(event){
       // change the display color
       var color = $(this).css('background-color');
       $('#colors').css('background-color', color);

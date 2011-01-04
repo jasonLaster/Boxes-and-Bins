@@ -322,7 +322,7 @@ var events = function(){
     });
   }
 
-  var box_events = function(){
+  var box_events = function(){ 
 
 
     $('.box').live('mouseover', function(){
@@ -393,12 +393,6 @@ var events = function(){
       $('.buttons, .remove', this).hide();
       $('.header').removeClass('hover');
     });
-
-    var buttons = $('.dropdown .arrows, .dropdown .down-arrow, #colors');
-    buttons.live('click', function(){
-      $('.values').hide();
-      $(this).parent().find('.values').show();
-    })
 
     // container & boxes
     $('.button').live('click', function(){

@@ -156,8 +156,6 @@ var selectSpanTests = function(){
   // should be 2 * 2 * 4 * (# of tests)
 }
 
-
-
 var editor = function(type, param) {
 
   if (!text_selection) {

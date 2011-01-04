@@ -1,0 +1,26 @@
+#ruler
+	- (0..9).each do |hundred|
+		.hundred-pixels
+			%span.value= hundred * 100
+			%ul.pixels
+				%li.one
+				%li.two
+				%li.three
+				%li.four
+				%li.five
+				%li.six
+				%li.seven
+				%li.eight
+				%li.nine
+				%li.ten
+  	
+	.hundred-pixels
+		%span.value 1000
+		%ul.pixels
+			%li.one
+			%li.two
+			%li.three
+			%li.four
+			%li.five
+			
+	.clear

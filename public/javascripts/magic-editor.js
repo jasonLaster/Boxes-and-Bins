@@ -156,6 +156,30 @@ var selectSpanTests = function(){
   // should be 2 * 2 * 4 * (# of tests)
 }
 
+var editorTests = function(){
+  // proper heirarchy
+  var proper_hierarchy = function(){
+    var content_divs = $('.content[contenteditable="true"]');
+    var content_ps = content_divs.children();
+    var content_spans = content_ps.children();
+
+    function all_elements_are (elements, type){
+      return _(elements).chain()
+        .map(function(el){ return el.nodeName;})
+        .all(function(el){ return el == type;})
+        .value();
+    }
+
+    return all_elements_are(content_divs, 'DIV')
+      && all_elements_are(content_ps, 'P')
+      && all_elements_are(content_spans, 'SPAN');
+  }
+
+  if (!proper_hierarchy()) {
+    alert('content div hierarchy is blown. There are probably no spans!!!')
+  }
+}
+
 var editor = function(type, param) {
 
   if (!text_selection) {

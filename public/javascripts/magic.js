@@ -380,6 +380,9 @@ var events = function(){
         : null;
     });
 
+    $('.body .content').live('keyup', function(e){
+      editorTests();
+    });
     // header / menubar
     $('.header').live('mouseover', function(){
       $('.buttons, .remove').hide();

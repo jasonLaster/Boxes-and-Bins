@@ -6,14 +6,16 @@ var text_selection = null;
 $(document).ready(function(){
   events();
   $('#flash').hide()
+  $('.values').hide();
+  fixSquarePosition();
+
+  // load page
   load_page(content)
   box_id = max_id('.box');
   container_id = max_id('.container.horizontal, .container.vertical, .container.simple');
-  $('.values').hide();
+
+  // setup mode related stuff
   box_edit_mode();
-  fixSquarePosition()
-  $('.square').hide();
-  $('*').removeClass('transparent_selection');
   different_modes();
 })
 

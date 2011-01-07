@@ -1,3 +1,10 @@
+var left_buffer = null;
+var right_buffer = null;
+var selected_elements = null;
+var left_to_rt = null;
+var cross_paragraph = null;
+var cross_span = null;
+
 
 /* selectSpans takes a textselection, which is basically an anchor and focus node and offset
  * and converts the text selected into a list of selected elements and a left and right element I call a buffer
@@ -5,13 +12,15 @@
  */
 var selectSpans = function() {
 
-  //  should add top level class for all text-boxes
-  $('p span').attr('type', '');
+  $('content p span').attr('type', '');
   sel = text_selection;
 
   /* figure out the text selection focus and anchor
    * either the anchorNode is a paragraph or it is a span, in either case we've got it covered
    */
+  var focus = null;
+  var anchor = null;
+
   if (sel.anchorNode.nodeName != "P") {
     focus = {node: $(sel.focusNode.parentNode), offset: sel.focusOffset};
   } else {
@@ -35,12 +44,6 @@ var selectSpans = function() {
 
   cross_paragraph = $(anchor.node).parent().text() !== $(focus.node).parent().text();
   cross_span = ($(anchor.node).text() !== $(focus.node).text());
-  var left_to_rt;
-
-  left_buffer = [];
-  right_buffer = [];
-  selected_elements = [];
-
 
   if(cross_paragraph) {
     left_to_rt = (anchor.node.parent().index() < focus.node.parent().index());
@@ -55,14 +58,17 @@ var selectSpans = function() {
 
   /* now that we know which was the left and right most selection
    * we can create a left or right buffer, if the left most selection is not at
-   * the beginning of the span or the right most selection is not at the end of a span
+   * the beginning of the span or the right most selection is not at the end of a span.
    */
+
+   left_buffer = [];
+   right_buffer = [];
+   selected_elements = [];
 
   // left_buffer
   if (left_selection.offset != 0) {
     left_buffer = left_selection.node.clone();
-    text = left_selection.node.text();
-    left_buffer.text(text.substring(0, left_selection.offset));
+    left_buffer.text(left_selection.node.text().substring(0, left_selection.offset));
     left_selection.node.before(left_buffer);
     left_buffer.attr('type' ,'left_buffer');
   }
@@ -70,11 +76,11 @@ var selectSpans = function() {
   // right_buffer
   if (right_selection.offset != right_selection.node.text().length) {
     right_buffer = right_selection.node.clone();
-    text = right_buffer.text();
-    right_buffer.text(text.substring(right_selection.offset, text.length));
+    right_buffer.text(right_buffer.text().substring(right_selection.offset, text.length));
     right_selection.node.after(right_buffer);
     right_buffer.attr('type' ,'right_buffer');
   }
+
 
   /* now that we've created a left and right buffer if needed, we can get to work
    * figuring out what the selected elements were. This is actually not that hard once we know
@@ -119,16 +125,24 @@ var selectSpans = function() {
   selected_elements.attr('type' ,'selected_elements');
 }
 
-// merge selected elements plus buffers if they have the same classes
-var mergeSpans = function() {
-  all_spans = $($.merge($.merge($.merge([], left_buffer), selected_elements), right_buffer));
+/* Merge Spans takes the left buffer, selected elements, and the right buffer
+ * and goes from left to right trying to combine the spans that are similar. 
+ * This is really important because otherwise, the spans will reduce to one character. 
+ */
 
-  // get list of affected paragraphs
-  // split up the spans by paragraph
+var mergeSpans = function() {
+
+  /* We want to get all the spans for each paragraph.
+   * If the selection spans multiple paragraphs, we'll have to split it up by paragraph. [[spans], [spans]]
+   */
+  var all_spans = $($.merge($.merge($.merge([], left_buffer), selected_elements), right_buffer));
+
+
   if (cross_paragraph) {
-    var paragraphs = _.uniq(_.map(all_spans, function(i){
-      return $(i).parent().index()
+    var paragraphs = _.uniq(_.map(all_spans, function(i){ 
+      return $(i).parent().index() 
     }));
+
     all_spans = _.map(paragraphs, function(paragraph_index){
       return _.select(all_spans, function(span){
         return $(span).parent().index() == paragraph_index;
@@ -137,6 +151,10 @@ var mergeSpans = function() {
   } else {
     all_spans = Array(all_spans);
   }
+
+  /* Now that we have all the spans organized by paragraph, 
+   * We'll iterate through the paragraphs and combine similar spans. 
+   */
 
   _.each(all_spans, function(spans){
     prev = $(spans[0]);

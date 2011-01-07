@@ -206,11 +206,13 @@ var toolbar_events = function(){
       // change the display color
       var color = $(this).css('background-color');
       $('#colors').css('background-color', color);
+      $('.toolbar .colors.values').hide();
 
       // change the colors
       var index = $(this).attr('class');
       var color_class = 'color-' + index;
       editor('color', color_class);
+
     });
 
     colors.live('mouseover', function(){

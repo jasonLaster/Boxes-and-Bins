@@ -263,10 +263,6 @@
 .ui-icon-locked { background-position: -192px -96px; }
 .ui-icon-unlocked { background-position: -208px -96px; }
 #information { margin: 2px; }
-#information::selection {
-  background: transparent;
-  margin: 0;
-}
 #inspector {
   position: fixed;
   right: 10px;

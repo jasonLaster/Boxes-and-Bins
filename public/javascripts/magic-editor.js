@@ -216,11 +216,21 @@ var selectSpanTests = function(){
 }
 
 var editorTests = function(){
+
   // proper heirarchy
   var proper_hierarchy = function(){
     var content_divs = $('.content[contenteditable="true"]');
-    var div_children = div_children.children();
-    var p_children = p_children.children();
+    var p_elements = content_divs.children();
+    var span_elements = p_elements.children();
+
+    var empty_elements =
+      _([content_divs, p_elements, span_elements])
+        .any(function(i){return $(i).length == 0}
+      );
+
+    if (empty_elements) {
+      return false;
+    }
 
     function all_elements_are (elements, type){
       return _(elements).chain()
@@ -230,8 +240,8 @@ var editorTests = function(){
     }
 
     return all_elements_are(content_divs, 'DIV')
-      && all_elements_are(div_children, 'P')
-      && all_elements_are(p_children, 'SPAN');
+      && all_elements_are(p_elements, 'P')
+      && all_elements_are(span_elements, 'SPAN');
   }
 
   if (!proper_hierarchy()) {

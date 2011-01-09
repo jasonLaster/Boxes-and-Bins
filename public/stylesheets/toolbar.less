@@ -1,3 +1,11 @@
+
+
+
+
+/*                */
+/* LESS FUNCTIONS */
+/*                */
+
 .box_shadow (@right: 0px, @down: 0px, @blur: 0px, @color:#fff) {
   -moz-box-shadow:    @right @down @blur @color;  
   -webkit-box-shadow: @right @down @blur @color;  
@@ -27,16 +35,13 @@
   .toolbar .values {position:absolute; left:0px; top:14px; width:120px; padding:0px 0; background-color:white; border:1px solid #999; z-index:10; .box_shadow(0px, 2px, 4px, #ccc);}
   .toolbar .values li {float:none; width:66px; height:18px; line-height:18px; font-size:12px; padding-left:4px; /*border-bottom:1px solid #ccc;*/}
   .toolbar .values li:hover {background-color:#578fc7; color:#fff;}
+  .toolbar .values.hide {display:none;}
+
   .toolbar .values.font-size {top:19px; width:70px; overflow:auto;}
 
     .toolbar .width input {width:40px;}
     .toolbar .values.width {top:19px; width:80px; height:400px; overflow:auto;}
     .toolbar .values.width li {width:60px;}
-
-  .toolbar .values.font {top:19px;}
-
-  .toolbar #viewing-modes ul      {margin-top:1px;}
-  .toolbar #viewing-modes li.mode {float:left;padding:0px;}
 
   .toolbar .dropdown.text {width:44px;}
   .toolbar .down-arrow {float:left; width:14px; height:13px; background:url('/images/toolbar/down-arrow.png');}
@@ -47,14 +52,27 @@
   .toolbar input:focus { outline:1px solid transparent;}
 
 
-/* STYLES */
-.toolbar #styles-button {position:relative; float:left; width:15px; height:16px;}
-.toolbar #styles-button {margin:3px 5px 0px 5px; background:url('/images/toolbar/paragaph-button.jpg');}
+  .toolbar .font.values {top:19px;}
+  .toolbar .font.values li {width:116px; padding-left:4px;}
+  
+  
 
-.toolbar #styles-dropdown {position:relative; float:left; width:30px; height:16px;}
-.toolbar #styles-dropdown {margin:3px 5px 0px 5px; background:url('/images/toolbar/paragaph-dropdown.jpg');}
+  .toolbar #viewing-modes ul      {margin-top:1px;}
+  .toolbar #viewing-modes li.mode {float:left;padding:0px;}
+
+
+
+/* STYLES */
+#styles-button {position:relative; float:left; width:15px; height:16px;}
+#styles-button {margin:3px 5px 0px 5px; background:url('/images/toolbar/paragaph-button.jpg');}
+
+#styles-dropdown {position:relative; float:left; width:30px; height:16px;}
+#styles-dropdown {margin:3px 5px 0px 5px; background:url('/images/toolbar/paragaph-dropdown.jpg');}
+
+  #styles-dropdown li {width:116px; padding-left:4px;}
 
 .toolbar .sources.values {top:20px;}
+.toolbar .sources.values li {width:116px; padding-left:4px;}
 .toolbar .styles.values {top:20px;}
 
 

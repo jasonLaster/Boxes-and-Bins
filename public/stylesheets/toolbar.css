@@ -92,6 +92,7 @@
   background-color: #578fc7;
   color: #ffffff;
 }
+.toolbar .values.hide { display: none; }
 .toolbar .values.font-size {
   top: 19px;
   width: 70px;
@@ -105,12 +106,6 @@
   overflow: auto;
 }
 .toolbar .values.width li { width: 60px; }
-.toolbar .values.font { top: 19px; }
-.toolbar #viewing-modes ul { margin-top: 1px; }
-.toolbar #viewing-modes li.mode {
-  float: left;
-  padding: 0px;
-}
 .toolbar .dropdown.text { width: 44px; }
 .toolbar .down-arrow {
   float: left;
@@ -136,27 +131,45 @@
   border-top: 1px solid #dedede;
 }
 .toolbar input:focus { outline: 1px solid transparent; }
-.toolbar #styles-button {
+.toolbar .font.values { top: 19px; }
+.toolbar .font.values li {
+  width: 116px;
+  padding-left: 4px;
+}
+.toolbar #viewing-modes ul { margin-top: 1px; }
+.toolbar #viewing-modes li.mode {
+  float: left;
+  padding: 0px;
+}
+#styles-button {
   position: relative;
   float: left;
   width: 15px;
   height: 16px;
 }
-.toolbar #styles-button {
+#styles-button {
   margin: 3px 5px 0px 5px;
   background: url('/images/toolbar/paragaph-button.jpg');
 }
-.toolbar #styles-dropdown {
+#styles-dropdown {
   position: relative;
   float: left;
   width: 30px;
   height: 16px;
 }
-.toolbar #styles-dropdown {
+#styles-dropdown {
   margin: 3px 5px 0px 5px;
   background: url('/images/toolbar/paragaph-dropdown.jpg');
 }
+#styles-dropdown li {
+  width: 116px;
+  padding-left: 4px;
+}
 .toolbar .sources.values { top: 20px; }
+.toolbar .sources.values li {
+  width: 116px;
+  padding-left: 4px;
+}
 .toolbar .styles.values { top: 20px; }
 .toolbar #colors {
   position: relative;

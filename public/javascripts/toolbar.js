@@ -9,6 +9,7 @@ $(document).ready(function(){
   setupInspector();
 
   $('.header').removeClass('ce')
+  $('.values').addClass('hide');
   if (diagnostic) {
     $('.content').addClass('d');
   }
@@ -191,8 +192,9 @@ var toolbar_events = function(){
   var toolbar_events = function(){
     var buttons = $('.dropdown .arrows, .dropdown .down-arrow, #colors');
     buttons.live('click', function(e){
-      $('.values').hide();
-      $(this).parent().find('.values').show();
+      var dropdown = $(this).parent().find('.values');
+      $('.values').not(dropdown).addClass('hide');
+      dropdown.toggleClass('hide');
     });
 
     $('.options li').live('click', function(){
@@ -226,15 +228,16 @@ var toolbar_events = function(){
   color_events();
 
   $('#styles-button, #styles-dropdown').live('click', function(){
-    $('.values').hide();
-    $(this).find('.values').show();
+    dropdown = $(this).find('.values');
+    $('.values').not(dropdown).addClass('hide');
+    dropdown.toggleClass('hide');
   });
 
   $('.font.dropdown .values li').live('click', function(){
     var value = $(this).text();
     var parent = $(this).closest('.dropdown').find('.selected.option');
     parent.text(value);
-    $('.values').hide();
+    $('.values').addClass('hide');
   });
 
   $('.font-size.dropdown .values li').live('click', function(){
@@ -242,7 +245,7 @@ var toolbar_events = function(){
     var value = $(this).text();
     var parent = $(this).closest('.dropdown').find('input');
     parent.val(value);
-    $('.values').hide();
+    $('.values').addClass('hide');
 
     var size = element.attr('size');
     editor('size', size);

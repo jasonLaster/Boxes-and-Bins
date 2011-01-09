@@ -12,6 +12,8 @@ var cross_span = null;
  */
 var selectSpans = function() {
 
+  editorTests();
+
   $('content p span').attr('type', '');
   sel = text_selection;
 
@@ -217,8 +219,8 @@ var editorTests = function(){
   // proper heirarchy
   var proper_hierarchy = function(){
     var content_divs = $('.content[contenteditable="true"]');
-    var content_ps = content_divs.children();
-    var content_spans = content_ps.children();
+    var div_children = div_children.children();
+    var p_children = p_children.children();
 
     function all_elements_are (elements, type){
       return _(elements).chain()
@@ -228,12 +230,24 @@ var editorTests = function(){
     }
 
     return all_elements_are(content_divs, 'DIV')
-      && all_elements_are(content_ps, 'P')
-      && all_elements_are(content_spans, 'SPAN');
+      && all_elements_are(div_children, 'P')
+      && all_elements_are(p_children, 'SPAN');
   }
 
   if (!proper_hierarchy()) {
-    alert('content div hierarchy is blown. There are probably no spans!!!');
+    console.log('content div hierarchy is blown. There are probably no spans!!!');
+
+    $('.content').find('p').each(function() {
+      if ($(this).html() == '<br>') {
+        $(this).html('<span><br></span>');
+      }
+    });
+
+    $('.content').each(function() {
+      if ($(this).html() == '') {
+        $(this).html('<p><span><br></span></p>');
+      }
+    });
   }
 }
 

@@ -6,7 +6,6 @@ var text_selection = null;
 $(document).ready(function(){
   events();
   $('#flash').hide()
-  $('.values').hide();
   fixSquarePosition();
 
   // load page
